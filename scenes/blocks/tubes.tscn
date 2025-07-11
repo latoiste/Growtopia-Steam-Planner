@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuye5ggmiahfj"]
+
+[ext_resource type="Texture2D" uid="uid://v5gs6xmjta3x" path="res://block sprites/pixil-frame-0.png" id="1_5q2kh"]
+[ext_resource type="Script" uid="uid://b7frattcrh2l2" path="res://scripts/blocks/tubes.gd" id="1_tp8m2"]
+
+[node name="Tubes" type="Node2D"]
+script = ExtResource("1_tp8m2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = ExtResource("1_5q2kh")
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)

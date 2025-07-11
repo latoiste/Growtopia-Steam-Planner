@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7e8rb3hjjxep"]
+
+[ext_resource type="Script" uid="uid://jyy7cncuvjtl" path="res://scripts/UI/interact_button.gd" id="1_es383"]
+
+[node name="InteractButton" type="Button"]
+anchors_preset = -1
+anchor_right = 0.005
+anchor_bottom = 0.009
+offset_bottom = 0.224
+script = ExtResource("1_es383")
+metadata/_custom_type_script = "uid://b268wb8u5qkbr"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

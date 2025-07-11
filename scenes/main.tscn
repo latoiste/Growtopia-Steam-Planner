@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckm26s3dyeyxp"]
+
+[ext_resource type="PackedScene" uid="uid://b3fgmanswmq4g" path="res://scenes/UI/UI.tscn" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://bucntcomgbrfi" path="res://scripts/main.gd" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://ctybx78ith7u3" path="res://scenes/world_manager.tscn" id="2_sugp2"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_sugp2")
+
+[node name="WorldManager" parent="." instance=ExtResource("2_sugp2")]
+
+[node name="State" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "State: "
+
+[node name="UiHover" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 22.0
+offset_right = 41.0
+offset_bottom = 45.0
+text = "Is hovering:"
+
+[node name="Ui" parent="." instance=ExtResource("1_0wfyh")]
+
+[connection signal="selected_block" from="Ui" to="." method="_on_ui_selected_block"]
+[connection signal="selected_block" from="Ui" to="WorldManager" method="_on_ui_selected_block"]
