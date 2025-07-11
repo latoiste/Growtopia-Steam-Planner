@@ -84,13 +84,23 @@ func dir_is_valid(dir: Vector2) -> bool:
 	
 	return true;
 
-func get_dir_index(dirs: Array[Vector2]) -> int:
+func get_dir_index(output_dir: Array[Vector2]) -> int:
 	var index: int = -1;
-	for i in range(dirs.size()):
-		var dir = dirs[i];
+	for i in range(output_dir.size()):
+		var dir = output_dir[i];
 		if dir_is_valid(dir):
 			index = i;
 			break;
 	return index;
 
-#func get_next_direction()
+func send_power(conductor: Conductor, prev_dir: Vector2) -> void:
+	print("Sent from: ", self);
+	print("Recieved to: ", conductor);
+	if block_type == "conductor":
+		self.recieve_power.disconnect(self._on_recieve_power);
+		
+	if prev_dir == Constants.NO_DIR:
+		return;
+	
+	conductor.recieve_power.connect(conductor._on_recieve_power);
+	conductor.recieve_power.emit(prev_dir);

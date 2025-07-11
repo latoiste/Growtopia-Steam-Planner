@@ -11,14 +11,11 @@ func set_direction(output_dir: Array[Vector2]) -> void:
 
 func provide_power() -> void:
 	var index = get_dir_index(output_direction);
-	
 	if index == -1:
 		return;
 	
 	var surrounding_blocks: Array[Block] = get_surrounding_blocks();
 	var conductor: Conductor = surrounding_blocks[index];
-	var prev_dir: Vector2 = Constants.ALL_DIR[index];
-	print("sent to!!", conductor)
+	var prev_dir: Vector2 = Constants.ALL_DIR[index] * -1;
 	
-	conductor.recieve_power.connect(conductor._on_recieve_power);
-	conductor.recieve_power.emit(prev_dir);
+	send_power(conductor, prev_dir);
