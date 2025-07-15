@@ -5,19 +5,29 @@ var block_name: String;
 var block_type: String;
 var block_pos: Vector2;
 var interactable: bool;
+var flippable: bool;
+var input_direction: Array[Vector2] = [];
+var output_direction: Array[Vector2] = [];
 
 func interact() -> void:
 	pass
 
-func set_block_position(pos: Vector2) -> void:
-	position = pos;
-	block_pos = Grid.get_grid_pos(pos);
+func set_block_position(world_pos: Vector2) -> void:
+	position = world_pos;
+	block_pos = Grid.get_grid_pos(world_pos);
 
 func get_block_name() -> String:
-	return block_name
+	return block_name;
 
 func get_block_type() -> String:
-	return block_type
+	return block_type;
+
+func get_global_block_pos() -> Vector2:
+	return Grid.get_world_pos(block_pos);
+
+## Returns the grid pos.
+func get_block_pos() -> Vector2:
+	return block_pos;
 	
 func is_interactable() -> bool:
 	return true if interactable else false
@@ -64,16 +74,7 @@ func get_block_right() -> Block:
 # - block type is conductor
 # - the input direction of that block matches (opposite of dir)
 func dir_is_valid(dir: Vector2) -> bool:
-	var block: Block;
-	match dir:
-		Constants.UP:
-			block = get_block_up();
-		Constants.DOWN:
-			block = get_block_down();
-		Constants.LEFT:
-			block = get_block_left();
-		Constants.RIGHT:
-			block = get_block_right();
+	var block: Block = get_block_in_dir(dir);
 
 	if not block:
 		return false;
@@ -84,23 +85,34 @@ func dir_is_valid(dir: Vector2) -> bool:
 	
 	return true;
 
-func get_dir_index(output_dir: Array[Vector2]) -> int:
-	var index: int = -1;
-	for i in range(output_dir.size()):
-		var dir = output_dir[i];
+## Gets the next direction of a block.
+## Returns Vector2.ZERO if its at the end.
+## Override this method for different properties.
+func get_next_dir(prev_dir: Vector2 = Constants.NO_DIR) -> Vector2:
+	for dir in output_direction:
 		if dir_is_valid(dir):
-			index = i;
-			break;
-	return index;
+			return dir;
+	return Constants.NO_DIR;
 
-func send_power(conductor: Conductor, prev_dir: Vector2) -> void:
-	print("Sent from: ", self);
-	print("Recieved to: ", conductor);
-	if block_type == "conductor":
-		self.recieve_power.disconnect(self._on_recieve_power);
-		
-	if prev_dir == Constants.NO_DIR:
-		return;
-	
-	conductor.recieve_power.connect(conductor._on_recieve_power);
-	conductor.recieve_power.emit(prev_dir);
+func get_block_in_dir(dir: Vector2) -> Block:
+	var block: Block;
+	match dir:
+		Constants.UP:
+			block = get_block_up();
+		Constants.DOWN:
+			block = get_block_down();
+		Constants.LEFT:
+			block = get_block_left();
+		Constants.RIGHT:
+			block = get_block_right();
+	return block;
+
+#func send_power(conductor: Conductor, next_dir: Vector2) -> void:	
+	#if block_type == "conductor":
+		#self.recieve_power.disconnect(self._on_recieve_power);
+		#
+	#if next_dir == Constants.NO_DIR:
+		#return;
+	#
+	#conductor.recieve_power.connect(conductor._on_recieve_power);
+	#conductor.recieve_power.emit(next_dir);

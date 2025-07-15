@@ -1,14 +1,13 @@
 extends Source
+
 @onready var interact_button = $InteractButton;
+var output_dir: Array[Vector2] = [Constants.NO_DIR,
+							   Constants.DOWN,
+							   Constants.LEFT, 
+							   Constants.RIGHT]
 
 func _ready():
-	block_name = "stomper";
-	block_type = "source";
-	interactable = true;
-	set_direction([Constants.NO_DIR,
-				   Constants.DOWN,
-				   Constants.LEFT, 
-				   Constants.RIGHT]);
+	new_source("stomper", "source", true, false, output_dir);
 
 func interact():
 	provide_power();

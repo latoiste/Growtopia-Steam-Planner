@@ -1,33 +1,50 @@
 extends Block
 class_name Conductor
-signal recieve_power
 
-var input_direction: Array[Vector2] = [];
-var output_direction: Array[Vector2] = [];
+var has_steam: bool = false;
 
-func _on_recieve_power(prev_dir: Vector2):
-	toggle();
-	provide_power(prev_dir);
+func new_conductor(block_name: String, block_type: String, interactable: bool, flippable: bool, output_dir: Array[Vector2], input_dir: Array[Vector2]):
+	self.block_name = block_name;
+	self.block_type = block_type;
+	self.interactable = interactable;
+	self.flippable = flippable;
+	set_direction(output_dir, input_dir);
 
 func set_direction(input_dir: Array[Vector2], output_dir: Array[Vector2]):
 	input_direction = input_dir.duplicate();
 	output_direction = output_dir.duplicate();
 
-func toggle() -> void:
-	pass;
+func get_next_dir(prev_dir: Vector2 = Constants.NO_DIR) -> Vector2:
+	if prev_dir:
+		change_dir_order(prev_dir);
+		
+	for dir in output_direction:
+		if dir_is_valid(dir):
+			return dir;
+	return Constants.NO_DIR;
 
-func provide_power(prev_dir: Vector2) -> void:
-	var prev_dir_index = output_direction.find(prev_dir);
-	if prev_dir_index == -1:
-		return;
-	output_direction[prev_dir_index] = Constants.NO_DIR;
-	#TODO STORE LATEST HORIZONTAL AND VERTICAL DIR OR JUST CHECK IDK LMAO
-	var index = get_dir_index(output_direction);
-	if index == -1:
-		return;
-	
-	var surrounding_blocks = get_surrounding_blocks();
-	var conductor: Conductor = surrounding_blocks[index];
-	var new_prev_dir = Constants.ALL_DIR[index] * -1;
-	
-	send_power(conductor, new_prev_dir);
+func change_dir_order(prev_dir: Vector2) -> void:
+	match prev_dir:
+		Constants.UP:
+			output_direction = [Constants.UP, 
+								Constants.RIGHT,
+								Constants.LEFT];
+		Constants.DOWN:
+			output_direction = [Constants.DOWN,
+								Constants.LEFT,
+								Constants.RIGHT];
+		Constants.LEFT:
+			output_direction = [Constants.LEFT,
+								Constants.UP,
+								Constants.DOWN];
+		Constants.RIGHT:
+			output_direction = [Constants.RIGHT,
+								Constants.DOWN,
+								Constants.UP];
+
+func _process(_delta: float) -> void:
+	var sprite: Sprite2D = get_child(0);
+	if has_steam:
+		sprite.modulate.a = 0.5;
+	else:
+		sprite.modulate.a = 1.0;

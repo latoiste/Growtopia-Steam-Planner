@@ -4,27 +4,27 @@ extends Node
 var grid: Dictionary = {}
 
 ##If block argument isn't given, it will be set to null
-func set_grid(pos: Vector2, block: Block = null) -> void:
+func set_grid(grid_pos: Vector2, block: Block = null) -> void:
 	if block:
-		grid[pos] = block;
+		grid[grid_pos] = block;
 	else:
-		grid.erase(pos);
+		grid.erase(grid_pos);
 
 ##Use grid pos
-func get_block_at(pos: Vector2) -> Block:
-	#print("Hi from get_block_at: ", grid.get(pos))
-	return grid.get(pos);
+func get_block_at(grid_pos: Vector2) -> Block:
+	#print("Hi from get_block_at: ", grid.get(grid_pos))
+	return grid.get(grid_pos);
 
 ##From world to grid
-func get_grid_pos(pos: Vector2) -> Vector2:
+func get_grid_pos(world_pos: Vector2) -> Vector2:
 	return Vector2(
-		floor(pos.x / Constants.BLOCK_SIZE),
-		floor(pos.y / Constants.BLOCK_SIZE)
+		floor(world_pos.x / Constants.BLOCK_SIZE),
+		floor(world_pos.y / Constants.BLOCK_SIZE)
 	)
 
 ##From grid to world
-func get_world_pos(pos: Vector2) -> Vector2:
+func get_world_pos(grid_pos: Vector2) -> Vector2:
 	return Vector2(
-		floor(pos.x * Constants.BLOCK_SIZE),
-		floor(pos.y * Constants.BLOCK_SIZE)
+		floor(grid_pos.x * Constants.BLOCK_SIZE),
+		floor(grid_pos.y * Constants.BLOCK_SIZE)
 	)

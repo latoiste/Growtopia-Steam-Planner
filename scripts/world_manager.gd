@@ -1,10 +1,10 @@
 extends Node2D
 
-var selected_block: String;
-var block_scene: Resource;
-
-var block_pos: Vector2;
+var BlockScene: PackedScene;
+var block_instance: Block;
 var block: Node2D;
+var selected_block: String;
+var block_pos: Vector2;
 var is_occupied: bool;
 
 func _process(_delta: float) -> void:
@@ -13,13 +13,13 @@ func _process(_delta: float) -> void:
 	is_occupied = true if block else false
 	
 func place_block() -> void:
-	var new_block: Block = block_scene.instantiate();
+	block_instance = BlockScene.instantiate();
 	var world_pos = Grid.get_world_pos(block_pos);
 	
-	new_block.set_block_position(world_pos)
-	add_child(new_block);
+	block_instance.set_block_position(world_pos)
+	add_child(block_instance);
 	
-	Grid.set_grid(block_pos, new_block);
+	Grid.set_grid(block_pos, block_instance);
 	#new_block.get_surrounding_blocks();
 	#print("up: ", new_block.get_up())
 	#print("down: ", new_block.get_down())
@@ -35,7 +35,7 @@ func replace_block() -> void:
 	place_block();
 
 func can_place() -> bool:
-	if not block_scene:
+	if not BlockScene:
 		return false;
 
 	if is_occupied:
@@ -74,9 +74,9 @@ func can_replace() -> bool:
 func set_block_scene() -> void:
 	match (selected_block):
 		"stomper":
-			block_scene = preload(ScenePaths.STOMPER_SCENE);
+			BlockScene = preload(ScenePaths.STOMPER_SCENE);
 		"tubes":
-			block_scene = preload(ScenePaths.TUBES_SCENE);
+			BlockScene = preload(ScenePaths.TUBES_SCENE);
 		_:
 			print("SELECTED BLOCK RUSAK CUY")
 
