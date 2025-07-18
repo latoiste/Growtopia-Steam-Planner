@@ -1,7 +1,11 @@
 extends Block
 class_name Conductor
 
-var has_steam: bool = false;
+func enter_steam() -> void:
+	pass;
+
+func exit_steam() -> void:
+	pass
 
 func get_next_dir(prev_dir: Vector2 = Constants.NO_DIR) -> Vector2:
 	if prev_dir:
@@ -31,9 +35,9 @@ func change_dir_order(prev_dir: Vector2) -> void:
 								Constants.DOWN,
 								Constants.UP];
 
-func _process(_delta: float) -> void:
-	var sprite: Sprite2D = get_child(0);
-	if has_steam:
-		sprite.modulate.a = 0.5;
-	else:
-		sprite.modulate.a = 1.0;
+#func _process(_delta: float) -> void:
+	#var sprite: Sprite2D = get_child(0);
+	#if has_steam:
+		#sprite.modulate.a = 0.5;
+	#else:
+		#sprite.modulate.a = 1.0;

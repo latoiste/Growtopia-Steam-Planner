@@ -9,10 +9,16 @@ var flippable: bool;
 var input_direction: Array[Vector2] = [];
 var output_direction: Array[Vector2] = [];
 
+func enter() -> void:
+	pass
+
+func exit() -> void:
+	pass
+
 func interact() -> void:
 	pass
 
-func new_block(blocK_name: String, block_type: String, interactable: bool, flippable: bool, output_dir: Array[Vector2], input_dir: Array[Vector2] = []):
+func new_block(blocK_name: String, block_type: String, interactable: bool, flippable: bool, output_dir: Array[Vector2] = [], input_dir: Array[Vector2] = []):
 	self.block_name = blocK_name;
 	self.block_type = block_type;
 	self.interactable = interactable;
@@ -20,10 +26,7 @@ func new_block(blocK_name: String, block_type: String, interactable: bool, flipp
 	set_direction(output_dir, input_dir);
 	
 func set_direction(output_dir: Array[Vector2], input_dir: Array[Vector2]):
-	if output_dir.is_empty():
-		output_direction = Constants.ALL_DIR;
-	else:
-		output_direction = output_dir.duplicate();
+	output_direction = output_dir.duplicate();
 	input_direction = input_dir.duplicate();
 
 func set_block_position(world_pos: Vector2) -> void:

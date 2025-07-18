@@ -4,5 +4,5 @@ extends Conductor
 var input_dir: Array[Vector2] = Constants.ALL_DIR;
 var output_dir: Array[Vector2] = Constants.ALL_DIR;
 
-func _ready() -> void:
+func enter():
 	new_block("tubes", "conductor", false, false, output_dir, input_dir);

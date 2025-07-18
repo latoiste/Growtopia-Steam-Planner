@@ -16,7 +16,8 @@ func place_block() -> void:
 	block_instance = BlockScene.instantiate();
 	var world_pos = Grid.get_world_pos(block_pos);
 	
-	block_instance.set_block_position(world_pos)
+	block_instance.enter();
+	block_instance.set_block_position(world_pos);
 	add_child(block_instance);
 	
 	Grid.set_grid(block_pos, block_instance);

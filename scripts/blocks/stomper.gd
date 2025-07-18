@@ -6,7 +6,7 @@ var output_dir: Array[Vector2] = [Constants.NO_DIR,
 							   Constants.LEFT, 
 							   Constants.RIGHT]
 
-func _ready():
+func enter():
 	new_block("stomper", "source", true, false, output_dir);
 
 func interact():

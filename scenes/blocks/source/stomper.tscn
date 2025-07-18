@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://muqtkakm3gkd"]
+
+[ext_resource type="Script" uid="uid://bvaelfsq8g48t" path="res://scripts/blocks/stomper.gd" id="1_kyh37"]
+[ext_resource type="Texture2D" uid="uid://b800pfkm02qsa" path="res://block sprites/Source/stomper.png" id="2_21x3a"]
+[ext_resource type="PackedScene" uid="uid://b7e8rb3hjjxep" path="res://scenes/UI/InteractButton.tscn" id="3_v0sqf"]
+
+[node name="Stomper" type="Node2D"]
+script = ExtResource("1_kyh37")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_21x3a")
+
+[node name="InteractButton" parent="." instance=ExtResource("3_v0sqf")]
+
+[connection signal="pressed" from="InteractButton" to="." method="interact"]

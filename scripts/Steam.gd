@@ -1,6 +1,8 @@
 extends Node2D
 class_name Steam
 
+signal give_steam;
+
 @onready var timer = $Timer;
 
 var tween: Tween;
@@ -9,12 +11,14 @@ var prev_dir: Vector2;
 var next_dir: Vector2;
 var initial_pos: Vector2;
 
-func init(block: Conductor, prev_dir: Vector2) -> void:
-	current_block = block;
-	next_dir = block.get_next_dir(prev_dir);
-	initial_pos = block.get_block_pos();
+func init(conductor: Conductor, prev_dir: Vector2) -> void:
+	current_block = conductor;
+	next_dir = conductor.get_next_dir(prev_dir);
+	initial_pos = conductor.get_block_pos();
 	set_steam_position(initial_pos);
-	current_block.has_steam = true;
+	
+	give_steam.connect(conductor.enter_steam, CONNECT_ONE_SHOT);
+	give_steam.emit();
 	
 	timer.start();
 	start_steam();
@@ -32,14 +36,14 @@ func start_steam() -> void:
 	kill_steam();
 
 func update_properties() -> void:
-	current_block.has_steam = false;
 	prev_dir = next_dir;
 	initial_pos += next_dir;
 	current_block = Grid.get_block_at(initial_pos);
 	
-	if current_block and current_block is Conductor:
+	if current_block:
 		next_dir = current_block.get_next_dir(prev_dir);
-		current_block.has_steam = true;
+		give_steam.connect(current_block.enter_steam, CONNECT_ONE_SHOT);
+		give_steam.emit();
 	else:
 		kill_steam();
 		
@@ -60,13 +64,13 @@ func kill_steam() -> void:
 		tween.kill();
 	await get_tree().create_timer(0.075).timeout
 	
-	if current_block and current_block is Conductor:
-		current_block.has_steam = false;
+	if give_steam.has_connections():
+		print("i will kill myself")
 	
 	queue_free();
 	
 func _process(delta: float) -> void:
-	print(current_block);
+	#print(current_block);
 	if not current_block:
-		print("killed")
 		kill_steam();
+		print("killed")

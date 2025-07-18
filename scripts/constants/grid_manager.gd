@@ -17,14 +17,8 @@ func get_block_at(grid_pos: Vector2) -> Block:
 
 ##From world to grid
 func get_grid_pos(world_pos: Vector2) -> Vector2:
-	return Vector2(
-		floor(world_pos.x / Constants.BLOCK_SIZE),
-		floor(world_pos.y / Constants.BLOCK_SIZE)
-	)
+	return floor(world_pos / Constants.BLOCK_SIZE);
 
 ##From grid to world
 func get_world_pos(grid_pos: Vector2) -> Vector2:
-	return Vector2(
-		floor(grid_pos.x * Constants.BLOCK_SIZE),
-		floor(grid_pos.y * Constants.BLOCK_SIZE)
-	)
+	return grid_pos * Constants.BLOCK_SIZE;

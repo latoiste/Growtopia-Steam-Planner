@@ -9,6 +9,8 @@ signal selected_mode(mode: String);
 
 var mouse_hovering: bool = false;
 
+#TODO: CHANGE CHILDREN TO BUTTONOVERLAY SO IT INHERITS MOUSE HOVERING LMAOOOO
+
 func _ready() -> void:
 	for child in block_container.get_children():
 		if child is Button:
