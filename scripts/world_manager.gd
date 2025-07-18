@@ -46,10 +46,8 @@ func can_delete() -> bool:
 	if selected_block != block.block_name:
 		return false;
 		
-	if block.interactable:
-		var interact_button = block.get_node("InteractButton");
-		if interact_button.mouse_hovering:
-			return false;
+	if mouse_is_hovering():
+		return false;
 		
 	return true;
 
@@ -60,12 +58,23 @@ func can_replace() -> bool:
 	if selected_block == block.block_name:
 		return false;
 	
+	if mouse_is_hovering():
+		return false;
+	
+	return true
+
+func mouse_is_hovering():
 	if block.interactable:
 		var interact_button = block.get_node("InteractButton");
 		if interact_button.mouse_hovering:
-			return false;
+			return true;
+			
+	if block.flippable:
+		var flip_button = block.get_node("FlipButton");
+		if flip_button.mouse_hovering:
+			return true;
 	
-	return true
+	return false;
 
 func set_block_scene() -> void:
 	match (selected_block):
@@ -73,6 +82,10 @@ func set_block_scene() -> void:
 			BlockScene = preload(ScenePaths.STOMPER_SCENE);
 		"tubes":
 			BlockScene = preload(ScenePaths.TUBES_SCENE);
+		"funnel":
+			BlockScene = preload(ScenePaths.FUNNEL_SCENE);
+		"crossover":
+			BlockScene = preload(ScenePaths.CROSSOVER_SCENE);
 		_:
 			print("SELECTED BLOCK RUSAK CUY")
 

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba1f376niumya"]
+
+[ext_resource type="Script" uid="uid://by65egbkv2ypf" path="res://scripts/UI/flip_button.gd" id="1_rmfg5"]
+
+[node name="FlipButton" type="Button"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 10.0001
+offset_right = 18.0001
+offset_bottom = 8.0
+grow_horizontal = 0
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_rmfg5")
+metadata/_custom_type_script = "uid://b268wb8u5qkbr"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

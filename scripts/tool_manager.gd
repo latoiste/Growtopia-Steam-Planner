@@ -12,7 +12,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			handle_select_mode(event);
 				
 func handle_draw_mode() -> void:
-	if Input.is_action_pressed("left_click") and not ui.mouse_hovering:
+	if Input.is_action_pressed("left_click"):
 		if world.can_place() and States.state != 2:
 			States.set_state(States.State.PLACE);
 			world.place_block();

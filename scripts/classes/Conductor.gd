@@ -14,6 +14,7 @@ func get_next_dir(prev_dir: Vector2 = Constants.NO_DIR) -> Vector2:
 	for dir in output_direction:
 		if dir_is_valid(dir):
 			return dir;
+			
 	return Constants.NO_DIR;
 
 func change_dir_order(prev_dir: Vector2) -> void:

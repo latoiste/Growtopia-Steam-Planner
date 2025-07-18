@@ -47,25 +47,23 @@ func update_properties() -> void:
 	else:
 		kill_steam();
 		
-	print("updated!");
-
 func move_steam_animation(start_pos: Vector2, final_pos: Vector2) -> void:
 	start_pos *= Constants.BLOCK_SIZE;
 	final_pos *= Constants.BLOCK_SIZE;
 	
 	tween = create_tween();
 	tween.tween_property(self, "position", final_pos, 0.075).from(start_pos);
-	
+
 func set_steam_position(grid_pos: Vector2) -> void:
 	position = grid_pos * Constants.BLOCK_SIZE;
 
 func kill_steam() -> void:
 	if tween:
 		tween.kill();
-	await get_tree().create_timer(0.075).timeout
+	await get_tree().create_timer(0.075).timeout;
 	
 	if give_steam.has_connections():
-		print("i will kill myself")
+		print("i will kill myself");
 	
 	queue_free();
 	
