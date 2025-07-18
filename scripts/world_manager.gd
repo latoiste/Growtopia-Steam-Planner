@@ -20,11 +20,6 @@ func place_block() -> void:
 	add_child(block_instance);
 	
 	Grid.set_grid(block_pos, block_instance);
-	#new_block.get_surrounding_blocks();
-	#print("up: ", new_block.get_up())
-	#print("down: ", new_block.get_down())
-	#print("left: ", new_block.get_left())
-	#print("right: ", new_block.get_right())
 	
 func delete_block() -> void:
 	block.queue_free()
@@ -82,7 +77,4 @@ func set_block_scene() -> void:
 
 func _on_ui_selected_block(block_name: String) -> void:
 	selected_block = block_name;
-	
 	set_block_scene();
-	#print(block_scene)
-	#print(selected_block)

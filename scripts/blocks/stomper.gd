@@ -7,7 +7,7 @@ var output_dir: Array[Vector2] = [Constants.NO_DIR,
 							   Constants.RIGHT]
 
 func _ready():
-	new_source("stomper", "source", true, false, output_dir);
+	new_block("stomper", "source", true, false, output_dir);
 
 func interact():
 	provide_power();

@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3fgmanswmq4g"]
+
+[ext_resource type="Script" uid="uid://dbwpdceh6rrrt" path="res://scripts/UI/hud.gd" id="1_dj8aq"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_5fyfn"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_7n4fj"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_dj8aq")
+
+[node name="BlockContainer" type="VBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.942
+anchor_right = 1.0
+anchor_bottom = 0.942
+offset_left = -75.0
+offset_top = -65.888
+offset_bottom = 0.112
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Tubes" type="Button" parent="BlockContainer"]
+layout_mode = 2
+text = "Tubes
+"
+
+[node name="Stomper" type="Button" parent="BlockContainer"]
+layout_mode = 2
+text = "Stomper"
+
+[node name="ModeContainer" type="HBoxContainer" parent="."]
+anchors_preset = -1
+anchor_top = 0.942
+anchor_bottom = 0.942
+offset_top = -39.888
+offset_right = 108.0
+offset_bottom = 0.112
+grow_vertical = 0
+
+[node name="Select" type="Button" parent="ModeContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_5fyfn")
+text = "Select"
+
+[node name="Draw" type="Button" parent="ModeContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_7n4fj")
+text = "Draw"
+
+[node name="CameraContainer" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StatsContainer" type="HBoxContainer" parent="."]
+offset_top = 824.0
+offset_right = 60.0
+offset_bottom = 864.0
+grow_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="StatsContainer"]
+layout_mode = 2
+text = "X: 0"
+
+[node name="Label2" type="Label" parent="StatsContainer"]
+layout_mode = 2
+text = "Y: 0"

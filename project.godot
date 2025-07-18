@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 ScenePaths="*res://scripts/constants/ScenePaths.gd"
 Constants="*res://scripts/constants/Constants.gd"
 Grid="*res://scripts/constants/grid_manager.gd"
+States="*res://scripts/constants/States.gd"
 
 [display]
 
