@@ -48,6 +48,13 @@ text = "Crossover
 script = ExtResource("2_7n4fj")
 metadata/_custom_type_script = "uid://b268wb8u5qkbr"
 
+[node name="Pipe" type="Button" parent="BlockContainer"]
+layout_mode = 2
+text = "Pipe
+"
+script = ExtResource("2_7n4fj")
+metadata/_custom_type_script = "uid://b268wb8u5qkbr"
+
 [node name="ModeContainer" type="HBoxContainer" parent="."]
 anchors_preset = -1
 anchor_top = 0.942

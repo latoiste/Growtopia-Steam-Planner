@@ -1,21 +1,26 @@
 extends Block
 class_name Conductor
 
-func enter_steam() -> void:
-	pass;
+signal force_update_sprite;
 
-func exit_steam() -> void:
-	pass
+func enter() -> void:
+	connect_force_update_sprite();
+	
+func exit() -> void:
+	connect_force_update_sprite();
+
+func connect_force_update_sprite() -> void:
+	var surrounding_blocks = get_surrounding_blocks();
+	for block in surrounding_blocks:
+		if block is Pipe:
+			if not force_update_sprite.is_connected(block.update_sprite):
+				force_update_sprite.connect(block.update_sprite);
+			force_update_sprite.emit()
 
 func get_next_dir(prev_dir: Vector2 = Constants.NO_DIR) -> Vector2:
 	if prev_dir:
 		change_dir_order(prev_dir);
-		
-	for dir in output_direction:
-		if dir_is_valid(dir):
-			return dir;
-			
-	return Constants.NO_DIR;
+	return super();
 
 func change_dir_order(prev_dir: Vector2) -> void:
 	match prev_dir:

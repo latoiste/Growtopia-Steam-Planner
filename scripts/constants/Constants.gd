@@ -1,7 +1,5 @@
 extends Node
 
-enum DIR {UP, DOWN, LEFT, RIGHT}
-
 const NO_DIR = Vector2.ZERO;
 const UP = Vector2(0, -1);
 const DOWN = Vector2(0, 1);

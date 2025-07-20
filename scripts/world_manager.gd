@@ -11,20 +11,23 @@ func _process(_delta: float) -> void:
 	block_pos = Grid.get_grid_pos(get_global_mouse_position());
 	block = Grid.get_block_at(block_pos)
 	is_occupied = true if block else false
+	#if is_occupied:
+		#print("occupied");
 	
 func place_block() -> void:
 	block_instance = BlockScene.instantiate();
-	var world_pos = Grid.get_world_pos(block_pos);
-	
-	block_instance.enter();
-	block_instance.set_block_position(world_pos);
 	add_child(block_instance);
 	
+	var world_pos = Grid.get_world_pos(block_pos);
 	Grid.set_grid(block_pos, block_instance);
 	
+	block_instance.set_block_position(world_pos);
+	block_instance.enter();
+	
 func delete_block() -> void:
-	block.queue_free()
-	Grid.set_grid(block_pos)
+	Grid.set_grid(block_pos);
+	block.exit();
+	block.queue_free();
 		
 func replace_block() -> void:
 	delete_block();
@@ -41,12 +44,15 @@ func can_place() -> bool:
 
 func can_delete() -> bool:
 	if not is_occupied:
+		#print("dawg")
 		return false;
 		
 	if selected_block != block.block_name:
+		#print("bro what")
 		return false;
 		
 	if mouse_is_hovering():
+		#print("hello?")
 		return false;
 		
 	return true;
@@ -86,6 +92,8 @@ func set_block_scene() -> void:
 			BlockScene = preload(ScenePaths.FUNNEL_SCENE);
 		"crossover":
 			BlockScene = preload(ScenePaths.CROSSOVER_SCENE);
+		"pipe":
+			BlockScene = preload(ScenePaths.PIPE_SCENE);
 		_:
 			print("SELECTED BLOCK RUSAK CUY")
 

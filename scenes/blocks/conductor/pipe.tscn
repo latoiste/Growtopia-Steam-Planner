@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://xqpuc0phpng0"]
+
+[ext_resource type="Script" uid="uid://ccg8i3fe8yvtw" path="res://scripts/blocks/conductor/pipe.gd" id="1_6mtno"]
+
+[node name="Pipe" type="Node2D"]
+script = ExtResource("1_6mtno")
+metadata/_custom_type_script = "uid://coxi4dypyi3en"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+scale = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_right = 16.0
+offset_bottom = 49.0
+text = "0
+"
+horizontal_alignment = 1

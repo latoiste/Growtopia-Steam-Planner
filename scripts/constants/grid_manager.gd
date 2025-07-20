@@ -3,6 +3,8 @@ extends Node
 #grid[block_pos] = block
 var grid: Dictionary = {}
 
+##TODO: ADD CHECKER FOR GRID AND TREE MISMATCH
+
 ##If block argument isn't given, it will be set to null
 func set_grid(grid_pos: Vector2, block: Block = null) -> void:
 	if block:

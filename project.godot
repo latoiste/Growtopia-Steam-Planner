@@ -31,6 +31,14 @@ window/size/viewport_height=864
 
 project/assembly_name="steam growtopia"
 
+[file_customization]
+
+folder_colors={
+"res://block sprites/": "red",
+"res://scenes/": "yellow",
+"res://scripts/": "green"
+}
+
 [input]
 
 left_click={

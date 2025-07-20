@@ -17,6 +17,12 @@ func exit() -> void:
 
 func interact() -> void:
 	pass
+	
+func enter_steam() -> void:
+	pass;
+
+func exit_steam() -> void:
+	pass
 
 func new_block(blocK_name: String, block_type: String, interactable: bool, flippable: bool, output_dir: Array[Vector2] = [], input_dir: Array[Vector2] = []):
 	self.block_name = blocK_name;
