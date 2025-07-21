@@ -111,7 +111,7 @@ func dir_is_valid(dir: Vector2) -> bool:
 ## Gets the next direction of a block.
 ## Returns Vector2.ZERO if its at the end.
 ## Override this method for different properties.
-func get_next_dir(prev_dir: Vector2 = Constants.NO_DIR) -> Vector2:
+func get_next_dir(_prev_dir: Vector2 = Constants.NO_DIR) -> Vector2:
 	for dir in output_direction:
 		if dir_is_valid(dir):
 			return dir;

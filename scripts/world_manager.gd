@@ -63,7 +63,7 @@ func can_replace() -> bool:
 	return true
 
 func set_block_scene() -> void:
-	match (selected_block):
+	match selected_block:
 		"stomper":
 			BlockScene = preload(ScenePaths.STOMPER_SCENE);
 		"tubes":
@@ -78,6 +78,10 @@ func set_block_scene() -> void:
 			BlockScene = preload(ScenePaths.DOOR_SCENE);
 		"crank":
 			BlockScene = preload(ScenePaths.CRANK_SCENE);
+		"vent":
+			BlockScene = preload(ScenePaths.VENT_SCENE);
+		"revolver":
+			BlockScene = preload(ScenePaths.REVOLVER_SCENE);
 		_:
 			print("SELECTED BLOCK RUSAK CUY")
 

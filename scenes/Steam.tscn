@@ -17,5 +17,6 @@ texture = ExtResource("2_pvta1")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 20.0
+one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="kill_steam"]

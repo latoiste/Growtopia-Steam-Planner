@@ -39,3 +39,4 @@ text = "Mode: "
 
 [connection signal="selected_block" from="Ui" to="WorldManager" method="_on_ui_selected_block"]
 [connection signal="selected_block" from="Ui" to="WorldManager/BlockSelector" method="_on_ui_selected_block"]
+[connection signal="selected_mode" from="Ui" to="ToolManager" method="_on_ui_selected_mode"]

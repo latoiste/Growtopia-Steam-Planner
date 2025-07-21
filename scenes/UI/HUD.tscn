@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b3fgmanswmq4g"]
+[gd_scene load_steps=15 format=3 uid="uid://b3fgmanswmq4g"]
 
 [ext_resource type="Script" uid="uid://dbwpdceh6rrrt" path="res://scripts/UI/hud.gd" id="1_dj8aq"]
 [ext_resource type="Script" uid="uid://b268wb8u5qkbr" path="res://scripts/UI/ButtonOverlay.gd" id="2_7n4fj"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://dup3s4feusntq" path="res://block sprites/Conductor/pipes/pipe_base.png" id="7_e8ns6"]
 [ext_resource type="Texture2D" uid="uid://c7c7qhmg7cl5x" path="res://block sprites/Conductor/door_closed.png" id="8_a0qax"]
 [ext_resource type="Texture2D" uid="uid://b7q4dt2yrjsmi" path="res://block sprites/Conductor/crank_vertical.png" id="8_gawfp"]
+[ext_resource type="Texture2D" uid="uid://phadekrepk2m" path="res://block sprites/Conductor/vent_off.png" id="9_tohwf"]
+[ext_resource type="Texture2D" uid="uid://hnqxus44ler2" path="res://block sprites/Source/revolver_body.png" id="10_e8ns6"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_ucsqe"]
 
@@ -26,9 +28,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -288.0
-offset_top = -136.0
+offset_top = -208.0
 offset_right = -98.0
-offset_bottom = -46.0
+offset_bottom = -68.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.5, 1.5)
@@ -82,6 +84,14 @@ icon = ExtResource("8_a0qax")
 [node name="Crank" type="Button" parent="BlockContainer"]
 layout_mode = 2
 icon = ExtResource("8_gawfp")
+
+[node name="Vent" type="Button" parent="BlockContainer"]
+layout_mode = 2
+icon = ExtResource("9_tohwf")
+
+[node name="Revolver" type="Button" parent="BlockContainer"]
+layout_mode = 2
+icon = ExtResource("10_e8ns6")
 
 [node name="ModeContainer" type="HBoxContainer" parent="."]
 anchors_preset = -1

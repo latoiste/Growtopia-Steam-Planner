@@ -64,6 +64,9 @@ func kill_steam() -> void:
 	await get_tree().create_timer(0.075).timeout;
 	
 	if give_steam.has_connections():
+		var connections = give_steam.get_connections();
+		for connection in connections:
+			give_steam.disconnect(connection["callable"]);
 		print("i will kill myself");
 	
 	queue_free();
@@ -71,6 +74,6 @@ func kill_steam() -> void:
 func _process(delta: float) -> void:
 	if not current_block:
 		kill_steam();
-		print("killed")
+	
 	sprite.rotation_degrees += 360 * delta;
 	

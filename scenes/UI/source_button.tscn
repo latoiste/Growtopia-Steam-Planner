@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://belto0oeuobbh"]
+
+[ext_resource type="Script" uid="uid://dr8cs4hnhyyk0" path="res://scripts/UI/SourceButton.gd" id="1_xdofk"]
+
+[node name="SourceButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_xdofk")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
