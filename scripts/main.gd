@@ -1,7 +1,5 @@
 extends Node2D
 
-@onready var ui = $Ui;
-
 @onready var state_text = $"CanvasLayer/State";
 @onready var mode_text = $"CanvasLayer/Mode"
 

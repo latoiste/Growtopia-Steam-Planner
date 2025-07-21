@@ -19,8 +19,6 @@ script = ExtResource("3_tefeu")
 
 [node name="Ui" parent="." instance=ExtResource("1_0wfyh")]
 
-[node name="ToolManager" parent="." instance=ExtResource("4_jyhfs")]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="State" type="Label" parent="CanvasLayer"]
@@ -37,6 +35,7 @@ offset_right = 57.0
 offset_bottom = 760.0
 text = "Mode: "
 
+[node name="ToolManager" parent="." instance=ExtResource("4_jyhfs")]
+
 [connection signal="selected_block" from="Ui" to="WorldManager" method="_on_ui_selected_block"]
 [connection signal="selected_block" from="Ui" to="WorldManager/BlockSelector" method="_on_ui_selected_block"]
-[connection signal="selected_mode" from="Ui" to="ToolManager" method="_on_ui_selected_mode"]

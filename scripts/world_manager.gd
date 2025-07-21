@@ -51,10 +51,6 @@ func can_delete() -> bool:
 		#print("bro what")
 		return false;
 		
-	if mouse_is_hovering():
-		#print("hello?")
-		return false;
-		
 	return true;
 
 func can_replace() -> bool:
@@ -64,23 +60,7 @@ func can_replace() -> bool:
 	if selected_block == block.block_name:
 		return false;
 	
-	if mouse_is_hovering():
-		return false;
-	
 	return true
-
-func mouse_is_hovering():
-	if block.interactable:
-		var interact_button = block.get_node("InteractButton");
-		if interact_button.mouse_hovering:
-			return true;
-			
-	if block.flippable:
-		var flip_button = block.get_node("FlipButton");
-		if flip_button.mouse_hovering:
-			return true;
-	
-	return false;
 
 func set_block_scene() -> void:
 	match (selected_block):

@@ -7,6 +7,7 @@
 script = ExtResource("1_rvbr1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1223, 675)
 anchor_mode = 0
 zoom = Vector2(4, 4)
 limit_left = 0

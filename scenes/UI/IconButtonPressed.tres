@@ -1,0 +1,26 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bd7rtikako68s"]
+
+[ext_resource type="StyleBox" uid="uid://coe5oo8d6yw77" path="res://scenes/UI/IconButtonBase.tres" id="1_82bo5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ucsqe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82bo5"]
+bg_color = Color(0.164706, 0.164706, 0.164706, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.877599, 0.424385, 0.191861, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[resource]
+Button/styles/focus = SubResource("StyleBoxEmpty_ucsqe")
+Button/styles/normal = ExtResource("1_82bo5")
+Button/styles/pressed = SubResource("StyleBoxFlat_82bo5")
