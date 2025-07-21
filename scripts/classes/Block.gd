@@ -31,7 +31,7 @@ func new_block(blocK_name: String, block_type: String, interactable: bool, flipp
 	self.flippable = flippable;
 	set_direction(output_dir, input_dir);
 	
-func set_direction(output_dir: Array[Vector2], input_dir: Array[Vector2]):
+func set_direction(output_dir: Array[Vector2] = [], input_dir: Array[Vector2] = []):
 	output_direction = output_dir.duplicate();
 	input_direction = input_dir.duplicate();
 

@@ -3,6 +3,7 @@ class_name Steam
 
 signal give_steam;
 
+@onready var sprite = $Sprite2D;
 @onready var timer = $Timer;
 
 var tween: Tween;
@@ -68,7 +69,8 @@ func kill_steam() -> void:
 	queue_free();
 	
 func _process(delta: float) -> void:
-	#print(current_block);
 	if not current_block:
 		kill_steam();
 		print("killed")
+	sprite.rotation_degrees += 360 * delta;
+	

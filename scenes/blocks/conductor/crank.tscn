@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://jom8h5cpaflf"]
+
+[ext_resource type="Script" uid="uid://64we26jkojua" path="res://scripts/blocks/conductor/crank.gd" id="1_7rn34"]
+[ext_resource type="PackedScene" uid="uid://b7e8rb3hjjxep" path="res://scenes/UI/interact_button.tscn" id="2_7rn34"]
+[ext_resource type="Texture2D" uid="uid://b7q4dt2yrjsmi" path="res://block sprites/Conductor/crank_vertical.png" id="2_83hrd"]
+
+[node name="Crank" type="Node2D"]
+script = ExtResource("1_7rn34")
+metadata/_custom_type_script = "uid://coxi4dypyi3en"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_83hrd")
+
+[node name="InteractButton" parent="." instance=ExtResource("2_7rn34")]
+
+[connection signal="pressed" from="InteractButton" to="." method="interact"]

@@ -14,15 +14,18 @@ func connect_force_update_sprite() -> void:
 	for block in surrounding_blocks:
 		if block is Pipe:
 			if not force_update_sprite.is_connected(block.update_sprite):
-				force_update_sprite.connect(block.update_sprite);
+				force_update_sprite.connect(block.update_sprite, CONNECT_ONE_SHOT);
 			force_update_sprite.emit()
 
-func get_next_dir(prev_dir: Vector2 = Constants.NO_DIR) -> Vector2:
-	if prev_dir:
-		change_dir_order(prev_dir);
+func get_next_dir(_prev_dir: Vector2 = Constants.NO_DIR) -> Vector2:
+	if _prev_dir:
+		change_dir_order(_prev_dir);
 	return super();
 
 func change_dir_order(prev_dir: Vector2) -> void:
+	if output_direction.is_empty():
+		return;
+		
 	match prev_dir:
 		Constants.UP:
 			output_direction = [Constants.UP, 

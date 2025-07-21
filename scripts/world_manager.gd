@@ -74,6 +74,10 @@ func set_block_scene() -> void:
 			BlockScene = preload(ScenePaths.CROSSOVER_SCENE);
 		"pipe":
 			BlockScene = preload(ScenePaths.PIPE_SCENE);
+		"door":
+			BlockScene = preload(ScenePaths.DOOR_SCENE);
+		"crank":
+			BlockScene = preload(ScenePaths.CRANK_SCENE);
 		_:
 			print("SELECTED BLOCK RUSAK CUY")
 

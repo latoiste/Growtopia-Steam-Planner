@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3fgmanswmq4g"]
+[gd_scene load_steps=13 format=3 uid="uid://b3fgmanswmq4g"]
 
 [ext_resource type="Script" uid="uid://dbwpdceh6rrrt" path="res://scripts/UI/hud.gd" id="1_dj8aq"]
 [ext_resource type="Script" uid="uid://b268wb8u5qkbr" path="res://scripts/UI/ButtonOverlay.gd" id="2_7n4fj"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cwxiuj43g3x1q" path="res://block sprites/Conductor/funnel.png" id="5_gawfp"]
 [ext_resource type="Texture2D" uid="uid://caro3onopftdx" path="res://block sprites/Conductor/crossover.png" id="6_tohwf"]
 [ext_resource type="Texture2D" uid="uid://dup3s4feusntq" path="res://block sprites/Conductor/pipes/pipe_base.png" id="7_e8ns6"]
+[ext_resource type="Texture2D" uid="uid://c7c7qhmg7cl5x" path="res://block sprites/Conductor/door_closed.png" id="8_a0qax"]
+[ext_resource type="Texture2D" uid="uid://b7q4dt2yrjsmi" path="res://block sprites/Conductor/crank_vertical.png" id="8_gawfp"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_ucsqe"]
 
@@ -23,9 +25,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -272.0
+offset_left = -288.0
 offset_top = -136.0
-offset_right = -90.0
+offset_right = -98.0
 offset_bottom = -46.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -43,8 +45,6 @@ text = "
 "
 icon = ExtResource("2_ucsqe")
 icon_alignment = 1
-script = ExtResource("2_7n4fj")
-metadata/_custom_type_script = "uid://b268wb8u5qkbr"
 
 [node name="Stomper" type="Button" parent="BlockContainer"]
 layout_mode = 2
@@ -52,8 +52,6 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_ucsqe")
 icon = ExtResource("4_a0qax")
 icon_alignment = 1
-script = ExtResource("2_7n4fj")
-metadata/_custom_type_script = "uid://b268wb8u5qkbr"
 
 [node name="Funnel" type="Button" parent="BlockContainer"]
 layout_mode = 2
@@ -61,16 +59,12 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_ucsqe")
 icon = ExtResource("5_gawfp")
 icon_alignment = 1
-script = ExtResource("2_7n4fj")
-metadata/_custom_type_script = "uid://b268wb8u5qkbr"
 
 [node name="Crossover" type="Button" parent="BlockContainer"]
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_ucsqe")
 icon = ExtResource("6_tohwf")
-script = ExtResource("2_7n4fj")
-metadata/_custom_type_script = "uid://b268wb8u5qkbr"
 
 [node name="Pipe" type="Button" parent="BlockContainer"]
 layout_mode = 2
@@ -80,8 +74,14 @@ text = "
 "
 icon = ExtResource("7_e8ns6")
 icon_alignment = 1
-script = ExtResource("2_7n4fj")
-metadata/_custom_type_script = "uid://b268wb8u5qkbr"
+
+[node name="Door" type="Button" parent="BlockContainer"]
+layout_mode = 2
+icon = ExtResource("8_a0qax")
+
+[node name="Crank" type="Button" parent="BlockContainer"]
+layout_mode = 2
+icon = ExtResource("8_gawfp")
 
 [node name="ModeContainer" type="HBoxContainer" parent="."]
 anchors_preset = -1

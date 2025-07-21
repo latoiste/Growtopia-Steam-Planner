@@ -1,7 +1,7 @@
 extends Conductor
 
-var input_dir: Array[Vector2] = Constants.ALL_DIR;
-var output_dir: Array[Vector2] = Constants.ALL_DIR;
+const input_dir: Array[Vector2] = Constants.ALL_DIR;
+const output_dir: Array[Vector2] = Constants.ALL_DIR;
 
 func enter():
 	super();
