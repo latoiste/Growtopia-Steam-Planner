@@ -4,8 +4,6 @@ class_name Block
 var block_name: String;
 var block_type: String;
 var block_pos: Vector2;
-var interactable: bool;
-var flippable: bool;
 var input_direction: Array[Vector2] = [];
 var output_direction: Array[Vector2] = [];
 
@@ -18,17 +16,15 @@ func exit() -> void:
 func interact() -> void:
 	pass
 	
-func enter_steam() -> void:
+func enter_steam(_sender: Steam) -> void:
 	pass;
 
 func exit_steam() -> void:
 	pass
 
-func new_block(blocK_name: String, block_type: String, interactable: bool, flippable: bool, output_dir: Array[Vector2] = [], input_dir: Array[Vector2] = []):
+func new_block(blocK_name: String, block_type: String, output_dir: Array[Vector2] = [], input_dir: Array[Vector2] = []):
 	self.block_name = blocK_name;
 	self.block_type = block_type;
-	self.interactable = interactable;
-	self.flippable = flippable;
 	set_direction(output_dir, input_dir);
 	
 func set_direction(output_dir: Array[Vector2] = [], input_dir: Array[Vector2] = []):
@@ -52,9 +48,6 @@ func get_global_block_pos() -> Vector2:
 func get_block_pos() -> Vector2:
 	return block_pos;
 	
-func is_interactable() -> bool:
-	return true if interactable else false
-
 ##The indeces for blocks returned are [UP, DOWN, LEFT, RIGHT] 
 func get_surrounding_blocks() -> Array[Block]:
 	var blocks: Array[Block] = []

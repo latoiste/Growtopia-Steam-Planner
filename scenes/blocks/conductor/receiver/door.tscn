@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://mf5yba3ubneh"]
 
-[ext_resource type="Script" uid="uid://0ygy7oo8q806" path="res://scripts/blocks/conductor/door.gd" id="1_11wsc"]
+[ext_resource type="Script" uid="uid://0ygy7oo8q806" path="res://scripts/blocks/conductor/receiver/door.gd" id="1_11wsc"]
 [ext_resource type="Texture2D" uid="uid://c7c7qhmg7cl5x" path="res://block sprites/Conductor/door_closed.png" id="2_ji6w5"]
 [ext_resource type="PackedScene" uid="uid://b7e8rb3hjjxep" path="res://scenes/UI/interact_button.tscn" id="3_4gic2"]
 
@@ -14,5 +14,3 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_ji6w5")
 
 [node name="InteractButton" parent="." instance=ExtResource("3_4gic2")]
-
-[connection signal="pressed" from="InteractButton" to="." method="enter_steam"]

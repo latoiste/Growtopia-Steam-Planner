@@ -1,13 +1,12 @@
 extends CanvasLayer
 
-@onready var block_container = $BlockContainer;
+@onready var block_container = $MarginContainer/PanelContainer/BlockContainer;
 @onready var mode_container = $ModeContainer;
 @onready var camera_container = $CameraContainer;
 
 signal selected_block(block_name: String);
 signal selected_mode(mode: String);
 
-#TODO: maybe move the scripts so its in the containers yeayeyeayaa
 func _ready() -> void:
 	for child in block_container.get_children():
 		child.pressed.connect(select_block.bind(child.name.to_lower()));

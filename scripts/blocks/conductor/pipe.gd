@@ -36,7 +36,7 @@ const PIPE_TEXTURES = [
 
 func enter() -> void:
 	super();
-	new_block("pipe", "conductor", false, false, output_dir, input_dir);
+	new_block("pipe", "conductor", output_dir, input_dir);
 	update_sprite();
 	update_neighbor_sprite();
 	

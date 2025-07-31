@@ -82,6 +82,18 @@ func set_block_scene() -> void:
 			BlockScene = preload(ScenePaths.VENT_SCENE);
 		"revolver":
 			BlockScene = preload(ScenePaths.REVOLVER_SCENE);
+		"funnelup":
+			BlockScene = preload(ScenePaths.FUNNEL_UP_SCENE);
+		"funneldown":
+			BlockScene = preload(ScenePaths.FUNNEL_DOWN_SCENE);
+		"launcher":
+			BlockScene = preload(ScenePaths.LAUNCHER_SCENE);
+		"organ":
+			BlockScene = preload(ScenePaths.ORGAN_SCENE);
+		"collector":
+			BlockScene = preload(ScenePaths.COLLECTOR_SCENE);
+		"valve":
+			BlockScene = preload(ScenePaths.VALVE_SCENE);
 		_:
 			print("SELECTED BLOCK RUSAK CUY")
 

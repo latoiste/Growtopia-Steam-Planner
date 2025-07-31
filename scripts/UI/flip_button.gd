@@ -1,6 +1,5 @@
 extends ButtonOverlay
 
-#signal sprite_flipped;
 var sprite: Sprite2D;
 
 func _ready() -> void:
@@ -10,4 +9,3 @@ func _ready() -> void:
 
 func _on_pressed() -> void:
 	sprite.flip_h = not sprite.flip_h;
-	#sprite_flipped.emit();

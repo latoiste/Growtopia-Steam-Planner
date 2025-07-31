@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://clb6s0nsyv5ek"]
+
+[ext_resource type="Script" uid="uid://dcn1aot7a4b3c" path="res://scripts/blocks/conductor/funnel_up.gd" id="1_qic3y"]
+[ext_resource type="Texture2D" uid="uid://cvgrdbfigmg6" path="res://block sprites/Conductor/funnel_up.png" id="2_00opw"]
+
+[node name="FunnelUp" type="Node2D"]
+script = ExtResource("1_qic3y")
+metadata/_custom_type_script = "uid://coxi4dypyi3en"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_00opw")

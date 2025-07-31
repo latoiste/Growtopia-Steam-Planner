@@ -13,9 +13,9 @@ const output_dir: Array[Vector2] = Constants.ALL_DIR;
 
 func enter():
 	super();
-	new_block("vent", "conductor", false, true, input_dir, output_dir);
+	new_block("vent", "conductor", output_dir, input_dir);
 
-func enter_steam():
+func enter_steam(_sender: Steam):
 	timer.start();
 	sprite.texture = VENT_TEXTURES[1];
 

@@ -10,5 +10,5 @@ func provide_power() -> void:
 	
 	if conductor:
 		steam_instance = SteamScene.instantiate();
-		get_parent().add_child(steam_instance);
-		steam_instance.init(conductor, next_dir);
+		add_sibling(steam_instance);
+		steam_instance.init(self, next_dir);

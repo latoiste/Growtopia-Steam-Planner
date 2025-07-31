@@ -5,4 +5,4 @@ const output_dir: Array[Vector2] = Constants.ALL_DIR;
 
 func enter():
 	super();
-	new_block("tubes", "conductor", false, false, output_dir, input_dir);
+	new_block("tubes", "conductor", output_dir, input_dir);

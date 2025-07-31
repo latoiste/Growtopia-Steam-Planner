@@ -7,15 +7,14 @@ var output_dir: Array[Vector2] = [Constants.RIGHT];
 
 func enter():
 	super();
-	new_block("funnel", "conductor", false, true, output_dir, input_dir);
+	new_block("funnel", "conductor", output_dir, input_dir);
 
 func get_next_dir(_prev_dir: Vector2 = Constants.NO_DIR) -> Vector2:
 	if sprite.flip_h:
-		output_dir = [Constants.LEFT];
+		output_direction = [Constants.LEFT];
 	else:
-		output_dir = [Constants.RIGHT];
+		output_direction = [Constants.RIGHT];
 		
-	set_direction(output_dir, input_dir);
 	return super();
 
 #func on_flipped() -> void:

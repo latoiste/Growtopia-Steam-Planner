@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjm5adujsb37w"]
+
+[ext_resource type="Script" uid="uid://dv3nrk06d1d22" path="res://scripts/blocks/conductor/organ.gd" id="1_vqrws"]
+[ext_resource type="Texture2D" uid="uid://diktqhg33m6ik" path="res://block sprites/Conductor/organ_off.png" id="2_3paiw"]
+
+[node name="Organ" type="Node2D"]
+script = ExtResource("1_vqrws")
+metadata/_custom_type_script = "uid://coxi4dypyi3en"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_3paiw")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

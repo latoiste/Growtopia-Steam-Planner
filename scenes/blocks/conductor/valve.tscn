@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://lb5n2nfdxpdm"]
+
+[ext_resource type="Script" uid="uid://cio8k225rpmd" path="res://scripts/blocks/conductor/valve.gd" id="1_ojl3d"]
+[ext_resource type="Texture2D" uid="uid://dqkfgupcjm0o2" path="res://block sprites/Conductor/valve.png" id="2_ojl3d"]
+[ext_resource type="PackedScene" uid="uid://ba1f376niumya" path="res://scenes/UI/flip_button.tscn" id="3_xebio"]
+
+[node name="Valve" type="Node2D"]
+script = ExtResource("1_ojl3d")
+metadata/_custom_type_script = "uid://coxi4dypyi3en"
+metadata/_edit_vertical_guides_ = [-144.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ojl3d")
+
+[node name="FlipButton" parent="." instance=ExtResource("3_xebio")]
