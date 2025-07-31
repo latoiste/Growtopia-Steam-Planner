@@ -94,6 +94,9 @@ func set_block_scene() -> void:
 			BlockScene = preload(ScenePaths.COLLECTOR_SCENE);
 		"valve":
 			BlockScene = preload(ScenePaths.VALVE_SCENE);
+		"engine":
+			BlockScene = preload(ScenePaths.ENGINE_SCENE);
+			
 		_:
 			print("SELECTED BLOCK RUSAK CUY")
 

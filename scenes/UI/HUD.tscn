@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b3fgmanswmq4g"]
+[gd_scene load_steps=22 format=3 uid="uid://b3fgmanswmq4g"]
 
 [ext_resource type="Script" uid="uid://dbwpdceh6rrrt" path="res://scripts/UI/hud.gd" id="1_dj8aq"]
 [ext_resource type="Script" uid="uid://b268wb8u5qkbr" path="res://scripts/UI/ButtonOverlay.gd" id="2_7n4fj"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://diktqhg33m6ik" path="res://block sprites/Conductor/organ_off.png" id="14_663ec"]
 [ext_resource type="Texture2D" uid="uid://cfpw0olndbh0r" path="res://block sprites/Conductor/collector.png" id="15_kxwrb"]
 [ext_resource type="Texture2D" uid="uid://dqkfgupcjm0o2" path="res://block sprites/Conductor/valve.png" id="16_o1axb"]
+[ext_resource type="Texture2D" uid="uid://dxa6y3vx7obn6" path="res://block sprites/Source/engine.png" id="17_i5pcr"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_ucsqe"]
 
@@ -132,6 +133,10 @@ icon = ExtResource("15_kxwrb")
 [node name="Valve" type="Button" parent="MarginContainer/PanelContainer/BlockContainer"]
 layout_mode = 2
 icon = ExtResource("16_o1axb")
+
+[node name="Engine" type="Button" parent="MarginContainer/PanelContainer/BlockContainer"]
+layout_mode = 2
+icon = ExtResource("17_i5pcr")
 
 [node name="ModeContainer" type="HBoxContainer" parent="."]
 anchors_preset = -1

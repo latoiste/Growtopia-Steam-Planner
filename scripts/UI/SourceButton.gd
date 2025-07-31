@@ -4,7 +4,7 @@ extends Button
 
 func _ready() -> void:
 	var parent = get_parent();
-	if parent:
+	if parent is Source:
 		pressed.connect(parent.interact);
 		
 func _on_pressed() -> void:

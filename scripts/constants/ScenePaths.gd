@@ -16,6 +16,8 @@ const LAUNCHER_SCENE = "res://scenes/blocks/conductor/receiver/launcher.tscn"
 const ORGAN_SCENE = "res://scenes/blocks/conductor/organ.tscn"
 const COLLECTOR_SCENE = "res://scenes/blocks/conductor/collector.tscn"
 const VALVE_SCENE = "res://scenes/blocks/conductor/valve.tscn"
+const ENGINE_SCENE = "res://scenes/blocks/source/engine.tscn"
+
 
 #EFFECT SCENES
 const STEAM_SCENE = "res://scenes/Steam.tscn"
