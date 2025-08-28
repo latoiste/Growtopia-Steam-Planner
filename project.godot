@@ -17,10 +17,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-ScenePaths="*res://scripts/constants/ScenePaths.gd"
-Constants="*res://scripts/constants/Constants.gd"
-Grid="*res://scripts/constants/grid_manager.gd"
-States="*res://scripts/constants/States.gd"
+Constants="*res://Globals/constants.gd"
+Grid="*res://Globals/grid.gd"
+ScenePaths="*res://Globals/scene_paths.gd"
+States="*res://Globals/states.gd"
 
 [display]
 
@@ -34,6 +34,10 @@ project/assembly_name="steam growtopia"
 [file_customization]
 
 folder_colors={
+"res://Blocks/": "orange",
+"res://Globals/": "blue",
+"res://Managers/": "yellow",
+"res://UI/": "green",
 "res://block sprites/": "red",
 "res://scenes/": "yellow",
 "res://scripts/": "green"

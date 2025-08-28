@@ -1,0 +1,176 @@
+[gd_scene load_steps=24 format=3 uid="uid://b3fgmanswmq4g"]
+
+[ext_resource type="Script" uid="uid://dbwpdceh6rrrt" path="res://UI/hud.gd" id="1_dj8aq"]
+[ext_resource type="Script" uid="uid://b268wb8u5qkbr" path="res://UI/Buttons/ButtonOverlay.gd" id="2_7n4fj"]
+[ext_resource type="Texture2D" uid="uid://e6pbb10fpstx" path="res://block sprites/Conductor/tubes.png" id="2_ucsqe"]
+[ext_resource type="Texture2D" uid="uid://b800pfkm02qsa" path="res://block sprites/Source/stomper.png" id="4_a0qax"]
+[ext_resource type="Texture2D" uid="uid://cwxiuj43g3x1q" path="res://block sprites/Conductor/funnel.png" id="5_gawfp"]
+[ext_resource type="Texture2D" uid="uid://caro3onopftdx" path="res://block sprites/Conductor/crossover.png" id="6_tohwf"]
+[ext_resource type="Texture2D" uid="uid://dup3s4feusntq" path="res://block sprites/Conductor/pipes/pipe_base.png" id="7_e8ns6"]
+[ext_resource type="Texture2D" uid="uid://cvgrdbfigmg6" path="res://block sprites/Conductor/funnel_up.png" id="7_m51yh"]
+[ext_resource type="Texture2D" uid="uid://c7c7qhmg7cl5x" path="res://block sprites/Conductor/door_closed.png" id="8_a0qax"]
+[ext_resource type="Texture2D" uid="uid://b7q4dt2yrjsmi" path="res://block sprites/Conductor/crank_vertical.png" id="8_gawfp"]
+[ext_resource type="Texture2D" uid="uid://dxppptg5impyk" path="res://block sprites/Conductor/funnel_down.png" id="9_8d6le"]
+[ext_resource type="Texture2D" uid="uid://phadekrepk2m" path="res://block sprites/Conductor/vent_off.png" id="9_tohwf"]
+[ext_resource type="Texture2D" uid="uid://hnqxus44ler2" path="res://block sprites/Source/revolver_body.png" id="10_e8ns6"]
+[ext_resource type="Texture2D" uid="uid://iohcj6o7gv8w" path="res://block sprites/Conductor/launcher_base.png" id="13_l13vl"]
+[ext_resource type="Texture2D" uid="uid://diktqhg33m6ik" path="res://block sprites/Conductor/organ_off.png" id="14_663ec"]
+[ext_resource type="Texture2D" uid="uid://cfpw0olndbh0r" path="res://block sprites/Conductor/collector.png" id="15_kxwrb"]
+[ext_resource type="Texture2D" uid="uid://dqkfgupcjm0o2" path="res://block sprites/Conductor/valve.png" id="16_o1axb"]
+[ext_resource type="Texture2D" uid="uid://dxa6y3vx7obn6" path="res://block sprites/Source/engine.png" id="17_i5pcr"]
+[ext_resource type="PackedScene" uid="uid://ohomidc2fo8k" path="res://UI/Camera/camera_container.tscn" id="19_pgems"]
+[ext_resource type="PackedScene" uid="uid://brhk0ahx4jv5c" path="res://UI/Stats/stats_container.tscn" id="19_rsrlt"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_ucsqe"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_5fyfn"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_7n4fj"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_dj8aq")
+
+[node name="BlockSelector" type="MarginContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -434.755
+offset_top = -210.0
+offset_right = -144.755
+offset_bottom = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="BlockSelector"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="BlockContainer" type="GridContainer" parent="BlockSelector/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 6
+
+[node name="Stomper" type="Button" parent="BlockSelector/PanelContainer/BlockContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ucsqe")
+icon = ExtResource("4_a0qax")
+icon_alignment = 1
+
+[node name="Revolver" type="Button" parent="BlockSelector/PanelContainer/BlockContainer"]
+layout_mode = 2
+icon = ExtResource("10_e8ns6")
+
+[node name="Tubes" type="Button" parent="BlockSelector/PanelContainer/BlockContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ucsqe")
+text = "
+"
+icon = ExtResource("2_ucsqe")
+icon_alignment = 1
+
+[node name="Pipe" type="Button" parent="BlockSelector/PanelContainer/BlockContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ucsqe")
+text = "
+"
+icon = ExtResource("7_e8ns6")
+icon_alignment = 1
+
+[node name="Crossover" type="Button" parent="BlockSelector/PanelContainer/BlockContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ucsqe")
+icon = ExtResource("6_tohwf")
+
+[node name="Funnel" type="Button" parent="BlockSelector/PanelContainer/BlockContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ucsqe")
+icon = ExtResource("5_gawfp")
+icon_alignment = 1
+
+[node name="FunnelUp" type="Button" parent="BlockSelector/PanelContainer/BlockContainer"]
+layout_mode = 2
+icon = ExtResource("7_m51yh")
+
+[node name="FunnelDown" type="Button" parent="BlockSelector/PanelContainer/BlockContainer"]
+layout_mode = 2
+icon = ExtResource("9_8d6le")
+
+[node name="Door" type="Button" parent="BlockSelector/PanelContainer/BlockContainer"]
+layout_mode = 2
+icon = ExtResource("8_a0qax")
+
+[node name="Crank" type="Button" parent="BlockSelector/PanelContainer/BlockContainer"]
+layout_mode = 2
+icon = ExtResource("8_gawfp")
+
+[node name="Vent" type="Button" parent="BlockSelector/PanelContainer/BlockContainer"]
+layout_mode = 2
+icon = ExtResource("9_tohwf")
+
+[node name="Launcher" type="Button" parent="BlockSelector/PanelContainer/BlockContainer"]
+layout_mode = 2
+icon = ExtResource("13_l13vl")
+
+[node name="Organ" type="Button" parent="BlockSelector/PanelContainer/BlockContainer"]
+layout_mode = 2
+icon = ExtResource("14_663ec")
+
+[node name="Collector" type="Button" parent="BlockSelector/PanelContainer/BlockContainer"]
+layout_mode = 2
+icon = ExtResource("15_kxwrb")
+
+[node name="Valve" type="Button" parent="BlockSelector/PanelContainer/BlockContainer"]
+layout_mode = 2
+icon = ExtResource("16_o1axb")
+
+[node name="Engine" type="Button" parent="BlockSelector/PanelContainer/BlockContainer"]
+layout_mode = 2
+icon = ExtResource("17_i5pcr")
+
+[node name="ModeContainer" type="HBoxContainer" parent="."]
+anchors_preset = -1
+anchor_top = 0.942
+anchor_bottom = 0.942
+offset_top = -39.888
+offset_right = 108.0
+offset_bottom = 0.112
+grow_vertical = 0
+
+[node name="Select" type="Button" parent="ModeContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_5fyfn")
+text = "Select"
+script = ExtResource("2_7n4fj")
+metadata/_custom_type_script = "uid://b268wb8u5qkbr"
+
+[node name="Draw" type="Button" parent="ModeContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_7n4fj")
+text = "Draw"
+script = ExtResource("2_7n4fj")
+metadata/_custom_type_script = "uid://b268wb8u5qkbr"
+
+[node name="CameraContainer" parent="." instance=ExtResource("19_pgems")]
+
+[node name="StatsContainer" parent="." instance=ExtResource("19_rsrlt")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_bottom = 0.0
+grow_vertical = 0

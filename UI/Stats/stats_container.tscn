@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://brhk0ahx4jv5c"]
+
+[ext_resource type="Script" uid="uid://g6nii0su20gd" path="res://UI/Stats/stats_container.gd" id="1_7nk27"]
+
+[node name="StatsContainer" type="HBoxContainer"]
+offset_right = 76.0
+offset_bottom = 40.0
+theme_override_constants/separation = 20
+script = ExtResource("1_7nk27")
+
+[node name="XCoords" type="Label" parent="."]
+layout_mode = 2
+text = "X: 0"
+
+[node name="YCoords" type="Label" parent="."]
+layout_mode = 2
+text = "Y: 0"
+
+[node name="Block" type="Label" parent="."]
+layout_mode = 2
+text = "Block: -"
