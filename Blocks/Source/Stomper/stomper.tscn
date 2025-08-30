@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://muqtkakm3gkd"]
 
-[ext_resource type="Script" uid="uid://bvaelfsq8g48t" path="res://scripts/blocks/source/stomper.gd" id="1_kyh37"]
-[ext_resource type="Texture2D" uid="uid://b800pfkm02qsa" path="res://block sprites/Source/stomper.png" id="2_21x3a"]
-[ext_resource type="PackedScene" uid="uid://belto0oeuobbh" path="res://scenes/UI/source_button.tscn" id="3_kyh37"]
+[ext_resource type="Script" uid="uid://bvaelfsq8g48t" path="res://Blocks/Source/Stomper/stomper.gd" id="1_kyh37"]
+[ext_resource type="Texture2D" uid="uid://b800pfkm02qsa" path="res://block sprites/Source/stomper.png" id="2_2rgks"]
+[ext_resource type="PackedScene" uid="uid://belto0oeuobbh" path="res://UI/Buttons/source_button.tscn" id="3_kyh37"]
 
 [node name="Stomper" type="Node2D"]
 script = ExtResource("1_kyh37")
@@ -10,7 +10,7 @@ script = ExtResource("1_kyh37")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(8, 16)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_21x3a")
+texture = ExtResource("2_2rgks")
 offset = Vector2(0, -16)
 
 [node name="SourceButton" parent="." instance=ExtResource("3_kyh37")]

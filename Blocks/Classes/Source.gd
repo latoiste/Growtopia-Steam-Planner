@@ -1,7 +1,6 @@
 extends Block
 class_name Source
 
-@onready var SteamScene: PackedScene = preload(ScenePaths.STEAM_SCENE);
 var steam_instance: Steam;
 
 func provide_power() -> void:
@@ -9,6 +8,6 @@ func provide_power() -> void:
 	var conductor := get_block_in_dir(next_dir);
 	
 	if conductor:
-		steam_instance = SteamScene.instantiate();
+		steam_instance = ScenePaths.STEAM_SCENE.instantiate();
 		add_sibling(steam_instance);
 		steam_instance.init(self, next_dir);

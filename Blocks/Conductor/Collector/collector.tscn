@@ -5,6 +5,7 @@
 
 [node name="Collector" type="Node2D"]
 script = ExtResource("1_2nw6u")
+border = true
 metadata/_custom_type_script = "uid://coxi4dypyi3en"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

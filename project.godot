@@ -37,6 +37,7 @@ folder_colors={
 "res://Blocks/": "orange",
 "res://Globals/": "blue",
 "res://Managers/": "yellow",
+"res://Sprites/": "red",
 "res://UI/": "green",
 "res://block sprites/": "red",
 "res://scenes/": "yellow",

@@ -1,11 +1,18 @@
 extends Node2D
 class_name Block
 
+@export var border: bool = false;
+
 var block_name: String;
 var block_id: int;
 var block_pos: Vector2;
 var input_direction: Array[Vector2] = [];
 var output_direction: Array[Vector2] = [];
+
+func _ready() -> void:
+	if border:
+		var border_instance := ScenePaths.BORDER_SCENE.instantiate();
+		add_child(border_instance);
 
 func enter() -> void:
 	pass
@@ -120,12 +127,6 @@ func get_block_in_dir(dir: Vector2) -> Block:
 		Constants.RIGHT:
 			block = get_block_right();
 	return block;
-
-func has_border() -> bool:
-	for child in get_children():
-		if child is Border:
-			return true;
-	return false;
 
 #func send_power(conductor: Conductor, next_dir: Vector2) -> void:	
 	#if block_type == "conductor":

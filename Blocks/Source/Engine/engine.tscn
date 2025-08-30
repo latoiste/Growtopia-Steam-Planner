@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://boipkeqb0lll6"]
 
-[ext_resource type="Script" uid="uid://yeu7kejev1y5" path="res://scripts/blocks/source/engine.gd" id="1_6ac1q"]
+[ext_resource type="Script" uid="uid://yeu7kejev1y5" path="res://Blocks/Source/Engine/engine.gd" id="1_6ac1q"]
 [ext_resource type="Texture2D" uid="uid://dxa6y3vx7obn6" path="res://block sprites/Source/engine.png" id="2_6ac1q"]
-[ext_resource type="PackedScene" uid="uid://belto0oeuobbh" path="res://scenes/UI/source_button.tscn" id="3_klt3x"]
+[ext_resource type="PackedScene" uid="uid://belto0oeuobbh" path="res://UI/Buttons/source_button.tscn" id="3_klt3x"]
 
 [node name="Engine" type="Node2D"]
 script = ExtResource("1_6ac1q")

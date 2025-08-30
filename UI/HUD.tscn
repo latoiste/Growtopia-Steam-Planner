@@ -8,7 +8,6 @@
 [node name="HUD" type="CanvasLayer"]
 
 [node name="BlockContainer" parent="." instance=ExtResource("2_f2wx0")]
-anchors_preset = -1
 offset_left = -320.0
 offset_top = -168.0
 offset_right = -10.0

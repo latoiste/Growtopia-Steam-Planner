@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7vrph7rfyvj2"]
+[gd_scene load_steps=4 format=3 uid="uid://c7vrph7rfyvj2"]
 
 [ext_resource type="Script" uid="uid://cnqbtflb4aem8" path="res://UI/Container/Mode/mode_container.gd" id="1_ic2wx"]
-[ext_resource type="Script" uid="uid://b268wb8u5qkbr" path="res://UI/Buttons/ButtonOverlay.gd" id="2_os8hc"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_5fyfn"]
 
@@ -22,13 +21,9 @@ layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_5fyfn")
 text = "Select"
-script = ExtResource("2_os8hc")
-metadata/_custom_type_script = "uid://b268wb8u5qkbr"
 
 [node name="Draw" type="Button" parent="."]
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_7n4fj")
 text = "Draw"
-script = ExtResource("2_os8hc")
-metadata/_custom_type_script = "uid://b268wb8u5qkbr"

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://btffcbbs7ojqg"]
 
-[ext_resource type="Script" uid="uid://bo5jfhwc13lu" path="res://scripts/Steam.gd" id="1_pvta1"]
+[ext_resource type="Script" uid="uid://bo5jfhwc13lu" path="res://Steam/Steam.gd" id="1_pvta1"]
 [ext_resource type="Texture2D" uid="uid://iul7ksprcqv2" path="res://block sprites/particles.png" id="2_pvta1"]
 
 [node name="Steam" type="Node2D"]

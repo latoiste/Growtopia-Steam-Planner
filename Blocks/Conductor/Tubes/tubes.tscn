@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cuye5ggmiahfj"]
 
-[ext_resource type="Script" uid="uid://b7frattcrh2l2" path="res://scripts/blocks/conductor/tubes.gd" id="1_73ohh"]
+[ext_resource type="Script" uid="uid://b7frattcrh2l2" path="res://Blocks/Conductor/Tubes/tubes.gd" id="1_73ohh"]
 [ext_resource type="Texture2D" uid="uid://e6pbb10fpstx" path="res://block sprites/Conductor/tubes.png" id="2_uosde"]
 
 [node name="Tubes" type="Node2D"]

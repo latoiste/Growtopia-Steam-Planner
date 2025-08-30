@@ -20,5 +20,24 @@ const BLOCKS: Dictionary = {
 	"stomper": "uid://muqtkakm3gkd",
 }
 
-#EFFECT SCENES
-const STEAM_SCENE = "uid://btffcbbs7ojqg"
+const STEAM_SCENE: PackedScene = preload("uid://btffcbbs7ojqg");
+const BORDER_SCENE: PackedScene = preload("uid://ei4ickdodkmx");
+
+const PIPE_TEXTURES: Array[Texture2D] = [
+	preload("res://block sprites/Conductor/pipes/pipe_base.png"),
+	preload("res://block sprites/Conductor/pipes/pipe_down.png"),
+	preload("res://block sprites/Conductor/pipes/pipe_up.png"),
+	preload("res://block sprites/Conductor/pipes/pipe_vertical.png"),
+	preload("res://block sprites/Conductor/pipes/pipe_right.png"),
+	preload("res://block sprites/Conductor/pipes/pipe_corner_DR.png"),
+	preload("res://block sprites/Conductor/pipes/pipe_corner_UR.png"),
+	preload("res://block sprites/Conductor/pipes/pipe_T_left.png"),
+	preload("res://block sprites/Conductor/pipes/pipe_left.png"),
+	preload("res://block sprites/Conductor/pipes/pipe_corner_DL.png"),
+	preload("res://block sprites/Conductor/pipes/pipe_corner_UL.png"),
+	preload("res://block sprites/Conductor/pipes/pipe_T_right.png"),
+	preload("res://block sprites/Conductor/pipes/pipe_horizontal.png"),
+	preload("res://block sprites/Conductor/pipes/pipe_T_up.png"),
+	preload("res://block sprites/Conductor/pipes/pipe_T_down.png"),
+	preload("res://block sprites/Conductor/pipes/pipe_cross.png"),
+]

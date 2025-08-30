@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://c7mag2f0lv3ut"]
 
-[ext_resource type="Script" uid="uid://w0058b807ecn" path="res://scripts/blocks/source/revolver.gd" id="1_yshtk"]
+[ext_resource type="Script" uid="uid://w0058b807ecn" path="res://Blocks/Source/Revolver/revolver.gd" id="1_yshtk"]
 [ext_resource type="Texture2D" uid="uid://hnqxus44ler2" path="res://block sprites/Source/revolver_body.png" id="2_v7x1l"]
 [ext_resource type="Texture2D" uid="uid://cqsvb3e1imaaq" path="res://block sprites/Source/revolver_handle.png" id="3_ilt5b"]
-[ext_resource type="PackedScene" uid="uid://belto0oeuobbh" path="res://scenes/UI/source_button.tscn" id="4_dpydk"]
+[ext_resource type="PackedScene" uid="uid://belto0oeuobbh" path="res://UI/Buttons/source_button.tscn" id="4_dpydk"]
 
 [node name="Revolver" type="Node2D"]
 script = ExtResource("1_yshtk")
