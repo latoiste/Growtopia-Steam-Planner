@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://brhk0ahx4jv5c"]
 
-[ext_resource type="Script" uid="uid://g6nii0su20gd" path="res://UI/Stats/stats_container.gd" id="1_7nk27"]
+[ext_resource type="Script" uid="uid://g6nii0su20gd" path="res://UI/Container/Stats/stats_container.gd" id="1_7nk27"]
 
 [node name="StatsContainer" type="HBoxContainer"]
 offset_right = 76.0

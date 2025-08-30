@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b72225wfa4juw"]
 
-[ext_resource type="Script" uid="uid://cs1gyp0hfae1b" path="res://scripts/blocks/conductor/funnel_down.gd" id="1_jpt0o"]
+[ext_resource type="Script" uid="uid://cs1gyp0hfae1b" path="res://Blocks/Conductor/FunnelDown/funnel_down.gd" id="1_jpt0o"]
 [ext_resource type="Texture2D" uid="uid://dxppptg5impyk" path="res://block sprites/Conductor/funnel_down.png" id="2_ipp72"]
 
 [node name="FunnelDown" type="Node2D"]

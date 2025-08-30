@@ -1,0 +1,135 @@
+[gd_scene load_steps=19 format=3 uid="uid://44hwpxsiqfna"]
+
+[ext_resource type="Script" uid="uid://ci4kx6iq7js3" path="res://UI/Container/Block/block_container.gd" id="1_qlt6g"]
+[ext_resource type="Texture2D" uid="uid://b800pfkm02qsa" path="res://block sprites/Source/stomper.png" id="2_xfnhi"]
+[ext_resource type="Texture2D" uid="uid://hnqxus44ler2" path="res://block sprites/Source/revolver_body.png" id="3_e1o5d"]
+[ext_resource type="Texture2D" uid="uid://e6pbb10fpstx" path="res://block sprites/Conductor/tubes.png" id="4_flbgh"]
+[ext_resource type="Texture2D" uid="uid://dup3s4feusntq" path="res://block sprites/Conductor/pipes/pipe_base.png" id="5_dtp1y"]
+[ext_resource type="Texture2D" uid="uid://caro3onopftdx" path="res://block sprites/Conductor/crossover.png" id="6_eb8sx"]
+[ext_resource type="Texture2D" uid="uid://cwxiuj43g3x1q" path="res://block sprites/Conductor/funnel.png" id="7_qvn4l"]
+[ext_resource type="Texture2D" uid="uid://cvgrdbfigmg6" path="res://block sprites/Conductor/funnel_up.png" id="8_7lggv"]
+[ext_resource type="Texture2D" uid="uid://dxppptg5impyk" path="res://block sprites/Conductor/funnel_down.png" id="9_w2jdj"]
+[ext_resource type="Texture2D" uid="uid://c7c7qhmg7cl5x" path="res://block sprites/Conductor/door_closed.png" id="10_qn00f"]
+[ext_resource type="Texture2D" uid="uid://b7q4dt2yrjsmi" path="res://block sprites/Conductor/crank_vertical.png" id="11_fhcu0"]
+[ext_resource type="Texture2D" uid="uid://phadekrepk2m" path="res://block sprites/Conductor/vent_off.png" id="12_abidr"]
+[ext_resource type="Texture2D" uid="uid://iohcj6o7gv8w" path="res://block sprites/Conductor/launcher_base.png" id="13_udlrv"]
+[ext_resource type="Texture2D" uid="uid://diktqhg33m6ik" path="res://block sprites/Conductor/organ_off.png" id="14_xa6yo"]
+[ext_resource type="Texture2D" uid="uid://cfpw0olndbh0r" path="res://block sprites/Conductor/collector.png" id="15_57tsp"]
+[ext_resource type="Texture2D" uid="uid://dqkfgupcjm0o2" path="res://block sprites/Conductor/valve.png" id="16_0ssxi"]
+[ext_resource type="Texture2D" uid="uid://dxa6y3vx7obn6" path="res://block sprites/Source/engine.png" id="17_17ndk"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_ucsqe"]
+
+[node name="BlockContainer" type="PanelContainer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -434.755
+offset_top = -210.0
+offset_right = -144.755
+offset_bottom = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
+size_flags_horizontal = 0
+size_flags_vertical = 4
+script = ExtResource("1_qlt6g")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="BlockSelector" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 6
+
+[node name="Stomper" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ucsqe")
+icon = ExtResource("2_xfnhi")
+icon_alignment = 1
+
+[node name="Revolver" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+icon = ExtResource("3_e1o5d")
+
+[node name="Tubes" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ucsqe")
+text = "
+"
+icon = ExtResource("4_flbgh")
+icon_alignment = 1
+
+[node name="Pipe" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ucsqe")
+text = "
+"
+icon = ExtResource("5_dtp1y")
+icon_alignment = 1
+
+[node name="Crossover" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ucsqe")
+icon = ExtResource("6_eb8sx")
+
+[node name="Funnel" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ucsqe")
+icon = ExtResource("7_qvn4l")
+icon_alignment = 1
+
+[node name="FunnelUp" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+icon = ExtResource("8_7lggv")
+
+[node name="FunnelDown" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+icon = ExtResource("9_w2jdj")
+
+[node name="Door" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+icon = ExtResource("10_qn00f")
+
+[node name="Crank" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+icon = ExtResource("11_fhcu0")
+
+[node name="Vent" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+icon = ExtResource("12_abidr")
+
+[node name="Launcher" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+icon = ExtResource("13_udlrv")
+
+[node name="Organ" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+icon = ExtResource("14_xa6yo")
+
+[node name="Collector" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+icon = ExtResource("15_57tsp")
+
+[node name="Valve" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+icon = ExtResource("16_0ssxi")
+
+[node name="Engine" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+icon = ExtResource("17_17ndk")

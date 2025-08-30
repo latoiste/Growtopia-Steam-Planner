@@ -11,5 +11,5 @@ func _process(delta: float) -> void:
 	
 	x_coords.text = "X: %d" % (grid_pos.x + 1);
 	y_coords.text = "Y: %d" % (grid_pos.y + 1);
-	current_block.text = "Block: %s" % ("Steam " + block.block_name.to_pascal_case()
+	current_block.text = "Block: %s" % (block.block_name
 			 if block else "-");

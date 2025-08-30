@@ -7,7 +7,7 @@ var output_dir: Array[Vector2] = [Constants.RIGHT];
 
 func enter():
 	super();
-	new_block("funnel", "conductor", output_dir, input_dir);
+	new_block("Staem Funnel", Constants.BLOCK_ID["funnel"], output_dir, input_dir);
 
 func get_next_dir(_prev_dir: Vector2 = Constants.NO_DIR) -> Vector2:
 	if sprite.flip_h:

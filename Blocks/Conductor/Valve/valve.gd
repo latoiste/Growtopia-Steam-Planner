@@ -7,7 +7,7 @@ const output_dir: Array[Vector2] = [Constants.UP, Constants.DOWN, Constants.RIGH
 
 func enter():
 	super();
-	new_block("valve", "conductor", output_dir, input_dir);
+	new_block("Steam Valve", Constants.BLOCK_ID["valve"], output_dir, input_dir);
 
 func enter_steam(_sender: Steam):
 	sprite.flip_h = not sprite.flip_h;

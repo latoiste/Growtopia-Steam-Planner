@@ -16,7 +16,7 @@ func _ready() -> void:
 
 func enter():
 	super();
-	new_block("door", "conductor", [], input_dir);
+	new_block("Steam Door", Constants.BLOCK_ID["door"], [], input_dir);
 
 func enter_steam(_sender: Steam):
 	is_open = not is_open;

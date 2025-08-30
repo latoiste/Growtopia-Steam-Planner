@@ -5,6 +5,6 @@ extends Node2D
 @onready var zoom_text: Label = $DebugText/Zoom
 
 func _process(_delta: float) -> void:
-	state_text.text = "State: " + str(States.state);
-	mode_text.text = "Mode: " + str(States.mode);
+	state_text.text = "State: " + str(Editor.state);
+	mode_text.text = "Mode: " + str(Editor.mode);
 	zoom_text.text = "Zoom: " + str(get_viewport().get_camera_2d().zoom)

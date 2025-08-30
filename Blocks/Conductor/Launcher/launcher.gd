@@ -7,7 +7,7 @@ const input_dir: Array[Vector2] = Constants.ALL_DIR;
 
 func enter():
 	super();
-	new_block("launcher", "conductor", [], input_dir);
+	new_block("Steam Launcher", Constants.BLOCK_ID["launcher"], [], input_dir);
 
 func enter_steam(_sender: Steam):
 	if tween:

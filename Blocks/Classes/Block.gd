@@ -2,7 +2,7 @@ extends Node2D
 class_name Block
 
 var block_name: String;
-var block_type: String;
+var block_id: int;
 var block_pos: Vector2;
 var input_direction: Array[Vector2] = [];
 var output_direction: Array[Vector2] = [];
@@ -22,9 +22,10 @@ func enter_steam(_sender: Steam) -> void:
 func exit_steam() -> void:
 	pass
 
-func new_block(blocK_name: String, block_type: String, output_dir: Array[Vector2] = [], input_dir: Array[Vector2] = []):
+func new_block(blocK_name: String, block_id: int, \
+		output_dir: Array[Vector2] = [], input_dir: Array[Vector2] = []):
 	self.block_name = blocK_name;
-	self.block_type = block_type;
+	self.block_id = block_id;
 	set_direction(output_dir, input_dir);
 	
 func set_direction(output_dir: Array[Vector2] = [], input_dir: Array[Vector2] = []):
@@ -37,9 +38,6 @@ func set_block_position(world_pos: Vector2) -> void:
 
 func get_block_name() -> String:
 	return block_name;
-
-func get_block_type() -> String:
-	return block_type;
 
 func get_global_block_pos() -> Vector2:
 	return Grid.get_world_pos(block_pos);
@@ -122,6 +120,12 @@ func get_block_in_dir(dir: Vector2) -> Block:
 		Constants.RIGHT:
 			block = get_block_right();
 	return block;
+
+func has_border() -> bool:
+	for child in get_children():
+		if child is Border:
+			return true;
+	return false;
 
 #func send_power(conductor: Conductor, next_dir: Vector2) -> void:	
 	#if block_type == "conductor":

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://6ruwp8q5nkxq"]
 
-[ext_resource type="Script" uid="uid://coev1c7kuswso" path="res://scripts/blocks/conductor/collector.gd" id="1_2nw6u"]
+[ext_resource type="Script" uid="uid://coev1c7kuswso" path="res://Blocks/Conductor/Collector/collector.gd" id="1_2nw6u"]
 [ext_resource type="Texture2D" uid="uid://cfpw0olndbh0r" path="res://block sprites/Conductor/collector.png" id="2_wcx1q"]
 
 [node name="Collector" type="Node2D"]

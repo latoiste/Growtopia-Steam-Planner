@@ -20,7 +20,7 @@ config/icon="res://icon.svg"
 Constants="*res://Globals/constants.gd"
 Grid="*res://Globals/grid.gd"
 ScenePaths="*res://Globals/scene_paths.gd"
-States="*res://Globals/states.gd"
+Editor="*res://Globals/editor_state.gd"
 
 [display]
 

@@ -7,7 +7,7 @@ const output_dir: Array[Vector2] = Constants.ALL_DIR;
 
 func enter():
 	super();
-	new_block("crossover", "conductor", output_dir, input_dir);
+	new_block("Steam Crossover", Constants.BLOCK_ID["crossover"], output_dir, input_dir);
 
 func get_next_dir(_prev_dir: Vector2 = Constants.NO_DIR) -> Vector2:
 	# if prev dir is vertical
