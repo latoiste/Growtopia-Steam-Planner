@@ -9,7 +9,7 @@ func _ready() -> void:
 		pressed.connect(parent.interact);
 	pressed.connect(_on_pressed);
 	timer.timeout.connect(_on_timer_timeout);
-		
+	
 func _on_pressed() -> void:
 	if not disabled:
 		timer.start();

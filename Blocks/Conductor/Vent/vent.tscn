@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://biwhwmhbdhote"]
+[gd_scene load_steps=5 format=3 uid="uid://biwhwmhbdhote"]
 
 [ext_resource type="Script" uid="uid://c8kssbgsef5hs" path="res://Blocks/Conductor/Vent/vent.gd" id="1_uqxsp"]
 [ext_resource type="Texture2D" uid="uid://phadekrepk2m" path="res://block sprites/Conductor/vent_off.png" id="2_17iw7"]
 [ext_resource type="PackedScene" uid="uid://ba1f376niumya" path="res://UI/Buttons/flip_button.tscn" id="3_3rjpe"]
+[ext_resource type="PackedScene" uid="uid://ei4ickdodkmx" path="res://Blocks/Border/border.tscn" id="4_xod6s"]
 
 [node name="Vent" type="Node2D"]
 script = ExtResource("1_uqxsp")
@@ -17,5 +18,7 @@ texture = ExtResource("2_17iw7")
 wait_time = 3.0
 
 [node name="FlipButton" parent="." instance=ExtResource("3_3rjpe")]
+
+[node name="Border" parent="." instance=ExtResource("4_xod6s")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

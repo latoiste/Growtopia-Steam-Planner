@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c42vopbjwddp3"]
+[gd_scene load_steps=5 format=3 uid="uid://c42vopbjwddp3"]
 
 [ext_resource type="Script" uid="uid://cpvdpgkueetaw" path="res://Blocks/Conductor/Crossover/crossover.gd" id="1_ssijk"]
 [ext_resource type="Texture2D" uid="uid://caro3onopftdx" path="res://block sprites/Conductor/crossover.png" id="2_v4nqr"]
 [ext_resource type="PackedScene" uid="uid://ba1f376niumya" path="res://UI/Buttons/flip_button.tscn" id="3_ffnh1"]
+[ext_resource type="PackedScene" uid="uid://ei4ickdodkmx" path="res://Blocks/Border/border.tscn" id="4_553om"]
 
 [node name="Crossover" type="Node2D"]
 script = ExtResource("1_ssijk")
@@ -14,3 +15,5 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_v4nqr")
 
 [node name="FlipButton" parent="." instance=ExtResource("3_ffnh1")]
+
+[node name="Border" parent="." instance=ExtResource("4_553om")]

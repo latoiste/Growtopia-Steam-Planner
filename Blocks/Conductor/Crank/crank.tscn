@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://jom8h5cpaflf"]
+[gd_scene load_steps=5 format=3 uid="uid://jom8h5cpaflf"]
 
 [ext_resource type="Script" uid="uid://64we26jkojua" path="res://Blocks/Conductor/Crank/crank.gd" id="1_7rn34"]
 [ext_resource type="PackedScene" uid="uid://b7e8rb3hjjxep" path="res://UI/Buttons/interact_button.tscn" id="2_7rn34"]
 [ext_resource type="Texture2D" uid="uid://b7q4dt2yrjsmi" path="res://block sprites/Conductor/crank_vertical.png" id="2_83hrd"]
+[ext_resource type="PackedScene" uid="uid://ei4ickdodkmx" path="res://Blocks/Border/border.tscn" id="4_2y38e"]
 
 [node name="Crank" type="Node2D"]
 script = ExtResource("1_7rn34")
@@ -14,5 +15,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_83hrd")
 
 [node name="InteractButton" parent="." instance=ExtResource("2_7rn34")]
+
+[node name="Border" parent="." instance=ExtResource("4_2y38e")]
 
 [connection signal="pressed" from="InteractButton" to="." method="interact"]

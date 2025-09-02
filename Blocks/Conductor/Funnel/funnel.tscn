@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6qdfofwdxc10"]
+[gd_scene load_steps=5 format=3 uid="uid://b6qdfofwdxc10"]
 
 [ext_resource type="Script" uid="uid://bw6s7o2aci18d" path="res://Blocks/Conductor/Funnel/funnel.gd" id="1_vjrnl"]
 [ext_resource type="Texture2D" uid="uid://cwxiuj43g3x1q" path="res://block sprites/Conductor/funnel.png" id="1_x1ax2"]
 [ext_resource type="PackedScene" uid="uid://ba1f376niumya" path="res://UI/Buttons/flip_button.tscn" id="2_sk8rc"]
+[ext_resource type="PackedScene" uid="uid://ei4ickdodkmx" path="res://Blocks/Border/border.tscn" id="4_lhou5"]
 
 [node name="Funnel" type="Node2D"]
 script = ExtResource("1_vjrnl")
@@ -13,3 +14,5 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_x1ax2")
 
 [node name="FlipButton" parent="." instance=ExtResource("2_sk8rc")]
+
+[node name="Border" parent="." instance=ExtResource("4_lhou5")]

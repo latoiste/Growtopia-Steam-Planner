@@ -29,7 +29,5 @@ const BLOCK_ID: Dictionary = {
 	"engine": 13,
 	"revolver": 14,
 	"stomper": 15,
+	"gear": 16,
 }
-
-func string_to_block_id(block_name: String):
-	pass;

@@ -1,4 +1,4 @@
-extends ButtonOverlay
+extends Button
 
 var sprite: Sprite2D;
 

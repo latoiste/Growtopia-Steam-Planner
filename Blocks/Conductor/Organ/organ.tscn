@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjm5adujsb37w"]
+[gd_scene load_steps=4 format=3 uid="uid://bjm5adujsb37w"]
 
 [ext_resource type="Script" uid="uid://dv3nrk06d1d22" path="res://Blocks/Conductor/Organ/organ.gd" id="1_vqrws"]
 [ext_resource type="Texture2D" uid="uid://diktqhg33m6ik" path="res://block sprites/Conductor/organ_off.png" id="2_3paiw"]
+[ext_resource type="PackedScene" uid="uid://ei4ickdodkmx" path="res://Blocks/Border/border.tscn" id="3_cyag0"]
 
 [node name="Organ" type="Node2D"]
 script = ExtResource("1_vqrws")
@@ -15,5 +16,7 @@ texture = ExtResource("2_3paiw")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
+
+[node name="Border" parent="." instance=ExtResource("3_cyag0")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

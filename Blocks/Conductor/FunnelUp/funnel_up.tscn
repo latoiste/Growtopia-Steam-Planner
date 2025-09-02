@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://clb6s0nsyv5ek"]
+[gd_scene load_steps=4 format=3 uid="uid://clb6s0nsyv5ek"]
 
 [ext_resource type="Script" uid="uid://dcn1aot7a4b3c" path="res://Blocks/Conductor/FunnelUp/funnel_up.gd" id="1_qic3y"]
 [ext_resource type="Texture2D" uid="uid://cvgrdbfigmg6" path="res://block sprites/Conductor/funnel_up.png" id="2_00opw"]
+[ext_resource type="PackedScene" uid="uid://ei4ickdodkmx" path="res://Blocks/Border/border.tscn" id="3_vsph7"]
 
 [node name="FunnelUp" type="Node2D"]
 script = ExtResource("1_qic3y")
@@ -11,3 +12,5 @@ metadata/_custom_type_script = "uid://coxi4dypyi3en"
 position = Vector2(8, 8)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_00opw")
+
+[node name="Border" parent="." instance=ExtResource("3_vsph7")]
