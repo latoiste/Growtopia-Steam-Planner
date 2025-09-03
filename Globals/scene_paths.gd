@@ -19,6 +19,13 @@ const BLOCKS: Dictionary = {
 	"revolver": "uid://c7mag2f0lv3ut",
 	"stomper": "uid://muqtkakm3gkd",
 	"gear": "uid://di7l1oltbkins",
+	"bellows": "uid://glaw4j7finwb",
+	"bellowsriser": "uid://b8gbot26acxqh",
+	"lamp": "uid://uth4dxpipy63",
+	"piston": "uid://36rwld7vohrd",
+	"pistonlifter": "uid://c6enr8nrs6u1e",
+	"scrambler": "uid://si3acpt58wxq",
+	"spike": "uid://doydskiq4qofp",
 }
 
 const STEAM_SCENE: PackedScene = preload("uid://btffcbbs7ojqg");

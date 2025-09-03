@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckf8dkmb2k43p"
-path="res://.godot/imported/lifter_piston.png-2762b9a3fe6e42ba386ac63c658ee953.ctex"
+uid="uid://dr4dp515qakqg"
+path="res://.godot/imported/bellows_rod.png-6173e733a48d1904dc292be27243286d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://block sprites/Conductor/lifter_piston.png"
-dest_files=["res://.godot/imported/lifter_piston.png-2762b9a3fe6e42ba386ac63c658ee953.ctex"]
+source_file="res://block sprites/Conductor/bellows_rod.png"
+dest_files=["res://.godot/imported/bellows_rod.png-6173e733a48d1904dc292be27243286d.ctex"]
 
 [params]
 

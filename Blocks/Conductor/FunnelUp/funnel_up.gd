@@ -8,4 +8,5 @@ func enter():
 	new_block("Steam Funnel - Up", Constants.BLOCK_ID["funnelup"], output_dir, input_dir);
 	
 func get_next_dir(_prev_dir: Vector2 = Constants.NO_DIR):
+	#call super biar ga ngepass prev_dir, messy but ok oakdokasdalsj
 	return super();

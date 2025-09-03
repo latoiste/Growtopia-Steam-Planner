@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://uth4dxpipy63"]
+
+[ext_resource type="Script" uid="uid://bcbrfp2hk42ab" path="res://Blocks/Conductor/Lamp/lamp.gd" id="1_8ia54"]
+[ext_resource type="Texture2D" uid="uid://b5c4vdxaoy3x2" path="res://block sprites/Conductor/lamp_off.png" id="2_uixyp"]
+
+[node name="Lamp" type="Node2D"]
+script = ExtResource("1_8ia54")
+metadata/_custom_type_script = "uid://coxi4dypyi3en"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_uixyp")
+
+[node name="Timer" type="Timer" parent="."]

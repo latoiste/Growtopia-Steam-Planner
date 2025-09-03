@@ -30,4 +30,11 @@ const BLOCK_ID: Dictionary = {
 	"revolver": 14,
 	"stomper": 15,
 	"gear": 16,
+	"bellows": 17,
+	"bellowsriser": 18,
+	"lamp": 19,
+	"piston": 20,
+	"pistonlifter": 21,
+	"scrambler": 22,
+	"spike": 23,
 }

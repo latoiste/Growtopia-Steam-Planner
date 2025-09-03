@@ -9,22 +9,22 @@ func enter():
 	super();
 	new_block("Steam Collector", Constants.BLOCK_ID["collector"], output_dir, input_dir);
 
-func enter_steam(_sender: Steam):
-	latest_prev_dir = _sender.prev_dir;
+func enter_steam(sender: Steam):
+	latest_prev_dir = sender.prev_dir;
 	var valid_dirs := get_all_valid_dir();
 	
 	if valid_dirs.size() <= 1:
 		return;
 		
-	steam_inside.append(_sender);
-	_sender.steam_paused = true;
+	steam_inside.append(sender);
+	sender.steam_paused = true;
 	
 	await get_tree().process_frame;
 	
 	if steam_inside.size() >= valid_dirs.size():
 		shoot_steam(valid_dirs);
 	else:
-		store_steam(_sender);
+		store_steam(sender);
 
 func get_all_valid_dir() -> Array[Vector2]:
 	var output_dirs: Array[Vector2] = Constants.ALL_DIR.duplicate();

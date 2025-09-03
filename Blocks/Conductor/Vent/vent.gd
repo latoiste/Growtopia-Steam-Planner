@@ -3,7 +3,7 @@ extends Conductor
 @onready var sprite: Sprite2D = $Sprite2D;
 @onready var timer: Timer = $Timer;
 
-const VENT_TEXTURES = [
+const VENT_TEXTURES: Array[Texture2D] = [
 	preload("res://block sprites/Conductor/vent_off.png"),
 	preload("res://block sprites/Conductor/vent_on.png"),
 ]
@@ -14,10 +14,11 @@ const output_dir: Array[Vector2] = Constants.ALL_DIR;
 func enter():
 	super();
 	new_block("Steam Vent", Constants.BLOCK_ID["vent"], output_dir, input_dir);
+	timer.timeout.connect(reset_vent_texture);
 
 func enter_steam(_sender: Steam):
-	timer.start();
+	timer.start(3);
 	sprite.texture = VENT_TEXTURES[1];
 
-func _on_timer_timeout() -> void:
+func reset_vent_texture() -> void:
 	sprite.texture = VENT_TEXTURES[0];

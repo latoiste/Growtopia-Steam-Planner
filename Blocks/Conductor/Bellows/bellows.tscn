@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://glaw4j7finwb"]
+
+[ext_resource type="Script" uid="uid://vhkpjgjid3uj" path="res://Blocks/Conductor/Bellows/bellows.gd" id="1_5tqe6"]
+[ext_resource type="Texture2D" uid="uid://c6bc1r21lyjt7" path="res://block sprites/Conductor/bellows.png" id="2_32nip"]
+[ext_resource type="Texture2D" uid="uid://dr4dp515qakqg" path="res://block sprites/Conductor/bellows_rod.png" id="2_pk8hc"]
+[ext_resource type="PackedScene" uid="uid://ei4ickdodkmx" path="res://Blocks/Border/border.tscn" id="3_pk8hc"]
+
+[node name="Bellows" type="Node2D"]
+script = ExtResource("1_5tqe6")
+metadata/_custom_type_script = "uid://coxi4dypyi3en"
+
+[node name="Rod" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_pk8hc")
+
+[node name="Body" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_32nip")
+
+[node name="Border" parent="." instance=ExtResource("3_pk8hc")]

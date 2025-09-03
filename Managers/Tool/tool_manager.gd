@@ -26,12 +26,3 @@ func handle_draw_mode() -> void:
 		
 func handle_select_mode(event: InputEvent):
 	camera.pan_camera(event);
-
-
-##TODO: AAAAAAAAAAAAAAAa
-#func _on_ui_selected_mode(mode: String) -> void:
-	#match mode:
-		#"select":
-			#Editor.set_mode(Editor.Mode.SELECT);
-		#"draw":
-			#Editor.set_mode(Editor.Mode.DRAW);

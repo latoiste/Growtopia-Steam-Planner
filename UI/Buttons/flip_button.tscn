@@ -12,4 +12,3 @@ offset_bottom = 8.0
 grow_horizontal = 0
 scale = Vector2(0.75, 0.75)
 script = ExtResource("1_rmfg5")
-metadata/_custom_type_script = "uid://b268wb8u5qkbr"

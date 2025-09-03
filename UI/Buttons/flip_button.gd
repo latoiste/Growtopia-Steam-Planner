@@ -1,12 +1,18 @@
 extends Button
 
-var sprite: Sprite2D;
+@export var sprite: Sprite2D;
+
+signal flipped;
 
 func _ready() -> void:
+	pressed.connect(on_flipped);
+	
+	if sprite:
+		return;
 	var parent = get_parent();
 	if parent:
 		sprite = parent.get_node("Sprite2D")
-	pressed.connect(_on_pressed);
 
-func _on_pressed() -> void:
+func on_flipped() -> void:
 	sprite.flip_h = not sprite.flip_h;
+	flipped.emit();

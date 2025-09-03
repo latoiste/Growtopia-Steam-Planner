@@ -15,6 +15,6 @@ position = Vector2(8, 8)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_ojl3d")
 
-[node name="FlipButton" parent="." instance=ExtResource("3_xebio")]
-
 [node name="Border" parent="." instance=ExtResource("4_svs3y")]
+
+[node name="FlipButton" parent="." instance=ExtResource("3_xebio")]

@@ -14,8 +14,8 @@ position = Vector2(8, 8)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_83hrd")
 
-[node name="InteractButton" parent="." instance=ExtResource("2_7rn34")]
-
 [node name="Border" parent="." instance=ExtResource("4_2y38e")]
+
+[node name="InteractButton" parent="." instance=ExtResource("2_7rn34")]
 
 [connection signal="pressed" from="InteractButton" to="." method="interact"]

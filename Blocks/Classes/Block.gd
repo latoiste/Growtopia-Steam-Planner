@@ -28,10 +28,10 @@ func enter_steam(_sender: Steam) -> void:
 func exit_steam() -> void:
 	pass
 
-func new_block(blocK_name: String, block_id: int, \
+func new_block(_block_name: String, _block_id: int, \
 		output_dir: Array[Vector2] = [], input_dir: Array[Vector2] = []):
-	self.block_name = blocK_name;
-	self.block_id = block_id;
+	self.block_name = _block_name;
+	self.block_id = _block_id;
 	set_direction(output_dir, input_dir);
 	
 func set_direction(output_dir: Array[Vector2] = [], input_dir: Array[Vector2] = []):

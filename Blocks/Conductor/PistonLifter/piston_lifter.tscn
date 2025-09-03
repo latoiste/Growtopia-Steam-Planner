@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6enr8nrs6u1e"]
+
+[ext_resource type="Script" uid="uid://cf20o427leofl" path="res://Blocks/Conductor/PistonLifter/piston_lifter.gd" id="1_jyps5"]
+[ext_resource type="Texture2D" uid="uid://bwq6a0jf74hs7" path="res://block sprites/Conductor/lifter_piston_rod.png" id="2_ekxlx"]
+[ext_resource type="Texture2D" uid="uid://m6rrr7w5f65d" path="res://block sprites/Conductor/piston_lifter.png" id="3_ijowp"]
+[ext_resource type="PackedScene" uid="uid://ei4ickdodkmx" path="res://Blocks/Border/border.tscn" id="4_rg7rm"]
+
+[node name="PistonLifter" type="Node2D"]
+script = ExtResource("1_jyps5")
+metadata/_custom_type_script = "uid://coxi4dypyi3en"
+
+[node name="Rod" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ekxlx")
+
+[node name="Body" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_ijowp")
+
+[node name="Border" parent="." instance=ExtResource("4_rg7rm")]

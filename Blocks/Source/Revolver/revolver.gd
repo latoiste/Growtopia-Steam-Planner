@@ -19,5 +19,5 @@ func interact():
 func animate_handle() -> void:
 	for i in range(6):
 		tween = create_tween();
-		tween.tween_property(sprite, "scale", Vector2(-sprite.scale.x, sprite.scale.y), 0.25);
+		tween.tween_property(sprite, "scale:x", -sprite.scale.x, 0.25);
 		await tween.finished;

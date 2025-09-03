@@ -1,5 +1,4 @@
 extends Conductor
-
 @onready var sprite: Sprite2D = $Body;
 
 var tween: Tween;
@@ -16,4 +15,4 @@ func enter_steam(_sender: Steam):
 	
 func animate_launcher():
 	tween = create_tween();
-	tween.tween_property(sprite, "scale", Vector2(sprite.scale.x, 0.2), 1.0).from(Vector2(sprite.scale.x, 0.5));
+	tween.tween_property(sprite, "scale:y", 0.2, 1.0).from(0.5);

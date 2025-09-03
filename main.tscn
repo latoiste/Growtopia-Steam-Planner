@@ -19,6 +19,7 @@ world = NodePath("../WorldManager")
 [node name="UI" parent="." instance=ExtResource("1_0wfyh")]
 
 [node name="DebugText" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="State" type="Label" parent="DebugText"]
 offset_left = 3.0
@@ -46,7 +47,6 @@ text = "Zoom: "
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(761, 403)
-zoom = Vector2(6.595, 6.595)
 limit_left = 0
 limit_top = 0
 limit_right = 1600

@@ -13,8 +13,7 @@ func connect_force_update_sprite() -> void:
 	var surrounding_blocks := get_surrounding_blocks();
 	for block in surrounding_blocks:
 		if block is Pipe:
-			if not force_update_sprite.is_connected(block.update_sprite):
-				force_update_sprite.connect(block.update_sprite, CONNECT_ONE_SHOT);
+			force_update_sprite.connect(block.update_sprite, CONNECT_ONE_SHOT);
 			force_update_sprite.emit()
 
 func get_next_dir(_prev_dir: Vector2 = Constants.NO_DIR) -> Vector2:

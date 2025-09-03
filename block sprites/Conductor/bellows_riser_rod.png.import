@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvfqk8qnl58su"
-path="res://.godot/imported/riser_bellows.png-00b4c3fdb3230bc0fa7a164a29ab100d.ctex"
+uid="uid://dqml08mv6qo86"
+path="res://.godot/imported/bellows_riser_rod.png-00519e2f778a7b7bb76e0d53a76dfe6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://block sprites/Conductor/riser_bellows.png"
-dest_files=["res://.godot/imported/riser_bellows.png-00b4c3fdb3230bc0fa7a164a29ab100d.ctex"]
+source_file="res://block sprites/Conductor/bellows_riser_rod.png"
+dest_files=["res://.godot/imported/bellows_riser_rod.png-00519e2f778a7b7bb76e0d53a76dfe6e.ctex"]
 
 [params]
 

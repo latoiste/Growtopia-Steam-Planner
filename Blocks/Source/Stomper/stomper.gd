@@ -19,6 +19,6 @@ func interact():
 
 func animate_stomper() -> void:
 	tween = create_tween().set_ease(Tween.EASE_OUT);
-	tween.tween_property(sprite, "scale", Vector2(sprite.scale.x, 0.075), 0.2);
-	tween.tween_property(sprite, "scale", Vector2(sprite.scale.x, 0.5), 1.5);
+	tween.tween_property(sprite, "scale:y", 0.075, 0.2);
+	tween.tween_property(sprite, "scale:y", 0.5, 1.5);
 	

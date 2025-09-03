@@ -24,4 +24,6 @@ func set_mode(selected_mode: String) -> void:
 
 func set_selected_block(selected_block: String) -> void:
 	selected_block_id = Constants.BLOCK_ID.get(selected_block);
-	BlockScene = load(ScenePaths.BLOCKS.get(selected_block.to_lower()));
+	var scene_path = ScenePaths.BLOCKS.get(selected_block.to_lower());
+	if scene_path:
+		BlockScene = load(scene_path);

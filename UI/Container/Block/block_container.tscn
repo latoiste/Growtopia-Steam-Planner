@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://44hwpxsiqfna"]
+[gd_scene load_steps=27 format=3 uid="uid://44hwpxsiqfna"]
 
 [ext_resource type="Script" uid="uid://ci4kx6iq7js3" path="res://UI/Container/Block/block_container.gd" id="1_qlt6g"]
 [ext_resource type="Texture2D" uid="uid://b800pfkm02qsa" path="res://block sprites/Source/stomper.png" id="2_xfnhi"]
@@ -17,6 +17,14 @@
 [ext_resource type="Texture2D" uid="uid://cfpw0olndbh0r" path="res://block sprites/Conductor/collector.png" id="15_57tsp"]
 [ext_resource type="Texture2D" uid="uid://dqkfgupcjm0o2" path="res://block sprites/Conductor/valve.png" id="16_0ssxi"]
 [ext_resource type="Texture2D" uid="uid://dxa6y3vx7obn6" path="res://block sprites/Source/engine.png" id="17_17ndk"]
+[ext_resource type="Texture2D" uid="uid://f4wxf71t8am7" path="res://block sprites/Conductor/gear.png" id="18_r7358"]
+[ext_resource type="Texture2D" uid="uid://c6bc1r21lyjt7" path="res://block sprites/Conductor/bellows.png" id="19_7451u"]
+[ext_resource type="Texture2D" uid="uid://d2ovcyn82ciii" path="res://block sprites/Conductor/bellows_riser.png" id="20_dr281"]
+[ext_resource type="Texture2D" uid="uid://b5c4vdxaoy3x2" path="res://block sprites/Conductor/lamp_off.png" id="21_etavu"]
+[ext_resource type="Texture2D" uid="uid://cltprt4y3d8ds" path="res://block sprites/Conductor/piston.png" id="22_oijmv"]
+[ext_resource type="Texture2D" uid="uid://m6rrr7w5f65d" path="res://block sprites/Conductor/piston_lifter.png" id="23_dvrtn"]
+[ext_resource type="Texture2D" uid="uid://oogb2ey8dswq" path="res://block sprites/Conductor/spikes_body.png" id="24_yme6x"]
+[ext_resource type="Texture2D" uid="uid://dk11q1pat1rsu" path="res://block sprites/Conductor/scrambler.png" id="25_ttnt4"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_ucsqe"]
 
@@ -81,6 +89,10 @@ text = "
 icon = ExtResource("5_dtp1y")
 icon_alignment = 1
 
+[node name="Collector" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+icon = ExtResource("15_57tsp")
+
 [node name="Crossover" type="Button" parent="MarginContainer/BlockSelector"]
 layout_mode = 2
 toggle_mode = true
@@ -102,13 +114,25 @@ icon = ExtResource("8_7lggv")
 layout_mode = 2
 icon = ExtResource("9_w2jdj")
 
-[node name="Door" type="Button" parent="MarginContainer/BlockSelector"]
-layout_mode = 2
-icon = ExtResource("10_qn00f")
-
 [node name="Crank" type="Button" parent="MarginContainer/BlockSelector"]
 layout_mode = 2
 icon = ExtResource("11_fhcu0")
+
+[node name="Valve" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+icon = ExtResource("16_0ssxi")
+
+[node name="Organ" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+icon = ExtResource("14_xa6yo")
+
+[node name="Scrambler" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+icon = ExtResource("25_ttnt4")
+
+[node name="Door" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+icon = ExtResource("10_qn00f")
 
 [node name="Vent" type="Button" parent="MarginContainer/BlockSelector"]
 layout_mode = 2
@@ -118,18 +142,34 @@ icon = ExtResource("12_abidr")
 layout_mode = 2
 icon = ExtResource("13_udlrv")
 
-[node name="Organ" type="Button" parent="MarginContainer/BlockSelector"]
-layout_mode = 2
-icon = ExtResource("14_xa6yo")
-
-[node name="Collector" type="Button" parent="MarginContainer/BlockSelector"]
-layout_mode = 2
-icon = ExtResource("15_57tsp")
-
-[node name="Valve" type="Button" parent="MarginContainer/BlockSelector"]
-layout_mode = 2
-icon = ExtResource("16_0ssxi")
-
 [node name="Engine" type="Button" parent="MarginContainer/BlockSelector"]
 layout_mode = 2
 icon = ExtResource("17_17ndk")
+
+[node name="Bellows" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+icon = ExtResource("19_7451u")
+
+[node name="BellowsRiser" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+icon = ExtResource("20_dr281")
+
+[node name="Piston" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+icon = ExtResource("22_oijmv")
+
+[node name="PistonLifter" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+icon = ExtResource("23_dvrtn")
+
+[node name="Spike" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+icon = ExtResource("24_yme6x")
+
+[node name="Lamp" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+icon = ExtResource("21_etavu")
+
+[node name="Gear" type="Button" parent="MarginContainer/BlockSelector"]
+layout_mode = 2
+icon = ExtResource("18_r7358")

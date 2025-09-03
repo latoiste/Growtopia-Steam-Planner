@@ -9,6 +9,5 @@ func enter() -> void:
 	super();
 	new_block("Steam Gear", Constants.BLOCK_ID["gear"], output_dir, input_dir);
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	sprite.rotation_degrees += delta * 360;
+	sprite.rotation_degrees += delta * 270;

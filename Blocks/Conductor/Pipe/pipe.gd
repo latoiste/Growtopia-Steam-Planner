@@ -8,13 +8,6 @@ var input_dir: Array[Vector2] = Constants.ALL_DIR;
 var output_dir: Array[Vector2] = Constants.ALL_DIR;
 var texture_index := 0;
 
-enum Direction {
-	UP = 1,
-	DOWN = 2,
-	LEFT = 4,
-	RIGHT = 8,
-}
-
 func enter() -> void:
 	super();
 	new_block("Steam Pipe", Constants.BLOCK_ID["pipe"], output_dir, input_dir);
