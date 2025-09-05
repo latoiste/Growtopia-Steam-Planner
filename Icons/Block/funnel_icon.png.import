@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh04fmwv5emqj"
-path="res://.godot/imported/zoom-out.svg-3a86b22a4e05b52a72e43a81c48b4a8a.ctex"
+uid="uid://b2kao2tq8yb0w"
+path="res://.godot/imported/funnel_icon.png-72f758237702779113834ef00fda1fbb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Icons/zoom-out.svg"
-dest_files=["res://.godot/imported/zoom-out.svg-3a86b22a4e05b52a72e43a81c48b4a8a.ctex"]
+source_file="res://Icons/Block/funnel_icon.png"
+dest_files=["res://.godot/imported/funnel_icon.png-72f758237702779113834ef00fda1fbb.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

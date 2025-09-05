@@ -1,21 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://ohomidc2fo8k"]
+[gd_scene load_steps=5 format=3 uid="uid://ohomidc2fo8k"]
 
 [ext_resource type="Script" uid="uid://b6wrym45edv7n" path="res://UI/Container/Camera/camera_container.gd" id="1_frfxl"]
-[ext_resource type="Texture2D" uid="uid://dh04fmwv5emqj" path="res://Icons/zoom-out.svg" id="2_yniha"]
-[ext_resource type="Texture2D" uid="uid://b8o6k46s2xek6" path="res://Icons/zoom-in.svg" id="3_rp8qw"]
+[ext_resource type="Texture2D" uid="uid://cjaeo3uaw3nh6" path="res://Icons/UI/zoom_out_32dp_E3E3E3_FILL0_wght400_GRAD0_opsz40.svg" id="2_lojoe"]
+[ext_resource type="Texture2D" uid="uid://c70hov2h2l32l" path="res://Icons/UI/zoom_in_32dp_E3E3E3_FILL0_wght400_GRAD0_opsz40.svg" id="3_j3cmi"]
+[ext_resource type="Texture2D" uid="uid://caiow6nblvnks" path="res://Icons/UI/zoom_out_map_32dp_E3E3E3_FILL0_wght400_GRAD0_opsz40.svg" id="4_s2mkq"]
 
 [node name="CameraContainer" type="HBoxContainer"]
 offset_right = 68.0
 offset_bottom = 32.0
-scale = Vector2(1.5, 1.5)
 script = ExtResource("1_frfxl")
 
 [node name="ZoomOut" type="Button" parent="."]
 layout_mode = 2
-icon = ExtResource("2_yniha")
+icon = ExtResource("2_lojoe")
 flat = true
 
 [node name="ZoomIn" type="Button" parent="."]
 layout_mode = 2
-icon = ExtResource("3_rp8qw")
+icon = ExtResource("3_j3cmi")
+flat = true
+
+[node name="ZoomOutMap" type="Button" parent="."]
+layout_mode = 2
+icon = ExtResource("4_s2mkq")
 flat = true

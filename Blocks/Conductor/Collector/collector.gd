@@ -43,7 +43,7 @@ func get_all_valid_dir() -> Array[Vector2]:
 func store_steam(steam: Steam) -> void:
 	var timer: Timer = steam.get_node("Timer");
 	timer.start(20);
-	timer.timeout.connect(remove_steam.bind(steam));
+	timer.timeout.connect(remove_steam.bind(steam), CONNECT_ONE_SHOT);
 
 #also just start the timer again for 10 seconds, and disconnect
 func shoot_steam(output_dirs: Array[Vector2]) -> void:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brswhps4x4i0t"
-path="res://.godot/imported/mouse-pointer.svg-5e3b606493a15e21c929795a958d3ae3.ctex"
+uid="uid://bbokbrlgxm8d8"
+path="res://.godot/imported/valve_icon.png-50ff0a17f3ce2c50d3da4b738931cebc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Icons/mouse-pointer.svg"
-dest_files=["res://.godot/imported/mouse-pointer.svg-5e3b606493a15e21c929795a958d3ae3.ctex"]
+source_file="res://Icons/Block/valve_icon.png"
+dest_files=["res://.godot/imported/valve_icon.png-50ff0a17f3ce2c50d3da4b738931cebc.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
