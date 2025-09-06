@@ -46,7 +46,7 @@ grow_vertical = 0
 text = "Zoom: "
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(761, 403)
+position = Vector2(800, 432)
 limit_left = 0
 limit_top = 0
 limit_right = 1600

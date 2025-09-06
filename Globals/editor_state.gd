@@ -27,3 +27,9 @@ func set_selected_block(selected_block: String) -> void:
 	var scene_path = ScenePaths.BLOCKS.get(selected_block.to_lower());
 	if scene_path:
 		BlockScene = load(scene_path);
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("draw"):
+		Editor.mode = Editor.Mode.DRAW;
+	elif event.is_action_pressed("view"):
+		Editor.mode = Editor.Mode.SELECT;
