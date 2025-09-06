@@ -10,7 +10,7 @@ var BlockScene: PackedScene:
 	set(value):
 		Editor.mode = Editor.Mode.DRAW;
 		BlockScene = value;
-	
+
 func set_state(selected_state: State) -> void:
 	state = selected_state;
 	
