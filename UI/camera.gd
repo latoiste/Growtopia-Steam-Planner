@@ -1,8 +1,8 @@
 extends Camera2D
 
 func pan_camera(event: InputEvent) -> void:
-	if Input.is_action_pressed("left_click") and event is InputEventMouseMotion:
-		position -= event.relative / zoom;
+	position -= event.relative / zoom;
+	fix_camera_position();
 
 func zoom_in() -> void:
 	if zoom == Constants.MAX_ZOOM_IN:

@@ -25,4 +25,5 @@ func handle_draw_mode() -> void:
 		Editor.set_state(Editor.State.IDLE);
 		
 func handle_select_mode(event: InputEvent):
-	camera.pan_camera(event);
+	if Input.is_action_pressed("left_click") and event is InputEventMouseMotion:
+		camera.pan_camera(event);
