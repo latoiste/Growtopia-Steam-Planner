@@ -11,6 +11,13 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("redo"):
 		redo();
 
+func handle_undoredo_action(action: String) -> void:
+	match action:
+		"undo":
+			undo();
+		"redo":
+			redo();
+
 func register_action(block: Block, type: String) -> void:
 	var block_id: int = block.block_id;
 	var pos: Vector2 = block.block_pos; 

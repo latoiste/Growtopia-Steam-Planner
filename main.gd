@@ -1,6 +1,10 @@
 extends Node2D
+@onready var state_text: Label = $"DebugText/State";
+@onready var mode_text: Label = $"DebugText/Mode"
+@onready var zoom_text: Label = $DebugText/Zoom
 
 @onready var camera: Camera2D = get_viewport().get_camera_2d();
+@onready var hud: HUD = $HUD;
 @onready var world: WorldManager = $WorldManager;
 @onready var undoredo: UndoRedoManager = $UndoRedoManager;
 
@@ -9,19 +13,15 @@ extends Node2D
 	"undoredo": undoredo,
 }
 
-@onready var state_text: Label = $"DebugText/State";
-@onready var mode_text: Label = $"DebugText/Mode"
-@onready var zoom_text: Label = $DebugText/Zoom
-
 func _ready() -> void:
 	world.block_placed.connect(undoredo.register_action.bind("place"));
 	world.block_deleted.connect(undoredo.register_action.bind("delete"));
 	
-func _process(_delta: float) -> void:
-	state_text.text = "State: " + str(Editor.state);
-	mode_text.text = "Mode: " + str(Editor.mode);
-	zoom_text.text = "Zoom: " + str(get_viewport().get_camera_2d().zoom)
-
+	hud.block_selected.connect(Editor.set_selected_block);
+	hud.mode_selected.connect(Editor.set_mode);
+	
+	hud.undoredo_pressed.connect(undoredo.handle_undoredo_action);
+	
 func _unhandled_input(event: InputEvent) -> void:
 	match Editor.mode:
 		Editor.Mode.DRAW:
@@ -51,3 +51,8 @@ func handle_select_mode(event: InputEvent) -> void:
 
 func get_manager(manager: String) -> Node:
 	return managers.get(manager);
+
+func _process(_delta: float) -> void:
+	state_text.text = "State: " + str(Editor.state);
+	mode_text.text = "Mode: " + str(Editor.mode);
+	zoom_text.text = "Zoom: " + str(get_viewport().get_camera_2d().zoom)
