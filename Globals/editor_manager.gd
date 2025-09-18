@@ -1,4 +1,5 @@
 extends Node
+class_name EditorManager
 
 enum Mode {SELECT, DRAW};
 enum State {IDLE, PLACE, DELETE, REPLACE};
@@ -8,7 +9,7 @@ var state: State = State.IDLE;
 var selected_block_id: int;
 var BlockScene: PackedScene:
 	set(value):
-		Editor.mode = Editor.Mode.DRAW;
+		mode = Mode.DRAW;
 		BlockScene = value;
 
 func set_state(selected_state: State) -> void:
@@ -20,7 +21,6 @@ func set_mode(selected_mode: String) -> void:
 			mode = Mode.SELECT;
 		"draw":
 			mode = Mode.DRAW;
-	#mode = selected_mode;
 
 func set_selected_block(selected_block: String) -> void:
 	selected_block_id = Constants.BLOCK_ID.get(selected_block);
@@ -30,6 +30,6 @@ func set_selected_block(selected_block: String) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("draw"):
-		Editor.mode = Editor.Mode.DRAW;
+		mode = Mode.DRAW;
 	elif event.is_action_pressed("view"):
-		Editor.mode = Editor.Mode.SELECT;
+		mode = Mode.SELECT;

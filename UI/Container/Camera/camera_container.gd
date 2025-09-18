@@ -9,7 +9,6 @@ func _ready() -> void:
 	for child in get_children():
 		if child is Button:
 			child.pressed.connect(change_camera_zoom.bind(child.name.to_lower()));
-	
 	if camera:
 		on_zoom_out.connect(camera.zoom_out);
 		on_zoom_in.connect(camera.zoom_in);

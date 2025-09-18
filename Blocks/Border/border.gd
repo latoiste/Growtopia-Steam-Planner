@@ -23,7 +23,7 @@ func _ready() -> void:
 	call_deferred("get_connected_borders");
 	call_deferred("update_neighbors");
 	
-func _exit_tree() -> void:
+func cleanup() -> void:
 	update_neighbors();
 	
 func get_connected_borders() -> void:
@@ -52,11 +52,6 @@ func update_neighbors() -> void:
 			var block := parent.get_block_in_dir(direction_vector);
 			var border := block.border;
 			border.get_connected_borders();
-	#for key in Direction.keys():
-		#var direction: int = Direction.get(key);
-		#if connected_directions & direction:
-			
-	
 	
 func change_sprite(texture_index: int) -> void:
 	var texture: Texture2D = ScenePaths.BORDER_TEXTURES.get(texture_index);

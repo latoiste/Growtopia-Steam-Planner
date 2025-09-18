@@ -2,24 +2,30 @@
 
 [ext_resource type="PackedScene" uid="uid://b3fgmanswmq4g" path="res://UI/HUD.tscn" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://bucntcomgbrfi" path="res://main.gd" id="1_sugp2"]
-[ext_resource type="PackedScene" uid="uid://ctybx78ith7u3" path="res://Managers/World/world_manager.tscn" id="2_lquwl"]
-[ext_resource type="PackedScene" uid="uid://20grnm2maqwa" path="res://Managers/Tool/tool_manager.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://cgjdt7xhpk70i" path="res://Managers/World/world_manager.tscn" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://0eaxi1fq4a" path="res://UI/camera.gd" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://kfkjo3682xf8" path="res://Managers/Undoredo/undoredo_manager.tscn" id="6_272bh"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_sugp2")
 metadata/_edit_horizontal_guides_ = [0.0, 864.0]
 metadata/_edit_vertical_guides_ = [0.0, 1600.0]
 
-[node name="WorldManager" parent="." instance=ExtResource("2_lquwl")]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(800, 432)
+limit_left = 0
+limit_top = 0
+limit_right = 1600
+limit_bottom = 864
+script = ExtResource("6_7mycd")
 
-[node name="ToolManager" parent="." node_paths=PackedStringArray("world") instance=ExtResource("4_jyhfs")]
-world = NodePath("../WorldManager")
+[node name="HUD" parent="." instance=ExtResource("1_0wfyh")]
 
-[node name="UI" parent="." instance=ExtResource("1_0wfyh")]
+[node name="WorldManager" parent="." instance=ExtResource("5_7mycd")]
+
+[node name="UndoRedoManager" parent="." instance=ExtResource("6_272bh")]
 
 [node name="DebugText" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="State" type="Label" parent="DebugText"]
 offset_left = 3.0
@@ -44,42 +50,3 @@ offset_right = 53.0
 offset_bottom = -191.045
 grow_vertical = 0
 text = "Zoom: "
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(800, 432)
-limit_left = 0
-limit_top = 0
-limit_right = 1600
-limit_bottom = 864
-script = ExtResource("6_7mycd")
-
-[node name="Label" type="Label" parent="."]
-visible = false
-offset_right = 40.0
-offset_bottom = 23.0
-text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-
-[node name="Label2" type="Label" parent="."]
-visible = false
-offset_top = 864.0
-offset_right = 836.0
-offset_bottom = 887.0
-rotation = -1.5708
-text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-
-[node name="Label3" type="Label" parent="."]
-visible = false
-offset_left = 1600.0
-offset_top = 864.0
-offset_right = 3196.0
-offset_bottom = 887.0
-rotation = 3.14159
-text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-
-[node name="Label4" type="Label" parent="."]
-visible = false
-offset_left = 1600.0
-offset_right = 2436.0
-offset_bottom = 23.0
-rotation = 1.5708
-text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"

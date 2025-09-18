@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3fgmanswmq4g"]
+[gd_scene load_steps=8 format=3 uid="uid://b3fgmanswmq4g"]
 
+[ext_resource type="Script" uid="uid://dluxct28rxm3e" path="res://UI/hud.gd" id="1_2ptjp"]
 [ext_resource type="PackedScene" uid="uid://44hwpxsiqfna" path="res://UI/Container/Block/block_container.tscn" id="2_f2wx0"]
 [ext_resource type="PackedScene" uid="uid://c7vrph7rfyvj2" path="res://UI/Container/Mode/mode_container.tscn" id="4_f2wx0"]
+[ext_resource type="PackedScene" uid="uid://chk1c76aau6lc" path="res://UI/Container/UndoRedo/undo_redo_container.tscn" id="4_gppie"]
+[ext_resource type="PackedScene" uid="uid://2o3mcumpuswf" path="res://UI/Container/Save/save_container.tscn" id="5_gppie"]
 [ext_resource type="PackedScene" uid="uid://ohomidc2fo8k" path="res://UI/Container/Camera/camera_container.tscn" id="19_pgems"]
 [ext_resource type="PackedScene" uid="uid://brhk0ahx4jv5c" path="res://UI/Container/Stats/stats_container.tscn" id="19_rsrlt"]
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_2ptjp")
 
 [node name="BlockContainer" parent="." instance=ExtResource("2_f2wx0")]
 offset_left = -320.0
@@ -29,7 +33,17 @@ offset_right = 152.0
 grow_vertical = 0
 theme_override_constants/separation = 15
 
-[node name="ModeContainer" parent="VBoxContainer" instance=ExtResource("4_f2wx0")]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="ModeContainer" parent="VBoxContainer/HBoxContainer" instance=ExtResource("4_f2wx0")]
+layout_mode = 2
+
+[node name="UndoRedoContainer" parent="VBoxContainer/HBoxContainer" instance=ExtResource("4_gppie")]
+layout_mode = 2
+
+[node name="SaveContainer" parent="VBoxContainer/HBoxContainer" instance=ExtResource("5_gppie")]
 layout_mode = 2
 
 [node name="StatsContainer" parent="VBoxContainer" instance=ExtResource("19_rsrlt")]

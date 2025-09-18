@@ -39,7 +39,6 @@ func start_steam() -> void:
 	kill_steam();
 
 func update_properties() -> void:
-	#print("update_properties called");
 	prev_dir = next_dir;
 	initial_pos += next_dir;
 	current_block = Grid.get_block_at(initial_pos);

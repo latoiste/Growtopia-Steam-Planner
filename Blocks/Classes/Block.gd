@@ -8,6 +8,15 @@ var input_direction: Array[Vector2] = [];
 var output_direction: Array[Vector2] = [];
 var border: Border;
 
+static func get_block_scene_by_id(id: int) -> PackedScene:
+	var _block_name: String = Constants.BLOCK_ID.find_key(id);
+	var BlockScene: PackedScene;
+	
+	if not _block_name:
+		return null;
+	BlockScene = load(ScenePaths.BLOCKS[_block_name]);
+	return BlockScene;
+
 func _ready() -> void:
 	for child in get_children():
 		if child is Border:
@@ -33,14 +42,22 @@ func new_block(_block_name: String, _block_id: int, \
 	self.block_name = _block_name;
 	self.block_id = _block_id;
 	set_direction(output_dir, input_dir);
+
+func delete() -> void:
+	exit();
+	queue_free();
+	if border:
+		border.cleanup();
 	
 func set_direction(output_dir: Array[Vector2] = [], input_dir: Array[Vector2] = []):
 	output_direction = output_dir.duplicate();
 	input_direction = input_dir.duplicate();
 
-func set_block_position(world_pos: Vector2) -> void:
-	position = world_pos;
-	block_pos = Grid.get_grid_pos(world_pos);
+func set_block_position(pos: Vector2, use_world_pos: bool = true) -> void:
+	if not use_world_pos:
+		pos = Grid.get_world_pos(pos);
+	block_pos = Grid.get_grid_pos(pos);
+	position = pos;
 
 func get_block_name() -> String:
 	return block_name;
@@ -62,46 +79,6 @@ func get_surrounding_blocks() -> Array[Block]:
 		blocks.append(block_around);
 	return blocks;
 
-###Returns the block above.
-###Returns null if theres no block
-#func get_block_up() -> Block:
-	#var pos := block_pos + Constants.UP;
-	#return Grid.get_block_at(pos);
-#
-###Returns the block below.
-###Returns null if theres no block
-#func get_block_down() -> Block:
-	#var pos := block_pos + Constants.DOWN;
-	#return Grid.get_block_at(pos);
-#
-###Returns the block to its left.
-###Returns null if theres no block
-#func get_block_left() -> Block:
-	#var pos := block_pos + Constants.LEFT;
-	#return Grid.get_block_at(pos);
-	#
-###Returns the block to its right.
-###Returns null if theres no block
-#func get_block_right() -> Block:
-	#var pos := block_pos + Constants.RIGHT;
-	#return Grid.get_block_at(pos);
-	#
-#func get_block_up_left() -> Block:
-	#var pos := block_pos + Constants.UP + Constants.LEFT;
-	#return Grid.get_block_at(pos);
-	#
-#func get_block_up_right() -> Block:
-	#var pos := block_pos + Constants.UP + Constants.RIGHT;
-	#return Grid.get_block_at(pos);
-	#
-#func get_block_down_left() -> Block:
-	#var pos := block_pos + Constants.DOWN + Constants.LEFT;
-	#return Grid.get_block_at(pos);
-	#
-#func get_block_down_right() -> Block:
-	#var pos := block_pos + Constants.DOWN + Constants.RIGHT;
-	#return Grid.get_block_at(pos);
-	
 #direciton is valid means:
 # - the direction exists (NOT Vector2.ZERO)
 # - the block in that direction exists

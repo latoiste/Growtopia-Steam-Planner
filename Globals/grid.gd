@@ -1,7 +1,14 @@
 extends Node
 
 #grid[block_pos] = block
-var grid: Dictionary = {}
+var grid: Dictionary = {};
+
+func get_grid() -> Dictionary:
+	var grid_copy: Dictionary = grid.duplicate();
+	for key in grid_copy.keys():
+		var block: Block = grid_copy.get(key);
+		grid_copy[key] = block.block_id;
+	return grid_copy;
 
 ##If block argument isn't given, it will be set to null
 func set_grid(grid_pos: Vector2, block: Block = null) -> void:
@@ -9,6 +16,8 @@ func set_grid(grid_pos: Vector2, block: Block = null) -> void:
 		grid[grid_pos] = block;
 	else:
 		grid.erase(grid_pos);
+	#print(grid)
+	#print("\n")
 
 ##Use grid pos
 func get_block_at(grid_pos: Vector2) -> Block:
