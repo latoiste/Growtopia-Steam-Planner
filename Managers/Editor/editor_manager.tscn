@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://0k0122kvdyr"]
+
+[ext_resource type="Script" uid="uid://2iyv85mxhhtt" path="res://Managers/Editor/editor_manager.gd" id="1_gwnvq"]
+
+[node name="EditorManager" type="Node2D"]
+script = ExtResource("1_gwnvq")

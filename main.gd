@@ -7,42 +7,54 @@ extends Node2D
 @onready var hud: HUD = $HUD;
 @onready var world: WorldManager = $WorldManager;
 @onready var undoredo: UndoRedoManager = $UndoRedoManager;
+@onready var editor: Node2D = $EditorManager
 
 @onready var managers := {
 	"world": world,
 	"undoredo": undoredo,
+	"editor": editor,
 }
 
 func _ready() -> void:
 	world.block_placed.connect(undoredo.register_action.bind("place"));
 	world.block_deleted.connect(undoredo.register_action.bind("delete"));
-	
-	hud.block_selected.connect(Editor.set_selected_block);
-	hud.mode_selected.connect(Editor.set_mode);
-	
 	hud.undoredo_pressed.connect(undoredo.handle_undoredo_action);
 	
+	hud.block_selected.connect(world.set_selected_block);
+	
+	hud.mode_selected.connect(editor.set_mode);
+	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("undo"):
+		undoredo.undo();
+	elif event.is_action_pressed("redo"):
+		undoredo.redo();
+	elif event.is_action_pressed("draw"):
+		editor.mode = editor.Mode.DRAW;
+	elif event.is_action_pressed("view"):
+		editor.mode = editor.Mode.SELECT;
+	
 func _unhandled_input(event: InputEvent) -> void:
-	match Editor.mode:
-		Editor.Mode.DRAW:
+	match editor.mode:
+		editor.Mode.DRAW:
 			handle_draw_mode();
-		Editor.Mode.SELECT:
+		editor.Mode.SELECT:
 			handle_select_mode(event);
-				
+	
 func handle_draw_mode() -> void:
 	if Input.is_action_pressed("left_click"):
-		if world.can_place() and Editor.state != Editor.State.DELETE:
-			Editor.set_state(Editor.State.PLACE);
+		if world.can_place() and editor.state != editor.State.DELETE:
+			editor.set_state(editor.State.PLACE);
 			world.place_block();
-		elif world.can_replace() and Editor.state != Editor.State.DELETE:
-			Editor.set_state(Editor.State.REPLACE);
+		elif world.can_replace() and editor.state != editor.State.DELETE:
+			editor.set_state(editor.State.REPLACE);
 			world.replace_block();
 	elif Input.is_action_pressed("right_click"):
-		if world.can_delete() and Editor.state != Editor.State.PLACE and Editor.state != Editor.State.REPLACE:
-			Editor.set_state(Editor.State.DELETE);
+		if world.can_delete() and editor.state != editor.State.PLACE and editor.state != editor.State.REPLACE:
+			editor.set_state(editor.State.DELETE);
 			world.delete_block();
 	elif Input.is_action_just_released("left_click") or Input.is_action_just_released("right_click"):
-		Editor.set_state(Editor.State.IDLE);
+		editor.set_state(editor.State.IDLE);
 		undoredo.update_undo_stack();
 		
 func handle_select_mode(event: InputEvent) -> void:
@@ -53,6 +65,6 @@ func get_manager(manager: String) -> Node:
 	return managers.get(manager);
 
 func _process(_delta: float) -> void:
-	state_text.text = "State: " + str(Editor.state);
-	mode_text.text = "Mode: " + str(Editor.mode);
+	state_text.text = "State: " + str(editor.state);
+	mode_text.text = "Mode: " + str(editor.mode);
 	zoom_text.text = "Zoom: " + str(get_viewport().get_camera_2d().zoom)

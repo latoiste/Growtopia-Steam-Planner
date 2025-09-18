@@ -5,12 +5,6 @@ var undo_stack: Array[Array]; # Array[Array[Action]]
 var redo_stack: Array[Array];
 var queued_actions: Array[Action];
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("undo"):
-		undo();
-	elif event.is_action_pressed("redo"):
-		redo();
-
 func handle_undoredo_action(action: String) -> void:
 	match action:
 		"undo":

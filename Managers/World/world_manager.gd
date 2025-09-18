@@ -1,9 +1,11 @@
 extends Node2D
 class_name WorldManager
 
+var mouse_grid_pos: Vector2;
+var selected_block_id: int;
+var BlockScene: PackedScene;
 var block_instance: Block;
 var block: Block;
-var mouse_grid_pos: Vector2;
 
 signal block_placed(block: Block);
 signal block_deleted(block: Block);
@@ -11,8 +13,12 @@ signal block_deleted(block: Block);
 func _process(_delta: float) -> void:
 	mouse_grid_pos = Grid.get_grid_pos(get_global_mouse_position());
 	block = Grid.get_block_at(mouse_grid_pos)
-	
-func place_block(placed_block: PackedScene = Editor.BlockScene, grid_pos: Vector2 = mouse_grid_pos) -> void:
+
+func set_selected_block(selected_block: String) -> void:
+	selected_block_id = Constants.BLOCK_ID.get(selected_block);
+	BlockScene = Block.get_block_scene_by_id(selected_block_id);
+
+func place_block(placed_block: PackedScene = BlockScene, grid_pos: Vector2 = mouse_grid_pos) -> void:
 	if Grid.get_block_at(mouse_grid_pos): #fix multiple block in the same tile
 		print("meeeeep")
 		return;
@@ -40,12 +46,15 @@ func delete_block(grid_pos: Vector2 = mouse_grid_pos) -> void:
 	block_deleted.emit(deleted_block);
 	print("block deleted emitted");
 	
-func replace_block(placed_block: PackedScene = Editor.BlockScene, grid_pos: Vector2 = mouse_grid_pos) -> void:
+func replace_block(placed_block: PackedScene = BlockScene, grid_pos: Vector2 = mouse_grid_pos) -> void:
 	delete_block(grid_pos);
 	place_block(placed_block, grid_pos);
 
+func clear_world() -> void:
+	pass;
+
 func can_place() -> bool:
-	if not Editor.BlockScene:
+	if not BlockScene:
 		return false;
 
 	if block:
@@ -63,7 +72,7 @@ func can_replace() -> bool:
 	if not block:
 		return false;
 	
-	if Editor.selected_block_id == block.block_id:
+	if selected_block_id == block.block_id:
 		return false;
 	
 	return true

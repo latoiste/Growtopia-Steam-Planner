@@ -12,7 +12,7 @@ config_version=5
 
 config/name="steam growtopia"
 run/main_scene="uid://ckm26s3dyeyxp"
-config/features=PackedStringArray("4.4", "C#", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -20,7 +20,6 @@ config/icon="res://icon.svg"
 Constants="*res://Globals/constants.gd"
 Grid="*res://Globals/grid.gd"
 ScenePaths="*res://Globals/scene_paths.gd"
-Editor="*res://Globals/editor_manager.gd"
 
 [display]
 
