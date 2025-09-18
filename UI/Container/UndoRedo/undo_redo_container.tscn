@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://chk1c76aau6lc"]
+
+[ext_resource type="Script" uid="uid://mcgih52yd1v5" path="res://UI/Container/UndoRedo/undo_redo_container.gd" id="1_lwgui"]
+[ext_resource type="Texture2D" uid="uid://0kwk2c4nw4oq" path="res://Icons/UI/undo_32dp_E3E3E3_FILL0_wght400_GRAD0_opsz40.svg" id="1_v2x4c"]
+[ext_resource type="PackedScene" uid="uid://crrjpxl4pcjbo" path="res://UI/Buttons/button_text_hover.tscn" id="1_vyge3"]
+[ext_resource type="Texture2D" uid="uid://t6j0octmnay1" path="res://Icons/UI/redo_32dp_E3E3E3_FILL0_wght400_GRAD0_opsz40.svg" id="3_uw6lp"]
+
+[node name="UndoRedoContainer" type="HBoxContainer"]
+script = ExtResource("1_lwgui")
+
+[node name="Undo" parent="." instance=ExtResource("1_vyge3")]
+layout_mode = 2
+icon = ExtResource("1_v2x4c")
+hover_text = "Undo (Ctrl + Z)"
+
+[node name="Redo" parent="." instance=ExtResource("1_vyge3")]
+layout_mode = 2
+icon = ExtResource("3_uw6lp")
+hover_text = "Redo (Ctrl + Y)"
