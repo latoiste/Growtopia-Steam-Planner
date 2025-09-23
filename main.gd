@@ -34,16 +34,6 @@ func _ready() -> void:
 	
 	undoredo.stack_changed.connect(hud.undoredo_container.disable_button);
 	
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("undo"):
-		undoredo.undo();
-	elif event.is_action_pressed("redo"):
-		undoredo.redo();
-	elif event.is_action_pressed("draw"):
-		editor.mode = editor.Mode.DRAW;
-	elif event.is_action_pressed("view"):
-		editor.mode = editor.Mode.SELECT;
-	
 func _unhandled_input(event: InputEvent) -> void:
 	match editor.mode:
 		editor.Mode.DRAW:

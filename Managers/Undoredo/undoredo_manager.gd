@@ -7,6 +7,12 @@ var queued_actions: Array[Action];
 
 signal stack_changed(undo_empty: bool, redo_empty: bool);
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("undo"):
+		undo();
+	elif event.is_action_pressed("redo"):
+		redo();
+
 func handle_undoredo_action(action: String) -> void:
 	match action:
 		"undo":
