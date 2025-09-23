@@ -18,7 +18,9 @@ func set_selected_block(selected_block: String) -> void:
 	selected_block_id = Constants.BLOCK_ID.get(selected_block);
 	BlockScene = Block.get_block_scene_by_id(selected_block_id);
 
-func place_block(placed_block: PackedScene = BlockScene, grid_pos: Vector2 = mouse_grid_pos) -> void:
+func place_block(placed_block: PackedScene = BlockScene, \
+		grid_pos: Vector2 = mouse_grid_pos, \
+		register_action: bool = true) -> void:
 	if Grid.get_block_at(mouse_grid_pos): #fix multiple block in the same tile
 		print("meeeeep")
 		return;
@@ -32,10 +34,11 @@ func place_block(placed_block: PackedScene = BlockScene, grid_pos: Vector2 = mou
 	block_instance.set_block_position(world_pos);
 	block_instance.enter();
 	
-	block_placed.emit(block_instance);
-	print("block_placed emitted");
+	if register_action:
+		block_placed.emit(block_instance);
+		print("block_placed emitted");
 
-func delete_block(grid_pos: Vector2 = mouse_grid_pos) -> void:
+func delete_block(grid_pos: Vector2 = mouse_grid_pos, register_action: bool = true) -> void:
 	var deleted_block := Grid.get_block_at(grid_pos);
 	if not deleted_block:
 		return;
@@ -43,8 +46,9 @@ func delete_block(grid_pos: Vector2 = mouse_grid_pos) -> void:
 	Grid.set_grid(grid_pos);
 	deleted_block.delete();
 	
-	block_deleted.emit(deleted_block);
-	print("block deleted emitted");
+	if register_action:
+		block_deleted.emit(deleted_block);
+		print("block deleted emitted");
 	
 func replace_block(placed_block: PackedScene = BlockScene, grid_pos: Vector2 = mouse_grid_pos) -> void:
 	delete_block(grid_pos);

@@ -32,6 +32,8 @@ func _ready() -> void:
 	
 	hud.saveload_pressed.connect(save.handle_saveload_action);
 	
+	undoredo.stack_changed.connect(hud.undoredo_container.disable_button);
+	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("undo"):
 		undoredo.undo();

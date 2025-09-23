@@ -5,6 +5,8 @@ var undo_stack: Array[Array]; # Array[Array[Action]]
 var redo_stack: Array[Array];
 var queued_actions: Array[Action];
 
+signal stack_changed(undo_empty: bool, redo_empty: bool);
+
 func handle_undoredo_action(action: String) -> void:
 	match action:
 		"undo":
@@ -28,6 +30,8 @@ func update_undo_stack() -> void:
 	
 	if not redo_stack.is_empty():
 		redo_stack.clear();
+		
+	stack_changed.emit(undo_stack.is_empty(), redo_stack.is_empty());
 	
 func undo() -> void:
 	if undo_stack.is_empty():
@@ -40,10 +44,11 @@ func undo() -> void:
 	for i in range(action_size):
 		var action: Action = undo_action.pop_back();
 		if action.type == "place":
-			world.delete_block(action.pos);
+			world.delete_block(action.pos, false);
 		elif action.type == "delete":
 			var block_instance: PackedScene = Block.get_block_scene_by_id(action.block_id);
-			world.place_block(block_instance, action.pos);
+			world.place_block(block_instance, action.pos, false);
+	stack_changed.emit(undo_stack.is_empty(), redo_stack.is_empty());
 	
 func redo() -> void:
 	if not redo_stack:
@@ -57,9 +62,10 @@ func redo() -> void:
 		var action: Action = redo_action.pop_back();
 		if action.type == "place":
 			var block_instance: PackedScene = Block.get_block_scene_by_id(action.block_id);
-			world.place_block(block_instance, action.pos);
+			world.place_block(block_instance, action.pos, false);
 		elif action.type == "delete":
-			world.delete_block(action.pos);
+			world.delete_block(action.pos, false);
+	stack_changed.emit(undo_stack.is_empty(), redo_stack.is_empty());
 	
 class Action:
 	var type: String;

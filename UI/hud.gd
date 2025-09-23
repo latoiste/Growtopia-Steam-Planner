@@ -16,7 +16,7 @@ func _ready() -> void:
 	connect_buttons(mode_container, mode_selected);
 	connect_buttons(undoredo_container, undoredo_pressed);
 	connect_buttons(save_container, saveload_pressed);
-
+	
 func connect_buttons(container: Container, _signal: Signal) -> void:
 	for child in container.get_children():
 		if not child is Button:
