@@ -23,7 +23,7 @@ icon = ExtResource("3_j3cmi")
 flat = true
 hover_text = "Zoom In (+)"
 
-[node name="ZoomOutMap" parent="." instance=ExtResource("2_j3cmi")]
+[node name="Reset" parent="." instance=ExtResource("2_j3cmi")]
 layout_mode = 2
 icon = ExtResource("4_s2mkq")
 flat = true
