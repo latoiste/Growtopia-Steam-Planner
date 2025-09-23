@@ -51,7 +51,9 @@ func replace_block(placed_block: PackedScene = BlockScene, grid_pos: Vector2 = m
 	place_block(placed_block, grid_pos);
 
 func clear_world() -> void:
-	pass;
+	var grid := Grid.get_grid();
+	for grid_pos in grid.keys():
+		delete_block(grid_pos);
 
 func can_place() -> bool:
 	if not BlockScene:

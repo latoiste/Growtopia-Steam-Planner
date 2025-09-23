@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://2o3mcumpuswf"]
+
+[ext_resource type="PackedScene" uid="uid://crrjpxl4pcjbo" path="res://UI/Buttons/button_text_hover.tscn" id="2_ry8ek"]
+[ext_resource type="Texture2D" uid="uid://djn6htdc0sv7n" path="res://Icons/UI/file_save_32dp_E3E3E3_FILL0_wght400_GRAD0_opsz40.svg" id="3_wqloa"]
+[ext_resource type="Texture2D" uid="uid://b7s570kuvej5h" path="res://Icons/UI/file_open_32dp_E3E3E3_FILL0_wght400_GRAD0_opsz40.svg" id="4_w5lob"]
+
+[node name="SaveContainer" type="HBoxContainer"]
+
+[node name="Save" parent="." instance=ExtResource("2_ry8ek")]
+layout_mode = 2
+icon = ExtResource("3_wqloa")
+hover_text = "Save"
+
+[node name="Load" parent="." instance=ExtResource("2_ry8ek")]
+layout_mode = 2
+icon = ExtResource("4_w5lob")
+hover_text = "Load"

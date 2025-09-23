@@ -7,12 +7,14 @@ extends Node2D
 @onready var hud: HUD = $HUD;
 @onready var world: WorldManager = $WorldManager;
 @onready var undoredo: UndoRedoManager = $UndoRedoManager;
-@onready var editor: Node2D = $EditorManager
+@onready var editor: EditorManager = $EditorManager
+@onready var save: SaveManager = $SaveManager
 
 @onready var managers := {
 	"world": world,
 	"undoredo": undoredo,
 	"editor": editor,
+	"save": save,
 }
 
 func _ready() -> void:
@@ -21,8 +23,14 @@ func _ready() -> void:
 	hud.undoredo_pressed.connect(undoredo.handle_undoredo_action);
 	
 	hud.block_selected.connect(world.set_selected_block);
+	save.world_loaded.connect(world.clear_world);
 	
 	hud.mode_selected.connect(editor.set_mode);
+	hud.block_selected.connect(func(_selected_block: String):
+		editor.set_mode("draw");
+	);
+	
+	hud.saveload_pressed.connect(save.handle_saveload_action);
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("undo"):
