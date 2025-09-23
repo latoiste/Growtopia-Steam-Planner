@@ -1,10 +1,10 @@
 extends CanvasLayer
 class_name HUD
 
-@onready var block_container: GridContainer = $PanelContainer/MarginContainer/BlockContainer
-@onready var mode_container: HBoxContainer = $VBoxContainer/HBoxContainer/ModeContainer
-@onready var undoredo_container: HBoxContainer = $VBoxContainer/HBoxContainer/UndoRedoContainer
-@onready var save_container: HBoxContainer = $VBoxContainer/HBoxContainer/SaveContainer
+@onready var block_container: GridContainer = $MarginContainer/PanelContainer/CenterContainer/BlockContainer
+@onready var mode_container: HBoxContainer = $MarginContainer/VBoxContainer/HBoxContainer/ModeContainer
+@onready var undoredo_container: HBoxContainer = $MarginContainer/VBoxContainer/HBoxContainer/UndoRedoContainer
+@onready var save_container: HBoxContainer = $MarginContainer/VBoxContainer/HBoxContainer/SaveContainer
 
 signal block_selected(block_name: String);
 signal mode_selected(mode: String);
