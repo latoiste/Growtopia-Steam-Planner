@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7vrph7rfyvj2"]
+[gd_scene load_steps=5 format=3 uid="uid://c7vrph7rfyvj2"]
 
-[ext_resource type="Texture2D" uid="uid://bbc0n0mc28vkf" path="res://Icons/UI/visibility_32dp_E3E3E3_FILL0_wght400_GRAD0_opsz40.svg" id="2_1yauu"]
+[ext_resource type="Script" uid="uid://d1ucghjvlqmjl" path="res://UI/Container/Mode/mode_container.gd" id="1_1yauu"]
 [ext_resource type="Texture2D" uid="uid://bflnmsua32mqn" path="res://Icons/UI/edit_32dp_E3E3E3_FILL0_wght400_GRAD0_opsz40.svg" id="3_1wnwp"]
 [ext_resource type="PackedScene" uid="uid://crrjpxl4pcjbo" path="res://UI/Buttons/button_text_hover.tscn" id="4_1wnwp"]
+[ext_resource type="Texture2D" uid="uid://bbc0n0mc28vkf" path="res://Icons/UI/visibility_32dp_E3E3E3_FILL0_wght400_GRAD0_opsz40.svg" id="4_sphor"]
 
 [node name="ModeContainer" type="HBoxContainer"]
 anchors_preset = -1
@@ -12,11 +13,11 @@ offset_top = -39.888
 offset_right = 60.0
 offset_bottom = 0.112
 grow_vertical = 0
-theme_override_constants/separation = 15
+script = ExtResource("1_1yauu")
 
 [node name="Select" parent="." instance=ExtResource("4_1wnwp")]
 layout_mode = 2
-icon = ExtResource("2_1yauu")
+icon = ExtResource("4_sphor")
 hover_text = "View Tool (V)"
 
 [node name="Draw" parent="." instance=ExtResource("4_1wnwp")]

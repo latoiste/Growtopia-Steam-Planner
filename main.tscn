@@ -21,8 +21,6 @@ limit_right = 1600
 limit_bottom = 864
 script = ExtResource("6_7mycd")
 
-[node name="HUD" parent="." instance=ExtResource("1_0wfyh")]
-
 [node name="WorldManager" parent="." instance=ExtResource("5_7mycd")]
 
 [node name="EditorManager" parent="." instance=ExtResource("5_272bh")]
@@ -31,28 +29,4 @@ script = ExtResource("6_7mycd")
 
 [node name="UndoRedoManager" parent="." instance=ExtResource("6_272bh")]
 
-[node name="DebugText" type="CanvasLayer" parent="."]
-
-[node name="State" type="Label" parent="DebugText"]
-offset_left = 3.0
-offset_top = 688.0
-offset_right = 52.0
-offset_bottom = 711.0
-text = "State: "
-
-[node name="Mode" type="Label" parent="DebugText"]
-offset_left = 4.0
-offset_top = 737.0
-offset_right = 57.0
-offset_bottom = 760.0
-text = "Mode: "
-
-[node name="Zoom" type="Label" parent="DebugText"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -214.045
-offset_right = 53.0
-offset_bottom = -191.045
-grow_vertical = 0
-text = "Zoom: "
+[node name="HUD" parent="." instance=ExtResource("1_0wfyh")]

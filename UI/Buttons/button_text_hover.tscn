@@ -1,13 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://crrjpxl4pcjbo"]
 
 [ext_resource type="Script" uid="uid://dsay7uylwuo5e" path="res://UI/Buttons/button_text_hover.gd" id="1_6sj31"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_el5kh"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.65098)
+[ext_resource type="Theme" uid="uid://cequleblijgxg" path="res://UI/Buttons/Theme/button_text_hover.tres" id="1_el5kh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6sj31"]
 content_margin_left = 5.0
@@ -30,7 +24,8 @@ Label/styles/normal = SubResource("StyleBoxFlat_6sj31")
 [sub_resource type="LabelSettings" id="LabelSettings_el5kh"]
 
 [node name="ButtonTextHover" type="Button"]
-theme_override_styles/disabled = SubResource("StyleBoxFlat_el5kh")
+theme = ExtResource("1_el5kh")
+toggle_mode = true
 script = ExtResource("1_6sj31")
 
 [node name="Timer" type="Timer" parent="."]

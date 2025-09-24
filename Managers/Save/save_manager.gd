@@ -2,7 +2,6 @@ extends Node
 class_name SaveManager
 
 const SAVE_FILE := "steam_sim.json";
-const TEST_SAVE := "D:/GodotProjects/steam-growtopia/save_test.json";
 
 var _js_callback := JavaScriptBridge.create_callback(on_js_recieve);
 
@@ -64,5 +63,5 @@ func load_blocks(block_id: int, positions: Array) -> void:
 	for pos in positions:
 		var BlockScene := Block.get_block_scene_by_id(block_id);
 		var grid_pos := Vector2(pos["pos_x"], pos["pos_y"]);
-		world.place_block(BlockScene, grid_pos);
+		world.place_block(BlockScene, grid_pos, false);
 		

@@ -1,4 +1,5 @@
 extends HBoxContainer
+class_name CameraContainer
 
 @onready var camera: Camera2D = get_viewport().get_camera_2d();
 

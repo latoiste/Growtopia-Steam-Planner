@@ -1,8 +1,8 @@
 [gd_scene load_steps=27 format=3 uid="uid://u7x6mra6uojr"]
 
-[ext_resource type="Theme" uid="uid://cplnul4wahltn" path="res://UI/Buttons/block_button.tres" id="1_ansid"]
+[ext_resource type="Theme" uid="uid://dwwtneslupmmp" path="res://UI/Buttons/Theme/block_button.tres" id="1_ttnt4"]
 [ext_resource type="Texture2D" uid="uid://b800pfkm02qsa" path="res://block sprites/Source/stomper.png" id="2_8c6tx"]
-[ext_resource type="ButtonGroup" uid="uid://cs36aa25l6sec" path="res://UI/Buttons/block_button_group.tres" id="2_ix6uh"]
+[ext_resource type="ButtonGroup" path="res://UI/Buttons/Group/block_button_group.tres" id="2_m4a3d"]
 [ext_resource type="Texture2D" uid="uid://bfcib4b6ppvr4" path="res://Icons/Block/revolver_icon.png" id="3_ix6uh"]
 [ext_resource type="Texture2D" uid="uid://rwy5l46apdd6" path="res://Icons/Block/tubes_icon.png" id="4_ea67k"]
 [ext_resource type="Texture2D" uid="uid://dup3s4feusntq" path="res://block sprites/Conductor/pipes/pipe_base.png" id="5_bfar1"]
@@ -34,25 +34,25 @@ columns = 6
 
 [node name="Stomper" type="Button" parent="."]
 layout_mode = 2
-theme = ExtResource("1_ansid")
+theme = ExtResource("1_ttnt4")
 toggle_mode = true
-button_group = ExtResource("2_ix6uh")
+button_group = ExtResource("2_m4a3d")
 icon = ExtResource("2_8c6tx")
 icon_alignment = 1
 
 [node name="Revolver" type="Button" parent="."]
 layout_mode = 2
-theme = ExtResource("1_ansid")
+theme = ExtResource("1_ttnt4")
 toggle_mode = true
-button_group = ExtResource("2_ix6uh")
+button_group = ExtResource("2_m4a3d")
 icon = ExtResource("3_ix6uh")
 icon_alignment = 1
 
 [node name="Tubes" type="Button" parent="."]
 layout_mode = 2
-theme = ExtResource("1_ansid")
+theme = ExtResource("1_ttnt4")
 toggle_mode = true
-button_group = ExtResource("2_ix6uh")
+button_group = ExtResource("2_m4a3d")
 text = "
 "
 icon = ExtResource("4_ea67k")
@@ -60,9 +60,9 @@ icon_alignment = 1
 
 [node name="Pipe" type="Button" parent="."]
 layout_mode = 2
-theme = ExtResource("1_ansid")
+theme = ExtResource("1_ttnt4")
 toggle_mode = true
-button_group = ExtResource("2_ix6uh")
+button_group = ExtResource("2_m4a3d")
 text = "
 "
 icon = ExtResource("5_bfar1")
@@ -70,160 +70,160 @@ icon_alignment = 1
 
 [node name="Collector" type="Button" parent="."]
 layout_mode = 2
-theme = ExtResource("1_ansid")
+theme = ExtResource("1_ttnt4")
 toggle_mode = true
-button_group = ExtResource("2_ix6uh")
+button_group = ExtResource("2_m4a3d")
 icon = ExtResource("6_ybl8i")
 icon_alignment = 1
 
 [node name="Crossover" type="Button" parent="."]
 layout_mode = 2
-theme = ExtResource("1_ansid")
+theme = ExtResource("1_ttnt4")
 toggle_mode = true
-button_group = ExtResource("2_ix6uh")
+button_group = ExtResource("2_m4a3d")
 icon = ExtResource("7_g8dq1")
 icon_alignment = 1
 
 [node name="Funnel" type="Button" parent="."]
 layout_mode = 2
-theme = ExtResource("1_ansid")
+theme = ExtResource("1_ttnt4")
 toggle_mode = true
-button_group = ExtResource("2_ix6uh")
+button_group = ExtResource("2_m4a3d")
 icon = ExtResource("8_wve5d")
 icon_alignment = 1
 
 [node name="FunnelUp" type="Button" parent="."]
 layout_mode = 2
-theme = ExtResource("1_ansid")
+theme = ExtResource("1_ttnt4")
 toggle_mode = true
-button_group = ExtResource("2_ix6uh")
+button_group = ExtResource("2_m4a3d")
 icon = ExtResource("9_6cl7v")
 icon_alignment = 1
 
 [node name="FunnelDown" type="Button" parent="."]
 layout_mode = 2
-theme = ExtResource("1_ansid")
+theme = ExtResource("1_ttnt4")
 toggle_mode = true
-button_group = ExtResource("2_ix6uh")
+button_group = ExtResource("2_m4a3d")
 icon = ExtResource("10_648m5")
 icon_alignment = 1
 
 [node name="Crank" type="Button" parent="."]
 layout_mode = 2
-theme = ExtResource("1_ansid")
+theme = ExtResource("1_ttnt4")
 toggle_mode = true
-button_group = ExtResource("2_ix6uh")
+button_group = ExtResource("2_m4a3d")
 icon = ExtResource("11_bn7fb")
 icon_alignment = 1
 
 [node name="Valve" type="Button" parent="."]
 layout_mode = 2
-theme = ExtResource("1_ansid")
+theme = ExtResource("1_ttnt4")
 toggle_mode = true
-button_group = ExtResource("2_ix6uh")
+button_group = ExtResource("2_m4a3d")
 icon = ExtResource("12_b3p6h")
 icon_alignment = 1
 
 [node name="Organ" type="Button" parent="."]
 layout_mode = 2
-theme = ExtResource("1_ansid")
+theme = ExtResource("1_ttnt4")
 toggle_mode = true
-button_group = ExtResource("2_ix6uh")
+button_group = ExtResource("2_m4a3d")
 icon = ExtResource("13_dhdly")
 icon_alignment = 1
 
 [node name="Scrambler" type="Button" parent="."]
 layout_mode = 2
-theme = ExtResource("1_ansid")
+theme = ExtResource("1_ttnt4")
 toggle_mode = true
-button_group = ExtResource("2_ix6uh")
+button_group = ExtResource("2_m4a3d")
 icon = ExtResource("14_5n2mo")
 icon_alignment = 1
 
 [node name="Door" type="Button" parent="."]
 layout_mode = 2
-theme = ExtResource("1_ansid")
+theme = ExtResource("1_ttnt4")
 toggle_mode = true
-button_group = ExtResource("2_ix6uh")
+button_group = ExtResource("2_m4a3d")
 icon = ExtResource("15_47c1m")
 icon_alignment = 1
 
 [node name="Vent" type="Button" parent="."]
 layout_mode = 2
-theme = ExtResource("1_ansid")
+theme = ExtResource("1_ttnt4")
 toggle_mode = true
-button_group = ExtResource("2_ix6uh")
+button_group = ExtResource("2_m4a3d")
 icon = ExtResource("16_vqmws")
 icon_alignment = 1
 
 [node name="Launcher" type="Button" parent="."]
 layout_mode = 2
-theme = ExtResource("1_ansid")
+theme = ExtResource("1_ttnt4")
 toggle_mode = true
-button_group = ExtResource("2_ix6uh")
+button_group = ExtResource("2_m4a3d")
 icon = ExtResource("17_vjf2d")
 icon_alignment = 1
 
 [node name="Engine" type="Button" parent="."]
 layout_mode = 2
-theme = ExtResource("1_ansid")
+theme = ExtResource("1_ttnt4")
 toggle_mode = true
-button_group = ExtResource("2_ix6uh")
+button_group = ExtResource("2_m4a3d")
 icon = ExtResource("18_xvur1")
 icon_alignment = 1
 
 [node name="Bellows" type="Button" parent="."]
 layout_mode = 2
-theme = ExtResource("1_ansid")
+theme = ExtResource("1_ttnt4")
 toggle_mode = true
-button_group = ExtResource("2_ix6uh")
+button_group = ExtResource("2_m4a3d")
 icon = ExtResource("19_tqnlj")
 icon_alignment = 1
 
 [node name="BellowsRiser" type="Button" parent="."]
 layout_mode = 2
-theme = ExtResource("1_ansid")
+theme = ExtResource("1_ttnt4")
 toggle_mode = true
-button_group = ExtResource("2_ix6uh")
+button_group = ExtResource("2_m4a3d")
 icon = ExtResource("20_k4130")
 icon_alignment = 1
 
 [node name="Piston" type="Button" parent="."]
 layout_mode = 2
-theme = ExtResource("1_ansid")
+theme = ExtResource("1_ttnt4")
 toggle_mode = true
-button_group = ExtResource("2_ix6uh")
+button_group = ExtResource("2_m4a3d")
 icon = ExtResource("21_orqxc")
 icon_alignment = 1
 
 [node name="PistonLifter" type="Button" parent="."]
 layout_mode = 2
-theme = ExtResource("1_ansid")
+theme = ExtResource("1_ttnt4")
 toggle_mode = true
-button_group = ExtResource("2_ix6uh")
+button_group = ExtResource("2_m4a3d")
 icon = ExtResource("22_805b5")
 icon_alignment = 1
 
 [node name="Spike" type="Button" parent="."]
 layout_mode = 2
-theme = ExtResource("1_ansid")
+theme = ExtResource("1_ttnt4")
 toggle_mode = true
-button_group = ExtResource("2_ix6uh")
+button_group = ExtResource("2_m4a3d")
 icon = ExtResource("23_kvts5")
 icon_alignment = 1
 
 [node name="Lamp" type="Button" parent="."]
 layout_mode = 2
-theme = ExtResource("1_ansid")
+theme = ExtResource("1_ttnt4")
 toggle_mode = true
-button_group = ExtResource("2_ix6uh")
+button_group = ExtResource("2_m4a3d")
 icon = ExtResource("24_05hu7")
 icon_alignment = 1
 
 [node name="Gear" type="Button" parent="."]
 layout_mode = 2
-theme = ExtResource("1_ansid")
+theme = ExtResource("1_ttnt4")
 toggle_mode = true
-button_group = ExtResource("2_ix6uh")
+button_group = ExtResource("2_m4a3d")
 icon = ExtResource("25_my7te")
 icon_alignment = 1

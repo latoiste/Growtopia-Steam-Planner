@@ -1,7 +1,4 @@
 extends Node2D
-@onready var state_text: Label = $"DebugText/State";
-@onready var mode_text: Label = $"DebugText/Mode"
-@onready var zoom_text: Label = $DebugText/Zoom
 
 @onready var camera: Camera2D = get_viewport().get_camera_2d();
 @onready var hud: HUD = $HUD;
@@ -32,7 +29,8 @@ func _ready() -> void:
 	
 	hud.saveload_pressed.connect(save.handle_saveload_action);
 	
-	undoredo.stack_changed.connect(hud.undoredo_container.disable_button);
+	undoredo.stack_changed.connect(hud.undoredo_container.on_stack_changed);
+	editor.mode_changed.connect(hud.mode_container.on_mode_selected);
 	
 func _unhandled_input(event: InputEvent) -> void:
 	match editor.mode:
@@ -63,8 +61,3 @@ func handle_select_mode(event: InputEvent) -> void:
 
 func get_manager(manager: String) -> Node:
 	return managers.get(manager);
-
-func _process(_delta: float) -> void:
-	state_text.text = "State: " + str(editor.state);
-	mode_text.text = "Mode: " + str(editor.mode);
-	zoom_text.text = "Zoom: " + str(get_viewport().get_camera_2d().zoom)

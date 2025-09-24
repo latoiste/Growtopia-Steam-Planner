@@ -42,6 +42,9 @@ func update_undo_stack() -> void:
 func undo() -> void:
 	if undo_stack.is_empty():
 		return;
+	if not queued_actions.is_empty():
+		return;
+	
 	var undo_action: Array[Action] = undo_stack.pop_back();
 	var world: WorldManager = get_parent().get_manager("world");
 	var action_size := undo_action.size();

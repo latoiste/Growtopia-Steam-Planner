@@ -1,11 +1,16 @@
 extends Node
 class_name EditorManager
 
-enum Mode {SELECT, DRAW};
 enum State {IDLE, PLACE, DELETE, REPLACE};
+enum Mode {SELECT, DRAW};
 
-var mode: Mode = Mode.DRAW;
 var state: State = State.IDLE;
+var mode: Mode = Mode.DRAW:
+	set(value):
+		mode = value
+		mode_changed.emit(value);
+
+signal mode_changed(mode: Mode);
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("draw"):

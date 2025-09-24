@@ -27,4 +27,4 @@ hover_text = "Zoom In (+)"
 layout_mode = 2
 icon = ExtResource("4_s2mkq")
 flat = true
-hover_text = "Reset Camera (???)"
+hover_text = "Reset Camera (R)"
