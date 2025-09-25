@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7e8rb3hjjxep"]
+[gd_scene load_steps=3 format=3 uid="uid://b7e8rb3hjjxep"]
 
 [ext_resource type="Script" uid="uid://bdnmh36vuusd5" path="res://UI/Buttons/interact_button.gd" id="1_gs018"]
+[ext_resource type="Texture2D" uid="uid://bgtoa5nfqy7al" path="res://Icons/UI/build_32dp_E3E3E3_FILL0_wght400_GRAD0_opsz40.svg" id="1_onytw"]
 
 [node name="InteractButton" type="Button"]
 offset_right = 8.0
 offset_bottom = 8.0
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.167, 0.167)
+icon = ExtResource("1_onytw")
 script = ExtResource("1_gs018")

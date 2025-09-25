@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://belto0oeuobbh"]
+[gd_scene load_steps=3 format=3 uid="uid://belto0oeuobbh"]
 
+[ext_resource type="Texture2D" uid="uid://bfwwjcmshk83v" path="res://Icons/UI/play_arrow_32dp_E3E3E3_FILL0_wght400_GRAD0_opsz40.svg" id="1_ppenn"]
 [ext_resource type="Script" uid="uid://dr8cs4hnhyyk0" path="res://UI/Buttons/source_button.gd" id="1_xdofk"]
 
 [node name="SourceButton" type="Button"]
 offset_right = 8.0
 offset_bottom = 8.0
+scale = Vector2(0.167, 0.167)
+icon = ExtResource("1_ppenn")
 script = ExtResource("1_xdofk")
 
 [node name="Timer" type="Timer" parent="."]

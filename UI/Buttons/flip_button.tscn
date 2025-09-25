@@ -1,14 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://ba1f376niumya"]
+[gd_scene load_steps=3 format=3 uid="uid://ba1f376niumya"]
 
 [ext_resource type="Script" uid="uid://by65egbkv2ypf" path="res://UI/Buttons/flip_button.gd" id="1_rmfg5"]
+[ext_resource type="Texture2D" uid="uid://bvf285dwh1lyp" path="res://Icons/UI/swap_horiz_32dp_E3E3E3_FILL0_wght400_GRAD0_opsz40.svg" id="1_xeftw"]
 
 [node name="FlipButton" type="Button"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 10.0001
-offset_right = 18.0001
-offset_bottom = 8.0
+offset_left = 8.0
+offset_right = 56.0
+offset_bottom = 48.0
 grow_horizontal = 0
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.167, 0.167)
+icon = ExtResource("1_xeftw")
 script = ExtResource("1_rmfg5")
