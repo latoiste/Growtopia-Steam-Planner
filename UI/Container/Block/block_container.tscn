@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://dwwtneslupmmp" path="res://UI/Buttons/Theme/block_button.tres" id="1_ttnt4"]
 [ext_resource type="Texture2D" uid="uid://b800pfkm02qsa" path="res://block sprites/Source/stomper.png" id="2_8c6tx"]
-[ext_resource type="ButtonGroup" path="res://UI/Buttons/Group/block_button_group.tres" id="2_m4a3d"]
+[ext_resource type="ButtonGroup" uid="uid://cs36aa25l6sec" path="res://UI/Buttons/Group/block_button_group.tres" id="2_m4a3d"]
 [ext_resource type="Texture2D" uid="uid://bfcib4b6ppvr4" path="res://Icons/Block/revolver_icon.png" id="3_ix6uh"]
 [ext_resource type="Texture2D" uid="uid://rwy5l46apdd6" path="res://Icons/Block/tubes_icon.png" id="4_ea67k"]
 [ext_resource type="Texture2D" uid="uid://dup3s4feusntq" path="res://block sprites/Conductor/pipes/pipe_base.png" id="5_bfar1"]

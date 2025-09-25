@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://b7e8rb3hjjxep"]
+[gd_scene load_steps=2 format=3 uid="uid://b7e8rb3hjjxep"]
+
+[ext_resource type="Script" uid="uid://bdnmh36vuusd5" path="res://UI/Buttons/interact_button.gd" id="1_gs018"]
 
 [node name="InteractButton" type="Button"]
 offset_right = 8.0
 offset_bottom = 8.0
 scale = Vector2(0.75, 0.75)
+script = ExtResource("1_gs018")

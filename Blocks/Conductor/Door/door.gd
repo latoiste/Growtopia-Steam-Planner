@@ -1,7 +1,6 @@
 extends Conductor
 
 @onready var sprite: Sprite2D = $Sprite2D;
-@onready var interact_button: Button = $InteractButton;
 
 const DOOR_TEXTURES = [
 	preload("res://block sprites/Conductor/door_closed.png"),
@@ -11,12 +10,12 @@ const DOOR_TEXTURES = [
 var is_open: bool = false;
 var input_dir: Array[Vector2] = Constants.ALL_DIR;
 
-func _ready() -> void:
-	interact_button.pressed.connect(enter_steam.bind(null));
-
 func enter():
 	super();
 	new_block("Steam Door", Constants.BLOCK_ID["door"], [], input_dir);
+
+func interact():
+	enter_steam(null);
 
 func enter_steam(_sender: Steam):
 	is_open = not is_open;
