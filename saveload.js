@@ -1,7 +1,6 @@
 function downloadFile(json, filename) {
     console.log("FUCKK")
-    let jsonString = JSON.stringify(json);
-    const blob = new Blob([jsonString], { type: "application/json"});
+    const blob = new Blob([json], { type: "application/json"});
     const objectURL = URL.createObjectURL(blob);
     
     const a = document.createElement("a");
@@ -16,30 +15,35 @@ function downloadFile(json, filename) {
 
 async function uploadFile() {
     const input = document.createElement("input");
-    let data;
+    let data = null;
     input.type = "file";
     
-    await new Promise(resolve => {
+    await new Promise((resolve, reject) => {
         input.addEventListener("change", (event) => {
             const file = event.target.files[0];
             if (!file) {
-                console.log("NO FILEEEEEEEEE");
+                reject("NO FILEEEEEEEEE")
             }
             else if (file.type !== "application/json") {
-                console.log("WEEE WOOOO WEEE WOOOO");
+                reject("WEEE WOOOO WEEE WOOOO");
             }
             else {
                 const content = new FileReader();
                 content.readAsText(file);
                 content.addEventListener("load", (event) => {
-                    const result = event.target.result;
-                    data = JSON.parse(result);
+                    data = event.target.result;
+                    console.log(typeof data);
                     resolve();
                 });
             }
             input.remove();
         });
         input.click();
+    }).then(() => {
+        console.log("Suces");
+        window.sendToGodot(data);
+    }).catch((message) => {
+        console.log(message);
+        window.sendToGodot('{}');
     });
-    window.sendToGodot(data);
 }

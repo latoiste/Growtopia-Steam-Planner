@@ -9,11 +9,12 @@ var output_direction: Array[Vector2] = [];
 var border: Border;
 
 static func get_block_scene_by_id(id: int) -> PackedScene:
-	var _block_name: String = Constants.BLOCK_ID.find_key(id);
+	var _block_name = Constants.BLOCK_ID.find_key(id);
 	var BlockScene: PackedScene;
 	
 	if not _block_name:
 		return null;
+		
 	BlockScene = load(ScenePaths.BLOCKS[_block_name]);
 	return BlockScene;
 
