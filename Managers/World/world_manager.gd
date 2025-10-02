@@ -20,8 +20,8 @@ func set_selected_block(selected_block: String) -> void:
 	
 
 func place_block(placed_block: PackedScene = BlockScene, grid_pos: Vector2 = mouse_grid_pos, register_action: bool = true) -> void:
-	if Grid.get_block_at(mouse_grid_pos): #fix multiple block in the same tile
-		print("meeeeep")
+	if Grid.get_block_at(grid_pos): #fix multiple block in the same tile
+		prints("meeeeep", grid_pos, Grid.get_block_at(grid_pos));
 		return;
 	
 	var world_pos := Grid.get_world_pos(grid_pos);

@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://ce1clsrsmxwrm" path="res://Managers/Save/save_manager.tscn" id="6_5vw27"]
 [ext_resource type="Script" uid="uid://0eaxi1fq4a" path="res://UI/camera.gd" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://kfkjo3682xf8" path="res://Managers/Undoredo/undoredo_manager.tscn" id="6_272bh"]
-[ext_resource type="Texture2D" uid="uid://culurdslxgs76" path="res://hills1.png" id="8_efxa6"]
-[ext_resource type="Texture2D" uid="uid://bn1jf1tgkytd5" path="res://hills2.png" id="9_dg77c"]
-[ext_resource type="Texture2D" uid="uid://bbd5ifle6armd" path="res://hills3.png" id="10_ycdy4"]
-[ext_resource type="Texture2D" uid="uid://gxharbybtjc5" path="res://sun.png" id="11_w48qg"]
+[ext_resource type="Texture2D" uid="uid://culurdslxgs76" path="res://block sprites/Background/hills1.png" id="8_efxa6"]
+[ext_resource type="Texture2D" uid="uid://bn1jf1tgkytd5" path="res://block sprites/Background/hills2.png" id="9_dg77c"]
+[ext_resource type="Texture2D" uid="uid://bbd5ifle6armd" path="res://block sprites/Background/hills3.png" id="10_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://gxharbybtjc5" path="res://block sprites/Background/sun.png" id="11_w48qg"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_sugp2")

@@ -9,9 +9,6 @@ func _ready() -> void:
 	redo_button.disabled = true;
 
 func on_stack_changed(undo_empty: bool, redo_empty: bool) -> void:
-	if undo_empty:
-		undo_button.disabled = true;
-		redo_button.disabled = false;
-	elif redo_empty:
-		redo_button.disabled = true;
-		undo_button.disabled = false;
+	undo_button.disabled = undo_empty;
+	redo_button.disabled = redo_empty;
+		

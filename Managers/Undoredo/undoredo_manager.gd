@@ -52,10 +52,10 @@ func undo() -> void:
 	
 	for i in range(action_size):
 		var action: Action = undo_action.pop_back();
+		var block_instance: PackedScene = Block.get_block_scene_by_id(action.block_id);
 		if action.type == "place":
 			world.delete_block(action.pos, false);
 		elif action.type == "delete":
-			var block_instance: PackedScene = Block.get_block_scene_by_id(action.block_id);
 			world.place_block(block_instance, action.pos, false);
 	stack_changed.emit(undo_stack.is_empty(), redo_stack.is_empty());
 	
@@ -68,9 +68,10 @@ func redo() -> void:
 	undo_stack.push_back(redo_action.duplicate());
 	
 	for i in range(action_size):
-		var action: Action = redo_action.pop_back();
+		var action: Action = redo_action.pop_front();
+		var block_instance: PackedScene = Block.get_block_scene_by_id(action.block_id);
+		print(block_instance);
 		if action.type == "place":
-			var block_instance: PackedScene = Block.get_block_scene_by_id(action.block_id);
 			world.place_block(block_instance, action.pos, false);
 		elif action.type == "delete":
 			world.delete_block(action.pos, false);
