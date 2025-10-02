@@ -59,6 +59,9 @@ func clear_world() -> void:
 		delete_block(grid_pos, false);
 
 func can_place() -> bool:
+	if mouse_grid_pos.x < 0 or mouse_grid_pos.y > 53:
+		return false;
+	
 	if not BlockScene:
 		return false;
 

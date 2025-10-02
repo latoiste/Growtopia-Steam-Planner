@@ -1,5 +1,11 @@
 extends Camera2D
 
+var MAX_ZOOM_IN: Vector2 = Vector2(7, 7);
+var MAX_ZOOM_OUT: Vector2 = Vector2(1, 1);
+
+func _ready() -> void:
+	zoom = Vector2(5, 5);
+	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("zoom_in"):
 		zoom_in();
@@ -13,12 +19,12 @@ func pan_camera(event: InputEvent) -> void:
 	fix_camera_position();
 
 func zoom_in() -> void:
-	if zoom < Constants.MAX_ZOOM_IN:
+	if zoom < MAX_ZOOM_IN:
 		zoom += Vector2(0.5, 0.5);
 	fix_camera_position();
 	
 func zoom_out() -> void:
-	if zoom > Constants.MAX_ZOOM_OUT:
+	if zoom > MAX_ZOOM_OUT:
 		zoom -= Vector2(0.5, 0.5);
 	fix_camera_position();
 	

@@ -17,5 +17,3 @@ texture = ExtResource("2_83hrd")
 [node name="Border" parent="." instance=ExtResource("4_2y38e")]
 
 [node name="InteractButton" parent="." instance=ExtResource("2_7rn34")]
-
-[connection signal="pressed" from="InteractButton" to="." method="interact"]

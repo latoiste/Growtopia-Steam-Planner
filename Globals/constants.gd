@@ -9,9 +9,6 @@ const ALL_DIR: Array[Vector2] = [UP, DOWN, LEFT, RIGHT];
 
 const BLOCK_SIZE = 16;
 
-const MAX_ZOOM_IN = Vector2(7, 7);
-const MAX_ZOOM_OUT = Vector2(1, 1);
-
 const BLOCK_ID: Dictionary = {
 	"collector": 0,
 	"crank": 1,

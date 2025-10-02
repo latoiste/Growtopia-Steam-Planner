@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ckm26s3dyeyxp"]
+[gd_scene load_steps=12 format=3 uid="uid://ckm26s3dyeyxp"]
 
 [ext_resource type="PackedScene" uid="uid://eiem2x6r3rqr" path="res://UI/HUD.tscn" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://bucntcomgbrfi" path="res://main.gd" id="1_sugp2"]
@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://ce1clsrsmxwrm" path="res://Managers/Save/save_manager.tscn" id="6_5vw27"]
 [ext_resource type="Script" uid="uid://0eaxi1fq4a" path="res://UI/camera.gd" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://kfkjo3682xf8" path="res://Managers/Undoredo/undoredo_manager.tscn" id="6_272bh"]
+[ext_resource type="Texture2D" uid="uid://culurdslxgs76" path="res://hills1.png" id="8_efxa6"]
+[ext_resource type="Texture2D" uid="uid://bn1jf1tgkytd5" path="res://hills2.png" id="9_dg77c"]
+[ext_resource type="Texture2D" uid="uid://bbd5ifle6armd" path="res://hills3.png" id="10_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://gxharbybtjc5" path="res://sun.png" id="11_w48qg"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_sugp2")
@@ -30,3 +34,45 @@ script = ExtResource("6_7mycd")
 [node name="UndoRedoManager" parent="." instance=ExtResource("6_272bh")]
 
 [node name="HUD" parent="." instance=ExtResource("1_0wfyh")]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Hills1" type="Sprite2D" parent="Background"]
+z_index = -1
+texture_filter = 2
+texture_repeat = 2
+position = Vector2(800, 738)
+scale = Vector2(2, 2)
+texture = ExtResource("8_efxa6")
+region_enabled = true
+region_rect = Rect2(0, 0, 800, 128)
+
+[node name="Hills2" type="Sprite2D" parent="Background"]
+z_index = -2
+texture_repeat = 2
+position = Vector2(800, 610)
+scale = Vector2(2, 2)
+texture = ExtResource("9_dg77c")
+region_enabled = true
+region_rect = Rect2(0, 0, 800, 256)
+
+[node name="Hills3" type="Sprite2D" parent="Background"]
+z_index = -3
+texture_repeat = 2
+position = Vector2(800, 482)
+scale = Vector2(2, 2)
+texture = ExtResource("10_ycdy4")
+region_enabled = true
+region_rect = Rect2(0, 0, 800, 256)
+
+[node name="Sun" type="Sprite2D" parent="Background"]
+z_index = -4
+position = Vector2(1306, 166)
+texture = ExtResource("11_w48qg")
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+z_index = -5
+offset_right = 1600.0
+offset_bottom = 864.0
+mouse_filter = 2
+color = Color(0.270588, 0.835294, 0.905882, 1)
