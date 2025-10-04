@@ -1,0 +1,5 @@
+[[redirects]]
+    from = "/"
+    to = "/steam growtopia.html"
+    status = 200
+    force = true

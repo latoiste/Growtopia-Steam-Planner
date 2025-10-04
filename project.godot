@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="steam growtopia"
+config/name="Steam Planner"
 run/main_scene="uid://ckm26s3dyeyxp"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+config/icon="uid://bmpgdqu6sayxw"
 
 [autoload]
 
