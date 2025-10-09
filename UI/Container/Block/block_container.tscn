@@ -204,7 +204,7 @@ button_group = ExtResource("2_m4a3d")
 icon = ExtResource("22_805b5")
 icon_alignment = 1
 
-[node name="Spike" type="Button" parent="."]
+[node name="Spikes" type="Button" parent="."]
 layout_mode = 2
 theme = ExtResource("1_ttnt4")
 toggle_mode = true

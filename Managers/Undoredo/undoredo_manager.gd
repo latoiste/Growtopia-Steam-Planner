@@ -70,7 +70,6 @@ func redo() -> void:
 	for i in range(action_size):
 		var action: Action = redo_action.pop_front();
 		var block_instance: PackedScene = Block.get_block_scene_by_id(action.block_id);
-		print(block_instance);
 		if action.type == "place":
 			world.place_block(block_instance, action.pos, false);
 		elif action.type == "delete":

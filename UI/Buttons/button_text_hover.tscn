@@ -2,24 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dsay7uylwuo5e" path="res://UI/Buttons/button_text_hover.gd" id="1_6sj31"]
 [ext_resource type="Theme" uid="uid://cequleblijgxg" path="res://UI/Buttons/Theme/button_text_hover.tres" id="1_el5kh"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6sj31"]
-content_margin_left = 5.0
-content_margin_right = 5.0
-bg_color = Color(0.148501, 0.456972, 0.581911, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.607843, 0.886275, 0.886275, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-shadow_color = Color(0, 0, 0, 1)
+[ext_resource type="StyleBox" uid="uid://ctirdlvsthyt5" path="res://UI/Buttons/Theme/text_box.tres" id="3_7o5mi"]
 
 [sub_resource type="Theme" id="Theme_el5kh"]
-Label/styles/normal = SubResource("StyleBoxFlat_6sj31")
+Label/styles/normal = ExtResource("3_7o5mi")
 
 [sub_resource type="LabelSettings" id="LabelSettings_el5kh"]
 

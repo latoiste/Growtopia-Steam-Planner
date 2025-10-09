@@ -1,17 +1,37 @@
-[gd_scene load_steps=8 format=3 uid="uid://eiem2x6r3rqr"]
+[gd_scene load_steps=12 format=3 uid="uid://eiem2x6r3rqr"]
 
 [ext_resource type="Script" uid="uid://dluxct28rxm3e" path="res://UI/hud.gd" id="1_2ptjp"]
 [ext_resource type="PackedScene" uid="uid://u7x6mra6uojr" path="res://UI/Container/Block/block_container.tscn" id="2_f2wx0"]
 [ext_resource type="PackedScene" uid="uid://c7vrph7rfyvj2" path="res://UI/Container/Mode/mode_container.tscn" id="4_f2wx0"]
 [ext_resource type="PackedScene" uid="uid://chk1c76aau6lc" path="res://UI/Container/UndoRedo/undo_redo_container.tscn" id="4_gppie"]
+[ext_resource type="PackedScene" uid="uid://dg3wer6wjk5j0" path="res://UI/Container/BlockCount/block_count_container.tscn" id="5_md4fy"]
 [ext_resource type="PackedScene" uid="uid://2o3mcumpuswf" path="res://UI/Container/Save/save_container.tscn" id="6_2ptjp"]
+[ext_resource type="Script" uid="uid://dud8vin22uadx" path="res://UI/Popup/popup.gd" id="9_rbci0"]
+[ext_resource type="Script" uid="uid://bfpg5pbn6k34d" path="res://UI/Popup/block_count_popup.gd" id="10_am7sw"]
 [ext_resource type="PackedScene" uid="uid://ohomidc2fo8k" path="res://UI/Container/Camera/camera_container.tscn" id="19_pgems"]
 [ext_resource type="PackedScene" uid="uid://brhk0ahx4jv5c" path="res://UI/Container/Stats/stats_container.tscn" id="19_rsrlt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rbci0"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.148501, 0.456972, 0.581911, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.607843, 0.886275, 0.886275, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_2ptjp")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="ButtonsContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -25,40 +45,73 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ButtonsContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_constants/separation = 15
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ButtonsContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 35
 
-[node name="ModeContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("4_f2wx0")]
+[node name="ModeContainer" parent="ButtonsContainer/VBoxContainer/HBoxContainer" instance=ExtResource("4_f2wx0")]
 layout_mode = 2
 
-[node name="UndoRedoContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("4_gppie")]
+[node name="UndoRedoContainer" parent="ButtonsContainer/VBoxContainer/HBoxContainer" instance=ExtResource("4_gppie")]
 layout_mode = 2
 
-[node name="SaveContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("6_2ptjp")]
+[node name="SaveContainer" parent="ButtonsContainer/VBoxContainer/HBoxContainer" instance=ExtResource("6_2ptjp")]
 layout_mode = 2
 
-[node name="StatsContainer" parent="MarginContainer/VBoxContainer" instance=ExtResource("19_rsrlt")]
+[node name="BlockCountContainer" parent="ButtonsContainer/VBoxContainer/HBoxContainer" instance=ExtResource("5_md4fy")]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+[node name="StatsContainer" parent="ButtonsContainer/VBoxContainer" instance=ExtResource("19_rsrlt")]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="ButtonsContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/PanelContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="ButtonsContainer/PanelContainer"]
 layout_mode = 2
 
-[node name="BlockContainer" parent="MarginContainer/PanelContainer/CenterContainer" instance=ExtResource("2_f2wx0")]
+[node name="BlockContainer" parent="ButtonsContainer/PanelContainer/CenterContainer" instance=ExtResource("2_f2wx0")]
 layout_mode = 2
 
-[node name="CameraContainer" parent="MarginContainer" instance=ExtResource("19_pgems")]
+[node name="CameraContainer" parent="ButtonsContainer" instance=ExtResource("19_pgems")]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+
+[node name="BlockCountPopup" type="ColorRect" parent="." node_paths=PackedStringArray("popup_content")]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4)
+script = ExtResource("9_rbci0")
+popup_content = NodePath("CenterContainer")
+metadata/_custom_type_script = "uid://dud8vin22uadx"
+
+[node name="CenterContainer" type="CenterContainer" parent="BlockCountPopup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_am7sw")
+
+[node name="PanelContainer" type="PanelContainer" parent="BlockCountPopup/CenterContainer"]
+custom_minimum_size = Vector2(300, 500)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rbci0")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BlockCountPopup/CenterContainer/PanelContainer"]
+layout_mode = 2
+bbcode_enabled = true

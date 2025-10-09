@@ -17,7 +17,6 @@ func _process(_delta: float) -> void:
 func set_selected_block(selected_block: String) -> void:
 	selected_block_id = Constants.BLOCK_ID.get(selected_block);
 	BlockScene = Block.get_block_scene_by_id(selected_block_id);
-	
 
 func place_block(placed_block: PackedScene = BlockScene, grid_pos: Vector2 = mouse_grid_pos, register_action: bool = true) -> void:
 	if Grid.get_block_at(grid_pos): #fix multiple block in the same tile
