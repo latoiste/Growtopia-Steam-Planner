@@ -4,7 +4,7 @@ extends Source
 const output_dir: Array[Vector2] = Constants.ALL_DIR;
 
 func enter():
-	new_block("Steam Engine", Constants.BLOCK_ID["engine"], output_dir);
+	new_block(BlockID.ENGINE, output_dir);
 
 func interact():
 	if timer.is_stopped():

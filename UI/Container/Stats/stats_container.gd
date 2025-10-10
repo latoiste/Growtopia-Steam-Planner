@@ -11,5 +11,4 @@ func _process(delta: float) -> void:
 	
 	x_coords.text = "X: %d" % (grid_pos.x + 1);
 	y_coords.text = "Y: %d" % (grid_pos.y + 1);
-	current_block.text = "Block: %s" % (block.block_name
-			 if block else "-");
+	current_block.text = "Block: %s" % (block.get_block_name() if block else "-")

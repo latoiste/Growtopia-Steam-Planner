@@ -14,8 +14,7 @@ func _process(_delta: float) -> void:
 	mouse_grid_pos = Grid.get_grid_pos(get_global_mouse_position());
 	block = Grid.get_block_at(mouse_grid_pos)
 
-func set_selected_block(selected_block: String) -> void:
-	selected_block_id = Constants.BLOCK_ID.get(selected_block);
+func set_selected_block(selected_block_id: int) -> void:
 	BlockScene = Block.get_block_scene_by_id(selected_block_id);
 
 func place_block(placed_block: PackedScene = BlockScene, grid_pos: Vector2 = mouse_grid_pos, register_action: bool = true) -> void:

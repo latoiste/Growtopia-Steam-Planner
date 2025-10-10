@@ -10,8 +10,10 @@
 layout_mode = 2
 icon = ExtResource("3_wqloa")
 hover_text = "Save"
+metadata/signal_params = "save"
 
 [node name="Load" parent="." instance=ExtResource("2_ry8ek")]
 layout_mode = 2
 icon = ExtResource("4_w5lob")
 hover_text = "Load"
+metadata/signal_params = "load"

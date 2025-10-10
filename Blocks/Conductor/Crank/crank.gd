@@ -13,7 +13,7 @@ const output_dir: Array[Vector2] = [Constants.UP, Constants.DOWN];
 
 func enter():
 	super();
-	new_block("Steam Crank", Constants.BLOCK_ID["crank"], output_dir, input_dir);
+	new_block(BlockID.CRANK, output_dir, input_dir);
 	
 func get_next_dir(_prev_dir: Vector2 = Constants.NO_DIR):
 	output_direction = [_prev_dir];

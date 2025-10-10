@@ -5,7 +5,7 @@ const output_dir: Array[Vector2] = Constants.ALL_DIR;
 
 func enter() -> void:
 	super();
-	new_block("Steam Scrambler", Constants.BLOCK_ID["scrambler"], output_dir, input_dir);
+	new_block(BlockID.SCRAMBLER, output_dir, input_dir);
 
 func get_next_dir(prev_dir: Vector2 = Constants.NO_DIR) -> Vector2:
 	var valid_dirs: Array[Vector2];

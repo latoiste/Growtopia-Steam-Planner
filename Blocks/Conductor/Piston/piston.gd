@@ -10,7 +10,7 @@ const output_dir: Array[Vector2] = Constants.ALL_DIR;
 
 func enter() -> void:
 	super();
-	new_block("Steam Piston", Constants.BLOCK_ID["piston"], output_dir, input_dir);
+	new_block(BlockID.PISTON, output_dir, input_dir);
 	start_piston_loop();
 	flip_button.flipped.connect(change_direction);
 

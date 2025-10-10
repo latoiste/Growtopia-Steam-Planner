@@ -8,7 +8,7 @@ const output_dir: Array[Vector2] = Constants.ALL_DIR;
 
 func enter() -> void:
 	super();
-	new_block("Steam Lifter Piston", Constants.BLOCK_ID["pistonlifter"], output_dir, input_dir);
+	new_block(BlockID.PISTONLIFTER, output_dir, input_dir);
 	start_piston_lifter_loop();
 
 func start_piston_lifter_loop() -> void:

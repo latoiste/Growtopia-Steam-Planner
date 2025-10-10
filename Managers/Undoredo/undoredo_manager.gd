@@ -20,10 +20,10 @@ func handle_undoredo_action(action: String) -> void:
 		"redo":
 			redo();
 
-func register_action(block: Block, type: String) -> void:
+func register_action(block: Block, action_type: String) -> void:
 	var block_id: int = block.block_id;
 	var pos: Vector2 = block.block_pos; 
-	var action := Action.new(type, block_id, pos);
+	var action := Action.new(action_type, block_id, pos);
 	
 	queued_actions.push_back(action);
 

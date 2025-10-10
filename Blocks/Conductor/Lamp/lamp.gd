@@ -11,7 +11,7 @@ const input_dir: Array[Vector2] = [Constants.DOWN];
 
 func enter() -> void:
 	super();
-	new_block("Steam Lamp", Constants.BLOCK_ID["lamp"], [], input_dir);
+	new_block(BlockID.LAMP, [], input_dir);
 	timer.timeout.connect(reset_lamp_texture);
 
 func enter_steam(_sender: Steam) -> void:

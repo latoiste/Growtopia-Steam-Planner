@@ -23,7 +23,7 @@ func _ready() -> void:
 	save.world_loaded.connect(world.clear_world);
 	
 	hud.mode_selected.connect(editor.set_mode);
-	hud.block_selected.connect(func(_selected_block: String):
+	hud.block_selected.connect(func(_selected_block_id: int):
 		editor.set_mode("draw");
 	);
 	

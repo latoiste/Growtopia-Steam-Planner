@@ -1,7 +1,7 @@
 extends CanvasLayer
 class_name HUD
 
-@onready var block_container: GridContainer = $ButtonsContainer/PanelContainer/CenterContainer/BlockContainer
+@onready var block_container: BlockContainer = $ButtonsContainer/PanelContainer/CenterContainer/BlockContainer
 @onready var mode_container: ModeContainer = $ButtonsContainer/VBoxContainer/HBoxContainer/ModeContainer
 @onready var undoredo_container: UndoredoContainer = $ButtonsContainer/VBoxContainer/HBoxContainer/UndoRedoContainer
 @onready var save_container: HBoxContainer = $ButtonsContainer/VBoxContainer/HBoxContainer/SaveContainer
@@ -9,7 +9,7 @@ class_name HUD
 
 @onready var block_count_popup: CustomPopup = $BlockCountPopup
 
-signal block_selected(block_name: String);
+signal block_selected(block_id: int);
 signal mode_selected(mode: String);
 signal undoredo_pressed(action: String);
 signal saveload_pressed(action: String);
@@ -27,5 +27,6 @@ func connect_buttons(container: Container, _signal: Signal) -> void:
 		if not child is Button:
 			continue;
 		child.pressed.connect(func():
-			_signal.emit(child.name.to_lower());
+			print(child.get_meta("signal_params"))
+			_signal.emit(child.get_meta("signal_params"));
 		);

@@ -18,7 +18,7 @@ const output_dir: Array[Vector2] = Constants.ALL_DIR;
 
 func enter():
 	super();
-	new_block("Steam Organ", Constants.BLOCK_ID["organ"], output_dir, input_dir);
+	new_block(BlockID.ORGAN, output_dir, input_dir);
 	
 func enter_steam(_sender: Steam):
 	timer.start();

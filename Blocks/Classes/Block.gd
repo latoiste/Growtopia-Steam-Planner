@@ -1,7 +1,6 @@
 extends Node2D
 class_name Block
 
-var block_name: String;
 var block_id: int;
 var block_pos: Vector2;
 var input_direction: Array[Vector2] = [];
@@ -9,13 +8,12 @@ var output_direction: Array[Vector2] = [];
 var border: Border;
 
 static func get_block_scene_by_id(id: int) -> PackedScene:
-	var _block_name = Constants.BLOCK_ID.find_key(id);
 	var BlockScene: PackedScene;
-	
-	if not _block_name:
+	var block_data = BlockData.DB[id];
+	if not block_data:
 		return null;
 		
-	BlockScene = load(ScenePaths.BLOCKS[_block_name]);
+	BlockScene = load(block_data["scene"]);
 	return BlockScene;
 
 func _ready() -> void:
@@ -38,10 +36,8 @@ func enter_steam(_sender: Steam) -> void:
 func exit_steam() -> void:
 	pass
 
-func new_block(_block_name: String, _block_id: int, \
-		output_dir: Array[Vector2] = [], input_dir: Array[Vector2] = []):
-	self.block_name = _block_name;
-	self.block_id = _block_id;
+func new_block(_block_id: int, output_dir: Array[Vector2] = [], input_dir: Array[Vector2] = []):
+	block_id = _block_id;
 	set_direction(output_dir, input_dir);
 
 func delete() -> void:
@@ -61,7 +57,10 @@ func set_block_position(pos: Vector2, use_world_pos: bool = true) -> void:
 	position = pos;
 
 func get_block_name() -> String:
-	return block_name;
+	return BlockData.DB[block_id].get("name");
+
+func get_block_icon() -> String:
+	return BlockData.DB[block_id].get("icon");
 
 func get_global_block_pos() -> Vector2:
 	return Grid.get_world_pos(block_pos);

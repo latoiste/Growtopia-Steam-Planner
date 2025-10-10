@@ -5,7 +5,7 @@ const output_dir: Array[Vector2] = [Constants.DOWN];
 
 func enter():
 	super();
-	new_block("Steam Funnel - Down", Constants.BLOCK_ID["funneldown"], output_dir, input_dir);
+	new_block(BlockID.FUNNELDOWN, output_dir, input_dir);
 	
 func get_next_dir(_prev_dir: Vector2 = Constants.NO_DIR):
 	return super();

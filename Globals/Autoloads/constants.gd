@@ -9,7 +9,7 @@ const ALL_DIR: Array[Vector2] = [UP, DOWN, LEFT, RIGHT];
 
 const BLOCK_SIZE = 16;
 
-const BLOCK_ID: Dictionary = {
+const BLOCK_ID = {
 	"collector": 0,
 	"crank": 1,
 	"crossover": 2,
@@ -33,5 +33,5 @@ const BLOCK_ID: Dictionary = {
 	"piston": 20,
 	"pistonlifter": 21,
 	"scrambler": 22,
-	"spike": 23,
+	"spikes": 23,
 }

@@ -7,7 +7,7 @@ const output_dir: Array[Vector2] = [Constants.UP,
 							   Constants.DOWN]
 
 func enter():
-	new_block("Steam Revolver", Constants.BLOCK_ID["revolver"], output_dir);
+	new_block(BlockID.REVOLVER, output_dir);
 
 func interact():
 	if tween:

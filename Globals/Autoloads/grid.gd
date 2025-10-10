@@ -32,3 +32,13 @@ func get_grid_pos(world_pos: Vector2) -> Vector2:
 ##From _grid to world
 func get_world_pos(grid_pos: Vector2) -> Vector2:
 	return grid_pos * Constants.BLOCK_SIZE;
+
+func get_block_count() -> Dictionary:
+	var block_count_dict: Dictionary;
+	for key in _grid.keys():
+		var block: Block = _grid.get(key);
+		var block_id: int = block.block_id;
+		var block_count = block_count_dict.get_or_add(block_id, 0); 
+		block_count_dict.set(block_id, block_count + 1);
+	return block_count_dict;
+		

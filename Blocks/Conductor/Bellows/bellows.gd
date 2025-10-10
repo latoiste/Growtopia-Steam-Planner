@@ -8,7 +8,7 @@ const output_dir: Array[Vector2] = Constants.ALL_DIR;
 
 func enter() -> void:
 	super();
-	new_block("Steam Bellows", Constants.BLOCK_ID["bellows"], output_dir, input_dir);
+	new_block(BlockID.BELLOWS, output_dir, input_dir);
 	start_bellows_loop();
 	
 func start_bellows_loop() -> void:

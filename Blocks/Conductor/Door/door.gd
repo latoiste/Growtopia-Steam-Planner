@@ -12,7 +12,7 @@ var input_dir: Array[Vector2] = Constants.ALL_DIR;
 
 func enter():
 	super();
-	new_block("Steam Door", Constants.BLOCK_ID["door"], [], input_dir);
+	new_block(BlockID.DOOR, [], input_dir);
 
 func interact():
 	enter_steam(null);

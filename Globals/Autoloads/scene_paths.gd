@@ -25,7 +25,34 @@ const BLOCKS: Dictionary = {
 	"piston": "uid://36rwld7vohrd",
 	"pistonlifter": "uid://c6enr8nrs6u1e",
 	"scrambler": "uid://si3acpt58wxq",
-	"spike": "uid://doydskiq4qofp",
+	"spikes": "uid://doydskiq4qofp",
+}
+
+const BLOCK_ICONS: Dictionary = {
+	"bellows": "res://Icons/Block/bellows_icon.png",
+	"bellowsriser": "res://Icons/Block/bellows_riser_icon.png",
+	"collector": "res://Icons/Block/collector_icon.png",
+	"crank": "res://Icons/Block/crank_icon.png",
+	"crossover": "res://Icons/Block/crossover_icon.png",
+	"funneldown": "res://Icons/Block/funnel_down_icon.png",
+	"funnel": "res://Icons/Block/funnel_icon.png",
+	"funnelup": "res://Icons/Block/funnel_up_icon.png",
+	"gear": "res://Icons/Block/gear_icon.png",
+	"launcher": "res://Icons/Block/launcher_icon.png",
+	"organ": "res://Icons/Block/organ_icon.png",
+	"piston": "res://Icons/Block/piston_icon.png",
+	"pistonlifter": "res://Icons/Block/piston_lifter_icon.png",
+	"revolver": "res://Icons/Block/revolver_icon.png",
+	"scrambler": "res://Icons/Block/scrambler_icon.png",
+	"spikes": "res://Icons/Block/spike_icon.png",
+	"tubes": "res://Icons/Block/tubes_icon.png",
+	"valve": "res://Icons/Block/valve_icon.png",
+	"stomper": "res://block sprites/Source/stomper.png",
+	"lamp": "res://block sprites/Conductor/lamp_off.png",
+	"door": "res://block sprites/Conductor/door_closed.png",
+	"vent": "res://block sprites/Conductor/vent_off.png", 
+	"pipe": "res://block sprites/Conductor/pipes/pipe_base.png",
+	"engine": "res://block sprites/Source/engine.png",
 }
 
 const STEAM_SCENE: PackedScene = preload("uid://btffcbbs7ojqg");

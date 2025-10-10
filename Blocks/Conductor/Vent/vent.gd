@@ -13,7 +13,7 @@ const output_dir: Array[Vector2] = Constants.ALL_DIR;
 
 func enter():
 	super();
-	new_block("Steam Vent", Constants.BLOCK_ID["vent"], output_dir, input_dir);
+	new_block(BlockID.VENT, output_dir, input_dir);
 	timer.timeout.connect(reset_vent_texture);
 
 func enter_steam(_sender: Steam):

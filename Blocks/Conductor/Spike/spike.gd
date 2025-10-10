@@ -8,7 +8,7 @@ const input_dir: Array[Vector2] = [Constants.DOWN];
 
 func enter() -> void:
 	super();
-	new_block("Steam Spikes", Constants.BLOCK_ID["spike"], [], input_dir);
+	new_block(BlockID.SPIKES, [], input_dir);
 
 func enter_steam(_sender: Steam) -> void:
 	animate_spike();

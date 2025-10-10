@@ -1,5 +1,6 @@
-[gd_scene load_steps=27 format=3 uid="uid://u7x6mra6uojr"]
+[gd_scene load_steps=28 format=3 uid="uid://u7x6mra6uojr"]
 
+[ext_resource type="Script" uid="uid://uopv451r0rru" path="res://UI/Container/Block/block_container.gd" id="1_m4a3d"]
 [ext_resource type="Theme" uid="uid://dwwtneslupmmp" path="res://UI/Buttons/Theme/block_button.tres" id="1_ttnt4"]
 [ext_resource type="Texture2D" uid="uid://b800pfkm02qsa" path="res://block sprites/Source/stomper.png" id="2_8c6tx"]
 [ext_resource type="ButtonGroup" uid="uid://cs36aa25l6sec" path="res://UI/Buttons/Group/block_button_group.tres" id="2_m4a3d"]
@@ -31,6 +32,7 @@
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 6
+script = ExtResource("1_m4a3d")
 
 [node name="Stomper" type="Button" parent="."]
 layout_mode = 2

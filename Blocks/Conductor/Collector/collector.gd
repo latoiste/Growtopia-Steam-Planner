@@ -7,7 +7,7 @@ const output_dir: Array[Vector2] = Constants.ALL_DIR;
 
 func enter():
 	super();
-	new_block("Steam Collector", Constants.BLOCK_ID["collector"], output_dir, input_dir);
+	new_block(BlockID.COLLECTOR, output_dir, input_dir);
 
 func enter_steam(sender: Steam):
 	latest_prev_dir = sender.prev_dir;

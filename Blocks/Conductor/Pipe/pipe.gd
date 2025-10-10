@@ -10,7 +10,7 @@ var texture_index := 0;
 
 func enter() -> void:
 	super();
-	new_block("Steam Pipe", Constants.BLOCK_ID["pipe"], output_dir, input_dir);
+	new_block(BlockID.PIPE, output_dir, input_dir);
 	update_sprite();
 	update_neighbor_sprite();
 	

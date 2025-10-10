@@ -35,9 +35,11 @@ layout_mode = 2
 theme_override_styles/pressed = SubResource("StyleBoxFlat_acsxg")
 icon = ExtResource("1_v2x4c")
 hover_text = "Undo (Ctrl + Z)"
+metadata/signal_params = "undo"
 
 [node name="Redo" parent="." instance=ExtResource("1_vyge3")]
 layout_mode = 2
 theme_override_styles/pressed = SubResource("StyleBoxFlat_lwgui")
 icon = ExtResource("3_uw6lp")
 hover_text = "Redo (Ctrl + Y)"
+metadata/signal_params = "redo"

@@ -19,8 +19,10 @@ script = ExtResource("1_1yauu")
 layout_mode = 2
 icon = ExtResource("4_sphor")
 hover_text = "View Tool (V)"
+metadata/signal_params = "select"
 
 [node name="Draw" parent="." instance=ExtResource("4_1wnwp")]
 layout_mode = 2
 icon = ExtResource("3_1wnwp")
 hover_text = "Draw Tool (D)"
+metadata/signal_params = "draw"
