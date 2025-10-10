@@ -27,6 +27,5 @@ func connect_buttons(container: Container, _signal: Signal) -> void:
 		if not child is Button:
 			continue;
 		child.pressed.connect(func():
-			print(child.get_meta("signal_params"))
 			_signal.emit(child.get_meta("signal_params"));
 		);
