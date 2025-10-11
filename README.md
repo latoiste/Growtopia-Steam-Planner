@@ -1,12 +1,12 @@
 <h1>Growtopia Steam Planner</h1>
-A simulator for steam blocks in Growtopia!
+A simulator for steam mechanics in Growtopia!
 </br>
 No installation needed, just access it <a href="https://gt-steam-planner.netlify.app/" target="_blank">here</a>! 
 
 <h2>⭐Features coming soon</h2>
 <ul>
   <li>Custom bootsplash screen</li>
-  <li>Block count</li>
+  <li>Mobile support</li>
 </ul>
 
 <h2>📝Found a bug? Request a feature?</h2>
