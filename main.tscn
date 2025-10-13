@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ckm26s3dyeyxp"]
+[gd_scene load_steps=13 format=3 uid="uid://ckm26s3dyeyxp"]
 
 [ext_resource type="PackedScene" uid="uid://eiem2x6r3rqr" path="res://UI/HUD.tscn" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://bucntcomgbrfi" path="res://main.gd" id="1_sugp2"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bn1jf1tgkytd5" path="res://block sprites/Background/hills2.png" id="9_dg77c"]
 [ext_resource type="Texture2D" uid="uid://bbd5ifle6armd" path="res://block sprites/Background/hills3.png" id="10_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://gxharbybtjc5" path="res://block sprites/Background/sun.png" id="11_w48qg"]
+[ext_resource type="PackedScene" uid="uid://pdagyf1hphng" path="res://UI/splash_screen.tscn" id="12_ycdy4"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_sugp2")
@@ -76,3 +77,5 @@ offset_right = 1600.0
 offset_bottom = 864.0
 mouse_filter = 2
 color = Color(0.270588, 0.835294, 0.905882, 1)
+
+[node name="SplashScreen" parent="." instance=ExtResource("12_ycdy4")]

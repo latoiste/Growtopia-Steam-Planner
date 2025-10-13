@@ -5,8 +5,8 @@ No installation needed, just access it <a href="https://gt-steam-planner.netlify
 
 <h2>⭐Features coming soon</h2>
 <ul>
-  <li>Custom bootsplash screen</li>
   <li>Mobile support</li>
+  <li>Non-steam blocks</li>
 </ul>
 
 <h2>📝Found a bug? Request a feature?</h2>
