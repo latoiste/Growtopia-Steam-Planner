@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://7r5yhgtupftm"]
+
+[ext_resource type="Script" uid="uid://lj4x3lclmxph" path="res://UI/Container/Popup/popup_container.gd" id="1_1khyv"]
+[ext_resource type="PackedScene" uid="uid://crrjpxl4pcjbo" path="res://UI/Buttons/button_text_hover.tscn" id="2_081ec"]
+[ext_resource type="Texture2D" uid="uid://doxj2lbktwsoa" path="res://Icons/UI/grid_view_32dp_E3E3E3_FILL0_wght400_GRAD0_opsz40.svg" id="3_0w2dq"]
+[ext_resource type="Texture2D" uid="uid://brn0a00enja8j" path="res://Icons/UI/bug_report_32dp_E3E3E3_FILL0_wght400_GRAD0_opsz40.svg" id="4_spu0q"]
+
+[node name="PopupContainer" type="HBoxContainer"]
+offset_right = 48.0
+offset_bottom = 48.0
+script = ExtResource("1_1khyv")
+
+[node name="BlockCount" parent="." instance=ExtResource("2_081ec")]
+layout_mode = 2
+icon = ExtResource("3_0w2dq")
+hover_text = "Block Count"
+
+[node name="BugReport" parent="." instance=ExtResource("2_081ec")]
+layout_mode = 2
+icon = ExtResource("4_spu0q")
+hover_text = "Bug Report"

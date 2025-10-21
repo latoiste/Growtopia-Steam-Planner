@@ -8,6 +8,7 @@ extends CanvasLayer
 @onready var texture_rect: TextureRect = $TextureRect
 
 func _ready() -> void:
+	visible = true
 	color_rect.color = background_color
 	texture_rect.texture = splash_screen
 	await show_splash_screen()

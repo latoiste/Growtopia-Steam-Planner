@@ -5,9 +5,11 @@ class_name HUD
 @onready var mode_container: ModeContainer = $ButtonsContainer/VBoxContainer/HBoxContainer/ModeContainer
 @onready var undoredo_container: UndoredoContainer = $ButtonsContainer/VBoxContainer/HBoxContainer/UndoRedoContainer
 @onready var save_container: HBoxContainer = $ButtonsContainer/VBoxContainer/HBoxContainer/SaveContainer
-@onready var block_count_container: HBoxContainer = $ButtonsContainer/VBoxContainer/HBoxContainer/BlockCountContainer
+@onready var popup_container: PopupContainer = $ButtonsContainer/VBoxContainer/HBoxContainer/PopupContainer
 
-@onready var block_count_popup: CustomPopup = $BlockCountPopup
+@onready var popup_overlay: PopupOverlay = $PopupOverlay
+@onready var bug_report_popup: BugReportPopup = $PopupOverlay/BugReportPopup
+@onready var block_count_popup: BlockCountPopup = $PopupOverlay/BlockCountPopup
 
 signal block_selected(block_id: int);
 signal mode_selected(mode: String);
@@ -20,7 +22,8 @@ func _ready() -> void:
 	connect_buttons(undoredo_container, undoredo_pressed);
 	connect_buttons(save_container, saveload_pressed);
 	
-	block_count_container.block_count_pressed.connect(block_count_popup.show_popup);
+	connect_popup(bug_report_popup, popup_container.bug_report_pressed)
+	connect_popup(block_count_popup, popup_container.block_count_pressed)
 	
 func connect_buttons(container: Container, _signal: Signal) -> void:
 	for child in container.get_children():
@@ -29,3 +32,8 @@ func connect_buttons(container: Container, _signal: Signal) -> void:
 		child.pressed.connect(func():
 			_signal.emit(child.get_meta("signal_params"));
 		);
+
+func connect_popup(popup: Container, _signal: Signal) -> void:
+	_signal.connect(func(): 
+		popup_overlay.show_popup(popup);
+	);

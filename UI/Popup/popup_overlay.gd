@@ -1,14 +1,8 @@
-@tool
 extends ColorRect
-class_name CustomPopup;
+class_name PopupOverlay;
 
-@export var popup_content: Container:
-	set(value):
-		popup_content = value;
-		if Engine.is_editor_hint():
-			update_configuration_warnings();
-	
 var tween: Tween;
+var popup_content: Container;
 var popup_showing: bool = false;
 
 func _ready() -> void:
@@ -18,11 +12,17 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("escape") and popup_showing:
 		close_popup();
+		
+func _gui_input(event: InputEvent) -> void:
+	if event is InputEventMouse and event.is_pressed():
+		close_popup();
 
-func show_popup() -> void:
+func show_popup(popup: Container) -> void:
+	popup_content = popup;
+	
 	visible = true;
+	popup_content.visible = true;
 	popup_showing = true;
-	popup_content.set_popup_size();
 	
 	tween = create_tween();
 	tween.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC);
@@ -34,12 +34,6 @@ func close_popup() -> void:
 	if tween:
 		tween.kill();
 	visible = false;
+	popup_content.visible = false;
 	popup_showing = false;
-		
-func _get_configuration_warnings() -> PackedStringArray:
-	var warning: PackedStringArray = [];
-	if popup_content == null:
-		warning.append("Missing a popup");
-	else:
-		warning.clear();
-	return warning;
+	

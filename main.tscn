@@ -79,3 +79,4 @@ mouse_filter = 2
 color = Color(0.270588, 0.835294, 0.905882, 1)
 
 [node name="SplashScreen" parent="." instance=ExtResource("12_ycdy4")]
+visible = false

@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvjsauy4gqp81"]
+
+[ext_resource type="Script" uid="uid://3bl18a471ie7" path="res://UI/Popup/BugReport/bug_report_popup.gd" id="1_onrwh"]
+[ext_resource type="StyleBox" uid="uid://ctirdlvsthyt5" path="res://UI/Buttons/Theme/text_box.tres" id="2_vdhvj"]
+[ext_resource type="Theme" uid="uid://djhm3hmexq7y1" path="res://UI/Buttons/Theme/text_box_button.tres" id="3_dxhkg"]
+
+[node name="BugReportPopup" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_onrwh")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(300, 267.95)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_vdhvj")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("3_dxhkg")
+text = "Github repository"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/line_separation = 3
+bbcode_enabled = true
+text = "[b][font_size=24]Found a bug?[/font_size]
+[fill]Help to improve this site by reporting a bug! You can report a bug by submitting an issue in this Github repository or message me in Discord (ackkkk).[/fill][/b]"
