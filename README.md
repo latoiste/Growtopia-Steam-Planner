@@ -5,7 +5,6 @@ No installation needed, just access it <a href="https://gt-steam-planner.netlify
 
 <h2>⭐Features coming soon</h2>
 <ul>
-  <li>Mobile support</li>
   <li>Non-steam blocks</li>
 </ul>
 
