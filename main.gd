@@ -47,6 +47,9 @@ func handle_draw_mode() -> void:
 		elif world.can_replace() and editor.state != editor.State.DELETE:
 			editor.set_state(editor.State.REPLACE);
 			world.replace_block();
+		if world.can_delete() and editor.state != editor.State.PLACE and editor.state != editor.State.REPLACE:
+			editor.set_state(editor.State.DELETE);
+			world.delete_block();
 	elif Input.is_action_pressed("right_click"):
 		if world.can_delete() and editor.state != editor.State.PLACE and editor.state != editor.State.REPLACE:
 			editor.set_state(editor.State.DELETE);

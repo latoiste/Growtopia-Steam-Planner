@@ -14,8 +14,9 @@ func _process(_delta: float) -> void:
 	mouse_grid_pos = Grid.get_grid_pos(get_global_mouse_position());
 	block = Grid.get_block_at(mouse_grid_pos)
 
-func set_selected_block(selected_block_id: int) -> void:
-	BlockScene = Block.get_block_scene_by_id(selected_block_id);
+func set_selected_block(id: int) -> void:
+	selected_block_id = id
+	BlockScene = Block.get_block_scene_by_id(id);
 
 func place_block(placed_block: PackedScene = BlockScene, grid_pos: Vector2 = mouse_grid_pos, register_action: bool = true) -> void:
 	if Grid.get_block_at(grid_pos): #fix multiple block in the same tile
@@ -33,7 +34,6 @@ func place_block(placed_block: PackedScene = BlockScene, grid_pos: Vector2 = mou
 	
 	if register_action:
 		block_placed.emit(block_instance);
-		print("block_placed emitted");
 
 func delete_block(grid_pos: Vector2 = mouse_grid_pos, register_action: bool = true) -> void:
 	var deleted_block := Grid.get_block_at(grid_pos);
@@ -45,7 +45,6 @@ func delete_block(grid_pos: Vector2 = mouse_grid_pos, register_action: bool = tr
 	
 	if register_action:
 		block_deleted.emit(deleted_block);
-		print("block deleted emitted");
 	
 func replace_block(placed_block: PackedScene = BlockScene, grid_pos: Vector2 = mouse_grid_pos) -> void:
 	delete_block(grid_pos);
@@ -65,7 +64,6 @@ func can_place() -> bool:
 
 	if block:
 		return false;
-		
 	return true
 
 func can_delete() -> bool:
